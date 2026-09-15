@@ -1,0 +1,60 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Suivi espèces {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <div class="d-flex align-items-center gap-2">
+            <h1 class="mb-0">Suivi espèces</h1>
+            <form method="get" class="d-inline">
+                <select name="annee" class="form-select form-select-sm" onchange="this.form.submit()">
+                    {% for a in annees_disponibles %}
+                        <option value="{{ a }}" {% if a == annee %}selected{% endif %}>{{ a }}-{{ a|add:1 }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <a href="{% url 'exporter_especes' pole.slug %}?annee={{ annee }}" class="btn btn-success btn-sm">Exporter Excel</a>
+    </div>
+
+    <h6 class="text-muted text-uppercase mb-2">Detail des opérations</h6>
+    <input type="text" id="rechercheRecharges" class="form-control mb-3" placeholder="Rechercher un nom, une date..." oninput="filtrerRecharges()">
+    <div class="table-responsive">
+        <table class="table align-middle bg-white shadow-sm">
+            <thead>
+                <tr><th>Date</th><th>Personne</th><th>Type</th><th>Montant</th><th>Encaisse par</th></tr>
+            </thead>
+            <tbody id="corpsRecharges">
+                {% for op in operations %}
+                    <tr data-recherche="{{ op.personne|lower }} {{ op.date|date:'d/m/Y' }} {{ op.encaisse_par|lower }} {{ op.type|lower }}">
+                        <td>{{ op.date|date:"d/m/Y H:i" }}</td>
+                        <td>{{ op.personne }}</td>
+                        <td>
+                            {% if op.type == "Adhesion" %}
+                                <span class="badge bg-primary">Adhésion</span>
+                            {% else %}
+                                <span class="badge bg-success">Rechargement</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ op.montant|floatformat:2 }} EUR</td>
+                        <td>{{ op.encaisse_par }}</td>
+                    </tr>
+                {% empty %}
+                    <tr><td colspan="5" class="text-muted text-center py-3">Aucune opération en espèces.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function filtrerRecharges() {
+        const recherche = document.getElementById('rechercheRecharges').value.trim().toLowerCase();
+        document.querySelectorAll('#corpsRecharges tr[data-recherche]').forEach(function (ligne) {
+            ligne.classList.toggle('d-none', !ligne.dataset.recherche.includes(recherche));
+        });
+    }
+</script>
+{% endblock %}

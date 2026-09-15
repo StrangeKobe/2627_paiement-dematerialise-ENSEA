@@ -1,0 +1,65 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Participants - {{ evenement.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'modifier_evenement' pole.slug evenement.id %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mb-0">{{ evenement.nom }}</h1>
+        <div class="d-flex gap-2">
+            <a href="{% url 'importer_participants' pole.slug evenement.id %}" class="btn btn-primary">
+                Importer depuis HelloAsso
+            </a>
+            <a href="{% url 'exporter_participants' pole.slug evenement.id %}" class="btn btn-success btn-sm">Exporter Excel</a>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-body text-center">
+            <span class="text-muted">Total billets</span>
+            <div class="display-6 fw-bold">{{ total_billets }}</div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Quantité</th>
+                        <th>Date</th>
+                        <th>Source</th>
+                        <th>HelloAsso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in participants %}
+                        <tr>
+                            <td>{{ p.nom }}</td>
+                            <td>{{ p.quantite }}</td>
+                            <td>{{ p.date|date:"d/m/Y H:i" }}</td>
+                            <td>
+                                {% if p.source == "Interne" %}
+                                    <span class="badge bg-success">Interne</span>
+                                {% else %}
+                                    <span class="badge bg-primary">HelloAsso</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if p.reference_helloasso %}
+                                    <span class="badge bg-primary" title="{{ p.reference_helloasso }}">Synchronisé</span>
+                                {% elif p.source == "Interne" %}
+                                    <span class="text-muted small">-</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr><td colspan="5" class="text-muted text-center py-3">Personne n'a encore pris de billet.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

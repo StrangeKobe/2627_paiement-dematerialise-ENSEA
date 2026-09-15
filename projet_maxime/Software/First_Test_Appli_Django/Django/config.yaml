@@ -1,0 +1,10 @@
+model_list:
+  - model_name: custom/blackbox-base
+    litellm_params:
+      model: vercel/custom/blackbox-base
+      api_key: os.environ/VERCEL_AI_GATEWAY_KEY
+
+  - model_name: gpt-4.1-mini
+    litellm_params:
+      model: vercel/gpt-4.1-mini
+      api_key: os.environ/VERCEL_AI_GATEWAY_KEY

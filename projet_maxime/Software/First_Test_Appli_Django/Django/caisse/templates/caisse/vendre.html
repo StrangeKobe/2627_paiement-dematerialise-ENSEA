@@ -1,0 +1,46 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Vendre{% endblock %}
+
+{% block contenu %}
+    <h1 class="mb-4">Vendre</h1>
+
+    {% if poles_vente %}
+        <div class="row g-3 mb-4">
+            {% for pole in poles_vente %}
+                <div class="col-6 col-md-4">
+                    <a href="{% url 'detail_pole' pole.slug %}" class="text-decoration-none">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body py-3">
+                                <div class="fw-bold">{{ pole.nom }}</div>
+                                <div class="text-muted small">Ouvrir la caisse</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if poles_gestion %}
+        <h6 class="text-muted text-uppercase mb-2">Gérer</h6>
+        <div class="row g-3">
+            {% for pole in poles_gestion %}
+                <div class="col-6 col-md-4">
+                    <a href="{% url 'gerer_produits' pole.slug %}" class="text-decoration-none">
+                        <div class="card shadow-sm h-100 border-primary">
+                            <div class="card-body py-3">
+                                <div class="fw-bold">{{ pole.nom }}</div>
+                                <div class="text-muted small">Gérer les produits</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if not poles_vente and not poles_gestion %}
+        <p class="text-muted">Aucun droit de vente ou de gestion pour le moment.</p>
+    {% endif %}
+{% endblock %}

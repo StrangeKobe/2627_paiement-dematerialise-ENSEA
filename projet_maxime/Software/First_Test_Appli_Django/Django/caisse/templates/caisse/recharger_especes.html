@@ -1,0 +1,30 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Rechargement espèces{% endblock %}
+
+{% block contenu %}
+<a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h4 class="mb-3">Rechargement en espèces</h4>
+                {% if erreur %}
+                    <div class="alert alert-danger">{{ erreur }}</div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Identifiant de l'étudiant</label>
+                        <input type="text" name="identifiant" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Montant (EUR)</label>
+                        <input type="text" name="montant" class="form-control" placeholder="ex: 10,00" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Valider le rechargement</button>
+                </form>
+            </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Code de sécurité{% endblock %}
+{% block contenu %}
+    <h1 class="mb-4 text-center">Code de sécurité</h1>
+
+    {% if erreur %}
+        <div class="alert alert-danger text-center">{{ erreur }}</div>
+    {% endif %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <span class="display-4 fw-bold" id="affichage">------</span>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        {% for touche in "123456789" %}
+                            <div class="col-4">
+                                <button type="button" class="btn btn-outline-secondary w-100 py-3 fs-4" onclick="taper('{{ touche }}')">{{ touche }}</button>
+                            </div>
+                        {% endfor %}
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-outline-secondary w-100 py-3 fs-4" onclick="taper('0')">0</button>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-outline-danger w-100 py-3 fs-4" onclick="effacer()">&larr;</button>
+                        </div>
+                    </div>
+
+                    <form method="post" id="formCode">
+                        {% csrf_token %}
+                        <input type="hidden" name="code" id="champCode">
+                        <button type="submit" class="btn btn-primary w-100 py-2">Valider</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let saisie = "";
+    const affichage = document.getElementById("affichage");
+    const champCode = document.getElementById("champCode");
+
+    function rafraichir() {
+        const masque = "•".repeat(saisie.length) + "-".repeat(6 - saisie.length);
+        affichage.textContent = masque;
+        champCode.value = saisie;
+    }
+
+    function taper(chiffre) {
+        if (saisie.length >= 6) return;
+        saisie += chiffre;
+        rafraichir();
+    }
+
+    function effacer() {
+        saisie = saisie.slice(0, -1);
+        rafraichir();
+    }
+
+    rafraichir();
+</script>
+{% endblock %}

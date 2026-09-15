@@ -1,0 +1,18 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Rechargement effectué{% endblock %}
+
+{% block contenu %}
+<div class="text-center py-5">
+    <div class="display-5 text-success mb-3">&#10003;</div>
+    <h2>Rechargement de {{ montant|floatformat:2 }} EUR</h2>
+    <p class="text-muted mb-1">
+        {% if profil.user.first_name or profil.user.last_name %}
+            {{ profil.user.first_name }} {{ profil.user.last_name }}
+        {% else %}
+            {{ profil.user.username }} <span class="badge bg-secondary">Identifiant</span>
+        {% endif %}
+    </p>
+    <a href="{% url 'recharger_especes' pole.slug %}" class="btn btn-primary">Nouveau rechargement</a>
+</div>
+{% endblock %}

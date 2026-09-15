@@ -1,0 +1,98 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Équipes{% endblock %}
+{% block contenu %}
+    <a href="{% url 'espace_ecole' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Équipes par pôle</h1>
+
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h6 class="mb-3">Attribuer un rôle</h6>
+            <form method="post" class="row g-2">
+                {% csrf_token %}
+                <div class="col-12 col-sm-4">
+                    <input type="text" name="identifiant" class="form-control" placeholder="identifiant école" required>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <select name="pole" class="form-select">
+                        <option value="">Aucun (rôle global uniquement)</option>
+                        {% for p in poles %}
+                            <option value="{{ p.id }}">{{ p.nom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-6 col-sm-3">
+                    <select name="role" class="form-select">
+                        <option value="VENDEUR">Vendeur</option>
+                        <option value="ADMIN_POLE">Admin de pôle</option>
+                        <option value="ADMIN_ADE">Admin ADE</option>
+                        <option value="ADMIN_ECOLE">Admin école</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-2">
+                    <button type="submit" name="ajouter" value="1" class="btn btn-primary w-100">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% for nom_pole, affectations in groupes %}
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h6 class="mb-2">{{ nom_pole }}</h6>
+                <ul class="list-unstyled mb-0">
+                    {% for a in affectations %}
+                        <li class="d-flex justify-content-between align-items-center border-bottom py-1">
+                            <span>
+                                {% if a.user.first_name or a.user.last_name %}
+                                    {{ a.user.first_name }} {{ a.user.last_name }}
+                                {% else %}
+                                    {{ a.user.username }} <span class="badge bg-secondary">Identifiant</span>
+                                {% endif %}
+                                <span class="badge bg-secondary ms-1">{{ a.get_role_display }}</span>
+                            </span>
+                            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#confirmationRetrait" data-affectation-id="{{ a.id }}" data-nom="{% if a.user.first_name or a.user.last_name %}{{ a.user.first_name }} {{ a.user.last_name }}{% else %}{{ a.user.username }}{% endif %}">Retirer</button>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% empty %}
+        <p class="text-muted">Aucune affectation.</p>
+    {% endfor %}
+
+    <div class="modal fade" id="confirmationRetrait" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Retirer ce rôle ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Tu es sur le point de retirer le rôle de <strong id="nomConcerne"></strong>.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Annuler</button>
+                    <form method="post" id="formConfirmationRetrait">
+                        {% csrf_token %}
+                        <input type="hidden" name="retirer" id="idConcerne">
+                        <button type="submit" class="btn btn-danger">Confirmer le retrait</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('confirmationRetrait').addEventListener('show.bs.modal', function (event) {
+        const bouton = event.relatedTarget;
+        document.getElementById('nomConcerne').textContent = bouton.dataset.nom;
+        document.getElementById('idConcerne').value = bouton.dataset.affectationId;
+    });
+</script>
+{% endblock %}

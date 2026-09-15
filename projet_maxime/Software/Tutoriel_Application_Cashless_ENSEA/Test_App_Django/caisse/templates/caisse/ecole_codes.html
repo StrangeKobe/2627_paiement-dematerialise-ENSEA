@@ -1,0 +1,99 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Codes de sécurité{% endblock %}
+{% block contenu %}
+    <a href="{% url 'espace_ecole' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Codes de sécurité</h1>
+
+    {% if a_traiter %}
+        <div class="alert alert-warning">
+            <strong>{{ a_traiter|length }} personne{{ a_traiter|length|pluralize }} avec un rôle a pouvoir sans code :</strong>
+            <ul class="list-unstyled mb-0 mt-2">
+                {% for a in a_traiter %}
+                    <li class="d-flex justify-content-between align-items-center py-1">
+                        <span>
+                            {% if a.user.first_name or a.user.last_name %}
+                                {{ a.user.first_name }} {{ a.user.last_name }}
+                            {% else %}
+                                {{ a.user.username }}
+                            {% endif %}
+                            &mdash; {{ a.roles|join:", " }} ({{ a.pole.nom|default:"ADE/Ecole" }})
+                        </span>
+                        <form method="post" class="d-inline">
+                            {% csrf_token %}
+                            <input type="hidden" name="identifiant" value="{{ a.user.username }}">
+                            <input type="hidden" name="pole" value="{{ a.pole.id|default:'' }}">
+                            <button type="submit" name="generer" value="1" class="btn btn-sm btn-warning">Générer le code</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if nouveau_code %}
+        <div class="alert alert-success">
+            <strong>Nouveau code généré : {{ nouveau_code }}</strong><br>
+            <span class="small">Note-le et remets-le en main propre maintenant : il ne sera plus jamais affiché.</span>
+        </div>
+    {% endif %}
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <form method="post" class="row g-2">
+                {% csrf_token %}
+                <div class="col-12 col-sm-5">
+                    <input type="text" name="identifiant" class="form-control" placeholder="identifiant école" required>
+                </div>
+                <div class="col-8 col-sm-5">
+                    <select name="pole" class="form-select">
+                        <option value="">ADE (global)</option>
+                        {% for p in poles %}
+                            <option value="{{ p.id }}">{{ p.nom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-4 col-sm-2">
+                    <button type="submit" name="generer" value="1" class="btn btn-primary w-100">Générer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <h6 class="text-muted text-uppercase mb-2">Codes existants</h6>
+    <table class="table align-middle bg-white shadow-sm">
+        <thead><tr><th>Personne</th><th>Pôle</th><th>Défini par</th><th>Date</th><th></th></tr></thead>
+        <tbody>
+            {% for c in codes %}
+                <tr>
+                    <td>
+                        {% if c.user.first_name or c.user.last_name %}
+                            {{ c.user.first_name }} {{ c.user.last_name }}
+                        {% else %}
+                            {{ c.user.username }} <span class="badge bg-secondary">Identifiant</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ c.pole.nom|default:"ADE" }}</td>
+                    <td>
+                        {% if c.definie_par.first_name or c.definie_par.last_name %}
+                            {{ c.definie_par.first_name }} {{ c.definie_par.last_name }}
+                        {% else %}
+                            {{ c.definie_par.username }}
+                        {% endif %}
+                    </td>
+                    <td>{{ c.date_maj|date:"d/m/Y" }}</td>
+                    <td>
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" name="retirer" value="{{ c.id }}" class="btn btn-sm btn-outline-danger">Retirer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="5" class="text-muted text-center py-3">Aucun code généré.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

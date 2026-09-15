@@ -1,0 +1,275 @@
+// ============================================================
+//  Plateforme paiement dématérialisé ENSEA — Schéma BDD V1
+//  Format DBML → coller sur https://dbdiagram.io
+//
+//  Philosophie :
+//   - On s'appuie sur auth_user et auth_group Django natifs
+//   - Argent en CENTIMES (int), jamais de float
+//   - is_active partout, jamais de suppression physique
+//   - Anonymisation RGPD prévue (deleted_at + écrasement des champs nominatifs)
+//
+//  Version mise à jour :
+//   + catégories de produits
+//   + notifications
+//   + événements (catalogues éphémères)
+//   + séparation claire Super Admin / Admin ADE
+// ============================================================
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 1 — AUTH DJANGO (tables natives, générées automatiquement)
+// ─────────────────────────────────────────────────────────────
+
+Table auth_user {
+  id            int       [pk, increment]
+  username      varchar   [unique, not null, note: 'login CAS ENSEA ex: marXX']
+  first_name    varchar
+  last_name     varchar
+  email         varchar   [not null]
+  password      varchar   [not null, note: 'hashe par Django']
+  is_staff      boolean   [default: false, note: 'acces a /admin/ Django']
+  is_active     boolean   [default: true]
+  is_superuser  boolean   [default: false, note: 'Super Admin technique']
+  date_joined   datetime
+  last_login    datetime
+}
+
+Table auth_group {
+  id    int      [pk, increment]
+  name  varchar  [unique, not null, note: 'ex: vendeur_kfet, tresorier_bde, admin_asso_epicuria, admin_ade']
+}
+
+Table auth_user_groups {
+  id        int  [pk, increment]
+  user_id   int  [not null, ref: > auth_user.id]
+  group_id  int  [not null, ref: > auth_group.id]
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 2 — EXTENSION PROFIL (lie 1-pour-1 a auth_user)
+// ─────────────────────────────────────────────────────────────
+
+Table profil_utilisateur {
+  id              int      [pk, increment]
+  user_id         int      [unique, not null, ref: - auth_user.id, note: '1-pour-1 avec auth_user']
+  date_naissance  date     [note: 'detection mineur a la volee, pas de booleen fige']
+  pseudonyme      varchar
+  numero_isic     varchar  [note: 'reemis chaque annee — jamais identifiant']
+  is_active       boolean  [default: true, note: 'false quand etudiant quitte lENSEA']
+  deleted_at      datetime [note: 'null = actif ; date dANONYMISATION RGPD (champs nominatifs ecrases)']
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 3 — ASSOCIATIONS
+// ─────────────────────────────────────────────────────────────
+
+Table association {
+  id        int      [pk, increment]
+  nom       varchar  [not null]
+  slug      varchar  [unique, not null, note: 'ex: kfet, bde, epicuria — base des noms de groupes']
+  est_ade   boolean  [default: false, note: 'true pour la structure faitiere ADE']
+  is_active boolean  [default: true]
+
+  note: 'Roles par asso = groupes Django nommes {role}_{slug}. Admin ADE = groupe admin_ade. Super Admin = is_superuser.'
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 4 — ADHESIONS (cotisation payee != role)
+// ─────────────────────────────────────────────────────────────
+
+Table adhesion {
+  id           int      [pk, increment]
+  user_id      int      [not null, ref: > auth_user.id]
+  asso_id      int      [not null, ref: > association.id]
+  date_debut   date     [not null]
+  date_fin     date     [note: 'null = en cours']
+  montant_paye int      [default: 0, note: 'centimes : adhesion 10 euros = 1000']
+  is_active    boolean  [default: true]
+
+  indexes {
+    (user_id, asso_id)
+  }
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 5 — MOYEN D IDENTIFICATION (RFID / QR)
+// ─────────────────────────────────────────────────────────────
+
+Table moyen_identification {
+  id              int      [pk, increment]
+  user_id         int      [not null, ref: > auth_user.id]
+  type            varchar  [not null, note: 'RFID ou QR_CODE']
+  valeur          varchar  [unique, note: 'UID puce RFID (rempli) ; pour QR_CODE = null car le QR est dynamique, genere a la volee et jamais stocke']
+  actif_etudiant  boolean  [default: true, note: 'letudiant active/desactive lui-meme dans son app (grise si false)']
+  actif_admin     boolean  [default: true, note: 'ladmin peut desactiver (visible par letudiant, pas cache) ; RFID dun 1A = false tant que la carte physique nest pas enregistree']
+
+  indexes { valeur }
+
+  note: 'Un moyen fonctionne SEULEMENT si actif_etudiant=true ET actif_admin=true. Le QR est toujours dynamique (valable ~10 min, genere a la volee, non stocke) : la ligne QR_CODE represente le DROIT dutiliser le QR, pas un code fige.'
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 6 — EVENEMENTS (catalogues ephemeres)
+// ─────────────────────────────────────────────────────────────
+
+Table evenement {
+  id          int      [pk, increment]
+  asso_id     int      [not null, ref: > association.id]
+  nom         varchar  [not null, note: 'ex: Soiree Karaoke, Gala 2026']
+  date_event  date
+  etat        varchar  [not null, note: 'OUVERT | FERME | EPUISE — FERME/EPUISE = cache aux vendeurs, visible par admin asso']
+  is_active   boolean  [default: true]
+  created_at  datetime
+
+  indexes { asso_id }
+
+  note: 'Quand etat=FERME ou EPUISE, les vendeurs ne voient plus levenement, seul ladmin asso le voit. Lhistorique reste consultable.'
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 7 — CATALOGUE PRODUITS
+// ─────────────────────────────────────────────────────────────
+
+Table categorie {
+  id        int      [pk, increment]
+  asso_id   int      [not null, ref: > association.id]
+  nom       varchar  [not null, note: 'ex: Boissons, Snacks, Alcool']
+  is_active boolean  [default: true]
+
+  indexes { asso_id }
+}
+
+Table produit {
+  id                  int      [pk, increment]
+  asso_id             int      [not null, ref: > association.id]
+  categorie_id        int      [ref: > categorie.id, note: 'null si pas de categorie']
+  evenement_id        int      [ref: > evenement.id, note: 'null = produit du catalogue general ; rempli = produit specifique a un evenement']
+  nom                 varchar  [not null]
+  description         text
+  photo               varchar  [note: 'chemin image uploadee']
+  prix_non_adherent   int      [not null, note: 'centimes']
+  prix_adherent       int      [not null, note: 'centimes']
+  stock               int      [default: 0]
+  seuil_alerte        int      [default: 0, note: 'chaque asso fixe son seuil']
+  restriction_majeur  boolean  [default: false, note: 'true = alcool, bloque si etudiant mineur']
+  is_active           boolean  [default: true, note: 'false = cache en caisse mais reste dans lhistorique']
+
+  indexes { asso_id }
+}
+
+Table mouvement_stock {
+  id          int      [pk, increment]
+  produit_id  int      [not null, ref: > produit.id]
+  type        varchar  [not null, note: 'VENTE | REAPPRO | INVENTAIRE | CORRECTION']
+  quantite    int      [not null, note: 'signe : -1 vente, +10 reappro']
+  motif       varchar
+  auteur_id   int      [ref: > auth_user.id]
+  created_at  datetime [not null]
+
+  note: 'Le stock sur produit est un cache recalculable depuis ces lignes. Mouvement enregistre uniquement a la VALIDATION de la transaction.'
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 8 — WALLET (porte-monnaie virtuel)
+// ─────────────────────────────────────────────────────────────
+
+Table wallet {
+  id          int      [pk, increment]
+  user_id     int      [unique, not null, ref: - auth_user.id, note: '1-pour-1 ; un seul wallet partage entre assos']
+  solde       int      [default: 0, note: 'centimes']
+  is_active   boolean  [default: true]
+  updated_at  datetime
+}
+
+Table rechargement {
+  id              int      [pk, increment]
+  wallet_id       int      [not null, ref: > wallet.id]
+  montant         int      [not null, note: 'centimes — minimum 2000 (20 euros)']
+  etat            varchar  [not null, note: 'INITIE | CONFIRME | ECHEC | REMBOURSE']
+  psp             varchar  [default: 'STRIPE']
+  psp_session_id  varchar  [note: 'ID session Stripe']
+  psp_event_id    varchar  [unique, note: 'ID evenement Stripe — UNIQUE empeche le double credit si webhook rejoue']
+  created_at      datetime
+  confirmed_at    datetime [note: 'null tant que non confirme']
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 9 — TRANSACTIONS (panier + transaction fusionnes)
+// ─────────────────────────────────────────────────────────────
+
+Table transaction {
+  id              int      [pk, increment]
+  uuid_client     varchar  [unique, not null, note: 'UUID genere par la caisse — empeche doublon si sync hors-ligne rejouee']
+  asso_id         int      [not null, ref: > association.id]
+  evenement_id    int      [ref: > evenement.id, note: 'null = vente catalogue general ; rempli = vente liee a un evenement']
+  vendeur_id      int      [ref: > auth_user.id, note: 'qui a encaisse']
+  acheteur_id     int      [ref: > auth_user.id, note: 'null si especes anonymes']
+  wallet_id       int      [ref: > wallet.id, note: 'null si paiement non-wallet']
+  mode_paiement   varchar  [not null, note: 'WALLET | ESPECES | TERMINAL_EXTERNE']
+  etat            varchar  [not null, note: 'OUVERT | EN_ATTENTE | CONFIRME | VALIDEE | ANNULEE | ERREUR']
+  montant_total   int      [default: 0, note: 'centimes — calcule depuis les lignes']
+  nom_caisse      varchar  [note: 'ex: Caisse principale Kfet — identifie le poste sans table dediee']
+  est_hors_ligne  boolean  [default: false]
+  created_at      datetime
+  validated_at    datetime [note: 'null tant que pas VALIDEE']
+
+  indexes {
+    (asso_id, created_at)
+    uuid_client
+    evenement_id
+  }
+
+  note: 'OUVERT/EN_ATTENTE = panier en cours. ANNULEE = panier abandonne (stock libere, rien debite). Stock consomme + wallet debite UNIQUEMENT au passage VALIDEE.'
+}
+
+Table ligne_transaction {
+  id             int      [pk, increment]
+  transaction_id int      [not null, ref: > transaction.id]
+  produit_id     int      [ref: > produit.id, note: 'null si produit libre (montant saisi a la main)']
+  libelle        varchar  [not null, note: 'COPIE du nom produit au moment de la vente — reste vrai meme si produit renomme/supprime']
+  prix_applique  int      [not null, note: 'COPIE du prix en centimes — tarif reellement paye']
+  quantite       int      [default: 1]
+  tarif_type     varchar  [not null, note: 'ADHERENT | NON_ADHERENT | LIBRE']
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 10 — NOTIFICATIONS
+// ─────────────────────────────────────────────────────────────
+
+Table notification {
+  id          int      [pk, increment]
+  user_id     int      [not null, ref: > auth_user.id, note: 'destinataire']
+  type        varchar  [not null, note: 'RECHARGEMENT | PAIEMENT | STOCK_BAS']
+  canal       varchar  [not null, note: 'EMAIL | PUSH']
+  contenu     text
+  etat        varchar  [not null, note: 'EN_ATTENTE | ENVOYEE | ECHEC — permet le retry apres hors-ligne']
+  created_at  datetime
+  sent_at     datetime [note: 'null tant que pas envoyee']
+
+  indexes { user_id }
+}
+
+
+// ─────────────────────────────────────────────────────────────
+//  BLOC 11 — AUDIT LOG (actions sensibles)
+// ─────────────────────────────────────────────────────────────
+
+Table audit_log {
+  id          int      [pk, increment]
+  acteur_id   int      [ref: > auth_user.id]
+  asso_id     int      [ref: > association.id, note: 'null si action globale']
+  action      varchar  [not null, note: 'EXPORT_ADHERENTS | PRIX_MODIFIE | ROLE_ACCORDE | POSTE_REVOQUE | VIREMENT_VALIDE | ANONYMISATION']
+  details     text     [note: 'JSON : cible, ancien->nouveau, nb lignes exportees...']
+  created_at  datetime [not null]
+
+  indexes { (asso_id, created_at) }
+}

@@ -1,0 +1,73 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Export {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Exporter les ventes - {{ pole.nom }}</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="get">
+                <label class="form-label d-block">Période</label>
+                <div class="btn-group mb-3" role="group">
+                    <input type="radio" class="btn-check" name="periode" id="p-mois" value="mois" checked onchange="basculer()">
+                    <label class="btn btn-outline-primary" for="p-mois">Mois</label>
+                    <input type="radio" class="btn-check" name="periode" id="p-annee" value="annee" onchange="basculer()">
+                    <label class="btn btn-outline-primary" for="p-annee">Année</label>
+                    <input type="radio" class="btn-check" name="periode" id="p-perso" value="personnalise" onchange="basculer()">
+                    <label class="btn btn-outline-primary" for="p-perso">Personnalisé</label>
+                </div>
+
+                <div id="bloc-annee-wrapper" class="mb-3">
+                    <label class="form-label">Année</label>
+                    <select name="annee" class="form-select">
+                        {% for a in annees %}
+                            <option value="{{ a }}" {% if a == aujourdhui.year %}selected{% endif %}>{{ a }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div id="bloc-mois" class="mb-3">
+                    <label class="form-label">Mois</label>
+                    <select name="mois" class="form-select">
+                        {% for valeur, nom in mois_liste %}
+                            <option value="{{ valeur }}" {% if valeur == aujourdhui.month %}selected{% endif %}>{{ nom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div id="bloc-perso" class="row g-2 mb-3 d-none">
+                    <div class="col-6">
+                        <label class="form-label">Du</label>
+                        <input type="date" name="debut" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Au</label>
+                        <input type="date" name="fin" class="form-control">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Télécharger le fichier Excel</button>
+            </form>
+        </div>
+    </div>
+
+    {% if admin_ade %}
+        <p class="text-center mt-3">
+            <a href="{% url 'rechercher_identifiant' %}" class="small">Retrouver le nom derrière un identifiant (ETU-...) &rsaquo;</a>
+        </p>
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function basculer() {
+        const val = document.querySelector('input[name="periode"]:checked').value;
+        document.getElementById('bloc-annee-wrapper').classList.toggle('d-none', val === 'personnalise');
+        document.getElementById('bloc-mois').classList.toggle('d-none', val !== 'mois');
+        document.getElementById('bloc-perso').classList.toggle('d-none', val !== 'personnalise');
+    }
+    basculer();
+</script>
+{% endblock %}

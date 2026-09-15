@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(timeout 25 python3 -c ' *)",
+      "Bash(echo \"Code de sortie: $?\")",
+      "Bash(timeout 8 bash -c \"echo > /dev/tcp/smtp.gmail.com/587\")",
+      "Bash(timeout 8 bash -c \"echo > /dev/tcp/smtp.gmail.com/465\")",
+      "Bash(timeout 8 bash -c \"echo > /dev/tcp/www.google.com/443\")",
+      "Bash(getent hosts *)",
+      "Bash(timeout 20 python3 -c ' *)",
+      "Bash(timeout 8 bash -c \"echo > /dev/tcp/smtpi.ensea.fr/25\")",
+      "Bash(timeout 15 python3 -c ' *)"
+    ]
+  }
+}

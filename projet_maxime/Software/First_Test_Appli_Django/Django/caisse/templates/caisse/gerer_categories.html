@@ -1,0 +1,31 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Catégories {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'gerer_produits' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Catégories - {{ pole.nom }}</h1>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h6 class="mb-3">Nouvelle catégorie</h6>
+            <form method="post" class="d-flex gap-2">
+                {% csrf_token %}
+                <input type="text" name="nom" class="form-control" placeholder="Nom de la catégorie" required>
+                <button type="submit" class="btn btn-primary text-nowrap">Ajouter</button>
+            </form>
+        </div>
+    </div>
+
+    <h6 class="text-muted text-uppercase mb-2">Catégories existantes</h6>
+    <ul class="list-group shadow-sm">
+        {% for c in categories %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ c.nom }}
+                <a href="{% url 'modifier_categorie' pole.slug c.id %}" class="btn btn-sm btn-outline-primary">Modifier</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item text-muted">Aucune catégorie pour le moment.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

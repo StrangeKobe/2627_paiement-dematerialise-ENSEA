@@ -1,0 +1,84 @@
+{% comment %}
+Modale de scan du QR de paiement, partagee entre encaisser.html et
+terminal_pole.html. Suppose la presence d'un champ cache
+<input type="hidden" name="jeton" id="champJeton"> dans le formulaire de
+la page qui l'inclut, et d'un bouton id="btnScannerQR" pour l'ouvrir.
+{% endcomment %}
+<div class="modal fade" id="modaleScanQR" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Scanner le QR de l'acheteur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <video id="videoScanQR" style="width:100%;border-radius:12px;background:#000;" playsinline muted></video>
+                <canvas id="canvasScanQR" style="display:none;"></canvas>
+                <p id="erreurScanQR" class="text-danger small mt-2 d-none"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script>
+    (function () {
+        var boutonScanner = document.getElementById("btnScannerQR");
+        if (!boutonScanner) { return; }
+
+        var champJeton = document.getElementById("champJeton");
+        var formulaire = champJeton.closest("form");
+        var modaleEl = document.getElementById("modaleScanQR");
+        var video = document.getElementById("videoScanQR");
+        var canvas = document.getElementById("canvasScanQR");
+        var contexte = canvas.getContext("2d");
+        var messageErreur = document.getElementById("erreurScanQR");
+        var flux = null;
+        var animation = null;
+
+        function arreterCamera() {
+            if (animation) { cancelAnimationFrame(animation); animation = null; }
+            if (flux) { flux.getTracks().forEach(function (piste) { piste.stop(); }); flux = null; }
+        }
+
+        function analyserImage() {
+            if (video.readyState === video.HAVE_ENOUGH_DATA) {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                contexte.drawImage(video, 0, 0, canvas.width, canvas.height);
+                var image = contexte.getImageData(0, 0, canvas.width, canvas.height);
+                var resultat = jsQR(image.data, image.width, image.height);
+                if (resultat && resultat.data) {
+                    champJeton.value = resultat.data;
+                    arreterCamera();
+                    bootstrap.Modal.getInstance(modaleEl).hide();
+                    formulaire.requestSubmit();
+                    return;
+                }
+            }
+            animation = requestAnimationFrame(analyserImage);
+        }
+
+        boutonScanner.addEventListener("click", function () {
+            messageErreur.classList.add("d-none");
+            new bootstrap.Modal(modaleEl).show();
+        });
+
+        modaleEl.addEventListener("shown.bs.modal", function () {
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+                .then(function (fluxCamera) {
+                    flux = fluxCamera;
+                    video.srcObject = flux;
+                    video.play();
+                    animation = requestAnimationFrame(analyserImage);
+                })
+                .catch(function () {
+                    messageErreur.textContent =
+                        "Impossible d'accéder à la caméra. Vérifie les autorisations, ou utilise le champ identifiant.";
+                    messageErreur.classList.remove("d-none");
+                });
+        });
+
+        modaleEl.addEventListener("hidden.bs.modal", arreterCamera);
+    })();
+</script>

@@ -1,0 +1,52 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Espace École{% endblock %}
+{% block contenu %}
+    <h1 class="mb-4">Espace École</h1>
+    <div class="d-flex flex-column gap-2">
+        <a href="{% url 'ecole_equipe' %}" class="card shadow-sm text-decoration-none">
+            <div class="card-body d-flex align-items-center justify-content-between py-3">
+                <div>
+                    <div class="fw-bold">Équipes</div>
+                    <div class="text-muted small">Qui compose chaque pôle</div>
+                </div>
+                <span class="text-muted">&rsaquo;</span>
+            </div>
+        </a>
+        <a href="{% url 'ecole_recettes' %}" class="card shadow-sm text-decoration-none">
+            <div class="card-body d-flex align-items-center justify-content-between py-3">
+                <div>
+                    <div class="fw-bold">Recettes</div>
+                    <div class="text-muted small">Recette de chaque pôle, mois par mois</div>
+                </div>
+                <span class="text-muted">&rsaquo;</span>
+            </div>
+        </a>
+        <a href="{% url 'ecole_adherents' %}" class="card shadow-sm text-decoration-none">
+            <div class="card-body d-flex align-items-center justify-content-between py-3">
+                <div>
+                    <div class="fw-bold">Adhérents</div>
+                    <div class="text-muted small">Liste par pôle (année en cours)</div>
+                </div>
+                <span class="text-muted">&rsaquo;</span>
+            </div>
+        </a>
+        <a href="{% url 'ecole_codes' %}" class="card shadow-sm text-decoration-none">
+            <div class="card-body d-flex align-items-center justify-content-between py-3">
+                <div>
+                    <div class="fw-bold">Codes de sécurité</div>
+                    <div class="text-muted small">Générer le code d'un admin</div>
+                </div>
+                <span class="text-muted">&rsaquo;</span>
+            </div>
+        </a>
+        <a href="{% url 'ecole_comptes' %}" class="card shadow-sm text-decoration-none">
+            <div class="card-body d-flex align-items-center justify-content-between py-3">
+                <div>
+                    <div class="fw-bold">Comptes</div>
+                    <div class="text-muted small">Liste, modification des profils et suppressions</div>
+                </div>
+                <span class="text-muted">&rsaquo;</span>
+            </div>
+        </a>
+    </div>
+{% endblock %}

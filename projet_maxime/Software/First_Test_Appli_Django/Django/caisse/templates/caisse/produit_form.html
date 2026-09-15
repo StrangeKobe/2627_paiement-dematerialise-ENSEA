@@ -1,0 +1,89 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}{{ titre }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'gerer_produits' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">{{ titre }}</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    {% if produit.photo %}
+                        <img src="{{ produit.photo.url }}" class="mb-3" style="max-width:120px;border-radius:8px;">
+                    {% endif %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Nom</label>
+                            {{ form.nom }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Catégorie</label>
+                            {{ form.categorie }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Prix (EUR)</label>
+                            {{ form.prix }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Stock (laisser vide = illimité)</label>
+                            {{ form.stock }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Photo</label>
+                            {{ form.photo }}
+                            {% if form.photo.errors %}<div class="text-danger small mt-1">{{ form.photo.errors.0 }}</div>{% endif %}
+                            <p class="text-muted small mt-1">5 Mo maximum.</p>
+                        </div>
+                        <div class="form-check mb-3">
+                            {{ form.disponible }}
+                            <label class="form-check-label">Disponible à la vente</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+
+                    {% if produit and admin_reel %}
+                        <hr class="my-3">
+                        {% if produit.retire %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <button type="submit" name="remettre" value="1" class="btn btn-outline-success w-100">Remettre l'article</button>
+                            </form>
+                        {% else %}
+                            <button type="button" class="btn btn-outline-danger w-100" data-bs-toggle="modal" data-bs-target="#modaleRetirerArticle">Retirer l'article</button>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if produit and admin_reel and not produit.retire %}
+    <div class="modal fade" id="modaleRetirerArticle" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Retirer cet article ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">
+                        "{{ produit.nom }}" disparaîtra de la vente et du catalogue normal, et
+                        rejoindra l'onglet "Retirés" (visible uniquement des admins). Tu pourras
+                        le remettre à tout moment.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" name="retirer" value="1" class="btn btn-danger">Oui, retirer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

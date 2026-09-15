@@ -1,0 +1,175 @@
+// Schéma de la base de données du projet ENSEA Cashless
+// À importer sur https://dbdiagram.io (menu Import > DBML, ou coller directement)
+// Généré à partir de caisse/models.py (état final, Parties 1 à 12 du tuto)
+
+Table auth_user {
+  id integer [pk]
+  username varchar [unique]
+  first_name varchar
+  last_name varchar
+  email varchar
+  is_superuser boolean
+  is_active boolean
+
+  Note: "Table native Django (django.contrib.auth), pas définie dans caisse/models.py"
+}
+
+Table Pole {
+  id integer [pk]
+  nom varchar
+  slug varchar [unique]
+  solde_analytique decimal
+  est_operationnel boolean
+  logo varchar [note: "chemin image, optionnel"]
+}
+
+Table Evenement {
+  id integer [pk]
+  pole_id integer [ref: > Pole.id]
+  nom varchar
+  date_evenement datetime [null]
+  lieu varchar
+  photo varchar [null]
+  actif boolean
+  date_fin_vente datetime [null]
+}
+
+Table Categorie {
+  id integer [pk]
+  pole_id integer [ref: > Pole.id]
+  nom varchar
+  ordre integer
+}
+
+Table Produit {
+  id integer [pk]
+  pole_id integer [ref: > Pole.id]
+  categorie_id integer [ref: > Categorie.id, null]
+  evenement_id integer [ref: > Evenement.id, null]
+  nom varchar
+  prix decimal
+  disponible boolean
+  stock integer [null, note: "NULL = illimité"]
+  est_billet boolean
+  photo varchar [null]
+  est_vente_libre boolean [note: "produit technique du Terminal"]
+  retire boolean
+}
+
+Table ProfilUtilisateur {
+  id integer [pk]
+  user_id integer [ref: - auth_user.id, note: "OneToOne"]
+  solde decimal
+  uid_rfid varchar [unique, null]
+  secret_qr varchar
+  statut_compte varchar [note: "ACTIF / DESACTIVE / ANONYMISE"]
+  date_naissance date [null]
+  date_creation datetime
+}
+
+Table Recharge {
+  id integer [pk]
+  profil_id integer [ref: > ProfilUtilisateur.id]
+  montant decimal
+  statut varchar [note: "EN_ATTENTE / CONFIRMEE / ECHOUEE"]
+  reference_helloasso varchar [null]
+  date_creation datetime
+  date_confirmation datetime [null]
+  mode_paiement varchar [note: "HELLOASSO / ESPECES"]
+  encaisse_par_id integer [ref: > auth_user.id, null]
+  pole_id integer [ref: > Pole.id, null, note: "rempli uniquement si ESPECES"]
+}
+
+Table Transaction {
+  id integer [pk]
+  profil_id integer [ref: > ProfilUtilisateur.id]
+  pole_id integer [ref: > Pole.id]
+  montant_total decimal
+  date_operation datetime
+}
+
+Table LigneTransaction {
+  id integer [pk]
+  transaction_id integer [ref: > Transaction.id]
+  produit_id integer [ref: > Produit.id]
+  libelle varchar
+  prix_unitaire decimal
+  quantite integer
+  reference_helloasso varchar
+}
+
+Table Affectation {
+  id integer [pk]
+  user_id integer [ref: > auth_user.id]
+  pole_id integer [ref: > Pole.id, null, note: "NULL = rôle global (ADE/École)"]
+  role varchar [note: "VENDEUR / ADMIN_POLE / ADMIN_ADE / ADMIN_ECOLE"]
+  droit_recharger_especes boolean
+  droit_adhesion_especes boolean
+  droit_gerer_produits boolean
+  droit_adhesions boolean
+  droit_equipe boolean
+  droit_exporter boolean
+  droit_parametres boolean
+}
+
+Table JetonPaiement {
+  id integer [pk]
+  profil_id integer [ref: > ProfilUtilisateur.id]
+  code varchar [unique]
+  date_creation datetime
+  utilise boolean
+}
+
+Table ParticipantImporte {
+  id integer [pk]
+  evenement_id integer [ref: > Evenement.id]
+  nom varchar
+  prenom varchar
+  email varchar
+  quantite integer
+  date_import datetime
+}
+
+Table Adhesion {
+  id integer [pk]
+  pole_id integer [ref: > Pole.id]
+  profil_id integer [ref: > ProfilUtilisateur.id]
+  annee integer [note: "année de début, ex. 2026 pour 2026-2027"]
+  montant decimal
+  mode_paiement varchar [note: "PORTEFEUILLE / ESPECES"]
+  encaisse_par_id integer [ref: > auth_user.id, null]
+  reference_helloasso varchar
+  date_paiement datetime
+
+  indexes {
+    (pole_id, profil_id, annee) [unique]
+  }
+}
+
+Table CodeSecuriteAdmin {
+  id integer [pk]
+  user_id integer [ref: > auth_user.id]
+  pole_id integer [ref: > Pole.id, null, note: "NULL = portée ADE globale"]
+  code_hash varchar
+  definie_par_id integer [ref: > auth_user.id]
+  date_maj datetime
+
+  indexes {
+    (user_id, pole_id) [unique]
+  }
+}
+
+Table DemandeSuppressionCompte {
+  id integer [pk]
+  profil_id integer [ref: - ProfilUtilisateur.id, note: "OneToOne"]
+  demande_par_id integer [ref: > auth_user.id]
+  date_demande datetime
+  remboursement_effectue boolean
+}
+
+Table TarifAdhesion {
+  id integer [pk]
+  pole_id integer [ref: > Pole.id]
+  description varchar
+  prix decimal
+}

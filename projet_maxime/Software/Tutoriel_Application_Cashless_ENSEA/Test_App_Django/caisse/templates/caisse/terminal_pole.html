@@ -1,0 +1,86 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Terminal {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'accueil' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Terminal - {{ pole.nom }}</h1>
+    <p class="text-muted small">Pour un produit hors catalogue (montant libre).</p>
+
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <span class="display-4 fw-bold" id="affichage">0,00</span>
+                        <span class="fs-4 text-muted">EUR</span>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        {% for touche in "123456789" %}
+                            <div class="col-4">
+                                <button type="button" class="btn btn-outline-secondary w-100 py-3 fs-4" onclick="taper('{{ touche }}')">{{ touche }}</button>
+                            </div>
+                        {% endfor %}
+                        <div class="col-4">
+                            <button type="button" class="btn btn-outline-secondary w-100 py-3 fs-4" onclick="taper(',')">,</button>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-outline-secondary w-100 py-3 fs-4" onclick="taper('0')">0</button>
+                        </div>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-outline-danger w-100 py-3 fs-4" onclick="effacer()">&larr;</button>
+                        </div>
+                    </div>
+
+                    <form method="post" id="formTerminal">
+                        {% csrf_token %}
+                        <input type="hidden" name="montant" id="champMontant">
+                        <input type="hidden" name="jeton" id="champJeton">
+                        <button type="button" class="btn btn-outline-primary w-100 mb-2" id="btnScannerQR">
+                            Scanner le QR de l'acheteur
+                        </button>
+                        <label class="form-label">Identifiant de l'acheteur</label>
+                        <input type="text" name="identifiant" class="form-control mb-3" placeholder="compte école">
+                        <button type="submit" class="btn btn-primary w-100 py-2">Valider le paiement</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "caisse/_scan_qr.html" %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let saisie = "";
+    const affichage = document.getElementById("affichage");
+    const champMontant = document.getElementById("champMontant");
+
+    function rafraichir() {
+        const valeur = saisie === "" ? "0" : saisie;
+        const nombre = parseFloat(valeur.replace(",", ".")) || 0;
+        affichage.textContent = nombre.toFixed(2).replace(".", ",");
+        champMontant.value = nombre.toFixed(2);
+    }
+
+    function taper(caractere) {
+        if (caractere === "," && saisie.includes(",")) return;  // une seule virgule
+        if (saisie.includes(",") && saisie.split(",")[1].length >= 2) return;  // 2 decimales max
+        saisie += caractere;
+        rafraichir();
+    }
+
+    function effacer() {
+        saisie = saisie.slice(0, -1);
+        rafraichir();
+    }
+
+    rafraichir();
+</script>
+{% endblock %}

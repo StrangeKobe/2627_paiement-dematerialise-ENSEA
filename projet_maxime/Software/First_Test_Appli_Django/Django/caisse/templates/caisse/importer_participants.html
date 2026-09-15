@@ -1,0 +1,34 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Importer des participants - {{ evenement.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'participants_evenement' pole.slug evenement.id %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+
+    <h1 class="mb-4">Importer des participants</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">{{ evenement.nom }}</h5>
+            <p class="text-muted">
+                Importe ici le fichier CSV téléchargé depuis le back-office HelloAsso.
+                Les colonnes <strong>Nom</strong> et <strong>Prénom</strong> seront
+                automatiquement détectées. Aucun mouvement d'argent n'est associé :
+                il s'agit uniquement d'un suivi opérationnel des participants.
+            </p>
+
+            {% if erreur %}
+                <div class="alert alert-danger">{{ erreur }}</div>
+            {% endif %}
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="fichier" class="form-label">Fichier CSV</label>
+                    <input type="file" class="form-control" id="fichier" name="fichier" accept=".csv" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Importer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

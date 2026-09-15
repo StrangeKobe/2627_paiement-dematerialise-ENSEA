@@ -1,0 +1,26 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Recettes{% endblock %}
+{% block contenu %}
+    <a href="{% url 'espace_ecole' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-3">Recettes</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="?annee={{ annee_prec }}&mois={{ mois_prec }}" class="btn btn-outline-secondary btn-sm">&lsaquo;</a>
+        <span class="fw-bold">{{ debut_mois|date:"F Y"|capfirst }}</span>
+        <a href="?annee={{ annee_suiv }}&mois={{ mois_suiv }}" class="btn btn-outline-secondary btn-sm">&rsaquo;</a>
+    </div>
+    {% for r in resultats %}
+        <div class="card shadow-sm mb-2">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-bold">{{ r.pole.nom }}</span>
+                    <span class="fs-5 fw-bold">{{ r.total|floatformat:2 }} EUR</span>
+                </div>
+                <div class="d-flex justify-content-between text-muted small">
+                    <span>Événements : {{ r.evenements|floatformat:2 }} EUR</span>
+                    <span>Produits : {{ r.produits|floatformat:2 }} EUR</span>
+                    <span>Autre : {{ r.autre|floatformat:2 }} EUR</span>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

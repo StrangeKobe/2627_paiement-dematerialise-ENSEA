@@ -1,0 +1,232 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Comptes{% endblock %}
+{% block contenu %}
+    <a href="{% url 'espace_ecole' %}" class="btn btn-outline-secondary btn-sm mb-3">&lsaquo; Retour</a>
+    <h1 class="mb-4">Comptes</h1>
+
+    {% if nb_a_supprimer %}
+        <div class="alert alert-danger">
+            {{ nb_a_supprimer }} compte{{ nb_a_supprimer|pluralize }} {{ nb_a_supprimer|pluralize:"est,sont" }} à supprimer.
+        </div>
+    {% endif %}
+
+    <div class="puces-categories mb-3">
+        <button type="button" class="puce-categorie active" data-filtre-btn="tous" onclick="filtrerComptes('tous')">Tous ({{ profils|length }})</button>
+        <button type="button" class="puce-categorie" data-filtre-btn="bientot" onclick="filtrerComptes('bientot')">Bientôt supprimé ({{ nb_bientot }})</button>
+        <button type="button" class="puce-categorie" data-filtre-btn="pret" onclick="filtrerComptes('pret')">À supprimer ({{ nb_a_supprimer }})</button>
+    </div>
+
+    <input type="text" id="rechercheComptes" class="form-control mb-3" placeholder="Rechercher un compte..." oninput="filtrerRecherche()">
+
+    <ul class="list-group" id="listeComptes">
+        {% for p in profils %}
+            <li class="list-group-item" data-filtre="{% if p.demande_suppression %}{% if p.demande_suppression.eligible_suppression_definitive %}pret{% else %}bientot{% endif %}{% else %}actif{% endif %}"
+                data-recherche="{% if p.user.first_name or p.user.last_name %}{{ p.user.first_name|lower }} {{ p.user.last_name|lower }}{% endif %} {{ p.user.username|lower }}">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="avatar-utilisateur">
+                            {% if p.user.first_name or p.user.last_name %}{{ p.user.first_name|first|upper }}{{ p.user.last_name|first|upper }}{% else %}{{ p.user.username|slice:":2"|upper }}{% endif %}
+                        </div>
+                        <div>
+                        <div class="fw-bold">
+                            {% if p.user.first_name or p.user.last_name %}{{ p.user.first_name }} {{ p.user.last_name }}{% else %}{{ p.user.username }}{% endif %}
+                        </div>
+                        <div class="small {% if p.solde > 0 %}fw-bold text-ensea{% else %}text-muted{% endif %}">Solde : {{ p.solde|floatformat:2 }} EUR</div>
+                        {% if p.demande_suppression %}
+                            {% if p.user.email %}<div class="text-muted small">{{ p.user.email }}</div>{% endif %}
+                            {% if p.demande_suppression.eligible_suppression_definitive %}
+                                <span class="badge bg-danger mt-1">À supprimer</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark mt-1">
+                                    Bientôt supprimé — dans {{ p.demande_suppression.jours_restants }} j
+                                    (le {{ p.demande_suppression.date_suppression_prevue|date:"d/m/Y" }})
+                                </span>
+                            {% endif %}
+                            <form method="post" class="mt-1">
+                                {% csrf_token %}
+                                <input type="hidden" name="profil_id" value="{{ p.id }}">
+                                <input type="hidden" name="basculer_remboursement" value="1">
+                                <label class="small">
+                                    <input type="checkbox" onchange="this.form.submit()" {% if p.demande_suppression.remboursement_effectue %}checked{% endif %}>
+                                    Remboursement effectué
+                                </label>
+                            </form>
+                        {% endif %}
+                        </div>
+                    </div>
+                    {% if not p.demande_suppression %}
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="{% url 'ecole_profils' %}?identifiant={{ p.user.username }}" class="btn btn-outline-secondary btn-sm rounded-pill px-3">Modifier</a>
+                        <button type="button" class="btn btn-outline-danger btn-sm rounded-circle d-flex align-items-center justify-content-center p-0"
+                                style="width:34px;height:34px;"
+                                data-profil-id="{{ p.id }}"
+                                data-nom="{% if p.user.first_name or p.user.last_name %}{{ p.user.first_name }} {{ p.user.last_name }}{% else %}{{ p.user.username }}{% endif %}"
+                                onclick="declencherSuppression(this)" aria-label="Supprimer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                    </div>
+                    {% else %}
+                    <div class="d-flex flex-column gap-1">
+                        <a href="{% url 'ecole_profils' %}?identifiant={{ p.user.username }}" class="btn btn-outline-secondary btn-sm rounded-pill px-3">Modifier</a>
+                        <button type="button" class="btn btn-outline-success btn-sm"
+                                data-profil-id="{{ p.id }}"
+                                data-nom="{% if p.user.first_name or p.user.last_name %}{{ p.user.first_name }} {{ p.user.last_name }}{% else %}{{ p.user.username }}{% endif %}"
+                                onclick="declencherAnnulation(this)">Annuler la suppression</button>
+                        {% if p.demande_suppression.eligible_suppression_definitive %}
+                            <button type="button" class="btn btn-danger btn-sm"
+                                    data-profil-id="{{ p.id }}"
+                                    data-nom="{% if p.user.first_name or p.user.last_name %}{{ p.user.first_name }} {{ p.user.last_name }}{% else %}{{ p.user.username }}{% endif %}"
+                                    onclick="declencherSuppressionDefinitive(this)">Supprimer définitivement</button>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+        {% empty %}
+            <li class="list-group-item text-muted text-center py-3">Aucun compte.</li>
+        {% endfor %}
+    </ul>
+    <p id="aucunResultatComptes" class="text-muted text-center py-3 d-none">Aucun résultat pour cette recherche.</p>
+
+    <form method="post" id="formActionCompte" class="d-none">
+        {% csrf_token %}
+        <input type="hidden" name="profil_id" id="champProfilId">
+        <input type="hidden" id="champAction" value="1">
+    </form>
+
+    <div class="modal fade" id="modaleAction1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titreModaleAction1">Confirmer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger mb-0" id="corpsModaleAction1"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-success" id="btnModaleAction1Confirmer">Confirmer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modaleAction2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dernière vérification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Vous êtes bien sûr(e) ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-success" id="btnModaleAction2Confirmer">Oui, confirmer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modaleAnnulation" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Annuler la suppression</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0" id="corpsModaleAnnulation"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Non</button>
+                    <button type="button" class="btn btn-success" id="btnModaleAnnulationConfirmer">Oui, annuler la suppression</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filtrerComptes(filtre) {
+            document.querySelectorAll('[data-filtre-btn]').forEach(function (bouton) {
+                bouton.classList.toggle('active', bouton.dataset.filtreBtn === filtre);
+            });
+            document.querySelectorAll('#listeComptes li[data-filtre]').forEach(function (ligne) {
+                ligne.classList.toggle('d-none', filtre !== 'tous' && ligne.dataset.filtre !== filtre);
+            });
+        }
+        filtrerComptes('tous');
+
+        function filtrerRecherche() {
+            var recherche = document.getElementById('rechercheComptes').value.trim().toLowerCase();
+            var auMoinsUn = false;
+            document.querySelectorAll('#listeComptes li[data-recherche]').forEach(function (ligne) {
+                var correspond = ligne.dataset.recherche.includes(recherche);
+                ligne.classList.toggle('d-none', !correspond);
+                if (correspond) { auMoinsUn = true; }
+            });
+            document.getElementById('aucunResultatComptes').classList.toggle('d-none', auMoinsUn || !recherche);
+        }
+
+        var formActionCompte = document.getElementById('formActionCompte');
+        var champProfilId = document.getElementById('champProfilId');
+        var champAction = document.getElementById('champAction');
+        var modaleAction1El = document.getElementById('modaleAction1');
+        var modaleAction2El = document.getElementById('modaleAction2');
+        var titreModaleAction1 = document.getElementById('titreModaleAction1');
+        var corpsModaleAction1 = document.getElementById('corpsModaleAction1');
+
+        function ouvrirChaineConfirmation(action, profilId, titre, corps) {
+            champProfilId.value = profilId;
+            champAction.name = action;
+            titreModaleAction1.textContent = titre;
+            corpsModaleAction1.textContent = corps;
+            new bootstrap.Modal(modaleAction1El).show();
+        }
+
+        var passageVersModale2 = false;
+        document.getElementById('btnModaleAction1Confirmer').addEventListener('click', function () {
+            passageVersModale2 = true;
+            bootstrap.Modal.getInstance(modaleAction1El).hide();
+        });
+        modaleAction1El.addEventListener('hidden.bs.modal', function () {
+            if (passageVersModale2) {
+                passageVersModale2 = false;
+                new bootstrap.Modal(modaleAction2El).show();
+            }
+        });
+        document.getElementById('btnModaleAction2Confirmer').addEventListener('click', function () {
+            formActionCompte.submit();
+        });
+
+        function declencherSuppression(bouton) {
+            ouvrirChaineConfirmation(
+                'demander_suppression', bouton.dataset.profilId,
+                'Supprimer ce compte ?',
+                'Le compte de ' + bouton.dataset.nom + ' sera anonymisé dans 3 mois. Un email va lui être envoyé pour l\'en informer.'
+            );
+        }
+
+        function declencherSuppressionDefinitive(bouton) {
+            ouvrirChaineConfirmation(
+                'supprimer_definitivement', bouton.dataset.profilId,
+                'Supprimer définitivement ce compte ?',
+                'Le compte de ' + bouton.dataset.nom + ' va être anonymisé immédiatement. Cette action est irréversible.'
+            );
+        }
+
+        var modaleAnnulationEl = document.getElementById('modaleAnnulation');
+        var corpsModaleAnnulation = document.getElementById('corpsModaleAnnulation');
+        function declencherAnnulation(bouton) {
+            champProfilId.value = bouton.dataset.profilId;
+            champAction.name = 'annuler_suppression';
+            corpsModaleAnnulation.textContent = 'Annuler la suppression prévue du compte de ' + bouton.dataset.nom + ' ?';
+            new bootstrap.Modal(modaleAnnulationEl).show();
+        }
+        document.getElementById('btnModaleAnnulationConfirmer').addEventListener('click', function () {
+            formActionCompte.submit();
+        });
+    </script>
+{% endblock %}

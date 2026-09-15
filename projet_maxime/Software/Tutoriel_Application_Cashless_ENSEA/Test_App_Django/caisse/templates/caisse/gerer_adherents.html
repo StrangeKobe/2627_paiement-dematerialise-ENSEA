@@ -1,0 +1,103 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Adhérents {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm">&lsaquo; Retour</a>
+        <form method="get" class="d-inline">
+            <select name="annee" class="form-select form-select-sm" onchange="this.form.submit()">
+                {% for a in annees_disponibles %}
+                    <option value="{{ a }}" {% if a == annee %}selected{% endif %}>{{ a }}-{{ a|add:1 }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
+    <h1 class="mb-3">Adhérents - {{ pole.nom }}</h1>
+
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <div class="text-muted small text-uppercase mb-2">Tarifs d'adhésion</div>
+            {% for t in tarifs %}
+                <div class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                    <span>{{ t.description }} — <span class="fw-bold">{{ t.prix|floatformat:2 }} EUR</span></span>
+                    <form method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" name="retirer_tarif" value="{{ t.id }}" class="btn btn-sm btn-outline-danger">Retirer</button>
+                    </form>
+                </div>
+            {% empty %}
+                <p class="text-muted small mb-2">Aucun tarif pour le moment.</p>
+            {% endfor %}
+            <form method="post" class="d-flex gap-2 mt-2">
+                {% csrf_token %}
+                <input type="text" name="description" class="form-control" placeholder="Ex. 1ère année">
+                <input type="number" step="0.10" name="prix" class="form-control" placeholder="EUR" style="max-width:110px;">
+                <button type="submit" name="ajouter_tarif" value="1" class="pilule-action pilule-primaire text-nowrap">Ajouter</button>
+            </form>
+        </div>
+    </div>
+
+    {% if peut_adhesion_especes %}
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <h6 class="mb-2">Encaisser une adhésion espèces</h6>
+            <form method="post" class="d-flex gap-2">
+                {% csrf_token %}
+                <input type="text" name="identifiant" class="form-control" placeholder="Identifiant étudiant">
+                <select name="tarif" class="form-select" style="max-width:200px;">
+                    {% for t in tarifs %}
+                        <option value="{{ t.id }}">{{ t.description }} — {{ t.prix|floatformat:2 }} EUR</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" name="especes" value="1" class="pilule-action pilule-primaire text-nowrap">Ajouter</button>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">Liste des adhérents <span class="badge bg-secondary">{{ adherents|length }}</span></h6>
+                <a href="{% url 'exporter_adherents' pole.slug %}?annee={{ annee }}" class="pilule-action pilule-excel d-inline-flex align-items-center gap-1">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Excel
+                </a>
+            </div>
+            <p class="text-muted small bg-light rounded p-2">Le détail complet (mode de règlement, date, encaissement) est disponible dans l'export Excel.</p>
+
+            <input type="text" id="rechercheAdherents" class="form-control mb-2" placeholder="Rechercher un adhérent..." oninput="filtrerAdherentsListe()">
+
+            <ul class="list-group list-group-flush" id="listeAdherents">
+                {% for a in adherents %}
+                    <li class="list-group-item" data-recherche="{% if a.profil.user.first_name or a.profil.user.last_name %}{{ a.profil.user.first_name|lower }} {{ a.profil.user.last_name|lower }}{% else %}{{ a.profil.user.username|lower }}{% endif %}">
+                        {% if a.profil.user.first_name or a.profil.user.last_name %}
+                            {{ a.profil.user.first_name }} {{ a.profil.user.last_name }}
+                        {% else %}
+                            {{ a.profil.user.username }} <span class="badge bg-secondary">Identifiant</span>
+                        {% endif %}
+                    </li>
+                {% empty %}
+                    <li class="list-group-item text-muted">Aucun adhérent pour {{ annee }}-{{ annee|add:1 }}.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function filtrerAdherentsListe() {
+        const recherche = document.getElementById('rechercheAdherents').value.trim().toLowerCase();
+        document.querySelectorAll('#listeAdherents li[data-recherche]').forEach(function (ligne) {
+            ligne.classList.toggle('d-none', !ligne.dataset.recherche.includes(recherche));
+        });
+    }
+</script>
+{% endblock %}

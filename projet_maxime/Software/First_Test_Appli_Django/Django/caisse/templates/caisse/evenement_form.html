@@ -1,0 +1,182 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}{{ titre }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'gerer_evenements' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+
+    <div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-2">
+        <h1 class="mb-0">{{ titre }}</h1>
+        {% if evenement %}
+            <div class="d-flex gap-2">
+                <a href="{% url 'participants_evenement' pole.slug evenement.id %}" class="btn btn-primary btn-sm">Participants</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    {% if evenement.photo %}
+                        <img src="{{ evenement.photo.url }}" class="mb-3" style="max-width:160px;border-radius:8px;">
+                    {% endif %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Nom</label>
+                            {{ form.nom }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Date et heure</label>
+                            {{ form.date_evenement }}
+                            {% if form.date_evenement.errors %}<div class="text-danger small mt-1">{{ form.date_evenement.errors.0 }}</div>{% endif %}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Lieu</label>
+                            {{ form.lieu }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Photo</label>
+                            {{ form.photo }}
+                            {% if form.photo.errors %}<div class="text-danger small mt-1">{{ form.photo.errors.0 }}</div>{% endif %}
+                            <p class="text-muted small mt-1">5 Mo maximum.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fin de vente (optionnel)</label>
+                            {{ form.date_fin_vente }}
+                            {% if form.date_fin_vente.errors %}<div class="text-danger small mt-1">{{ form.date_fin_vente.errors.0 }}</div>{% endif %}
+                            <p class="text-muted small mb-0">À partir de cette date/heure, plus rien n'est vendable pour cet événement, même si "Actif" reste coché.</p>
+                        </div>
+                        <div class="form-check mb-3">
+                            {{ form.actif }}
+                            <label class="form-check-label">Actif (visible et vendable à la caisse)</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if evenement %}
+        <!-- Onglets Billets / Catalogue -->
+        <ul class="nav nav-tabs mb-3" id="catalogueTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="billets-tab" data-bs-toggle="tab" data-bs-target="#billets" type="button" role="tab" aria-controls="billets" aria-selected="true">
+                    Billets (entrées)
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="catalogue-tab" data-bs-toggle="tab" data-bs-target="#catalogue" type="button" role="tab" aria-controls="catalogue" aria-selected="false">
+                    Catalogue de la soirée
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="catalogueTabContent">
+            <!-- Onglet Billets -->
+            <div class="tab-pane fade show active" id="billets" role="tabpanel" aria-labelledby="billets-tab">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0">Billets</h5>
+                    <a href="{% url 'creer_billet' pole.slug evenement.id %}?type=billet" class="btn btn-primary btn-sm">+ Ajouter un billet</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle bg-white shadow-sm">
+                        <thead>
+                            <tr><th>Photo</th><th>Nom</th><th>Prix</th><th>Stock</th><th>Disponible</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            {% for billet in billets %}
+                                <tr>
+                                    <td>
+                                        {% if billet.photo %}
+                                            <img src="{{ billet.photo.url }}" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">
+                                        {% else %}<span class="text-muted small">Aucune</span>{% endif %}
+                                    </td>
+                                    <td>{{ billet.nom }}</td>
+                                    <td>{{ billet.prix|floatformat:2 }} EUR</td>
+                                    <td>
+                                        {% if billet.stock is None %}<span class="text-muted">illimité</span>
+                                        {% elif billet.stock == 0 %}<span class="badge bg-danger">0</span>
+                                        {% else %}{{ billet.stock }}{% endif %}
+                                    </td>
+                                    <td>{% if billet.disponible %}<span class="badge bg-success">Oui</span>{% else %}<span class="badge bg-secondary">Non</span>{% endif %}</td>
+                                    <td><a href="{% url 'modifier_billet' pole.slug evenement.id billet.id %}" class="btn btn-sm btn-outline-primary">Modifier</a></td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="6" class="text-muted text-center py-3">Aucun billet pour le moment.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Onglet Catalogue de la soirée -->
+            <div class="tab-pane fade" id="catalogue" role="tabpanel" aria-labelledby="catalogue-tab">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="mb-0">Catalogue de la soirée</h5>
+                    <a href="{% url 'creer_billet' pole.slug evenement.id %}?type=catalogue" class="btn btn-primary btn-sm">+ Ajouter un produit</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle bg-white shadow-sm">
+                        <thead>
+                            <tr><th>Photo</th><th>Nom</th><th>Prix</th><th>Stock</th><th>Disponible</th><th></th></tr>
+                        </thead>
+                        <tbody>
+                            {% for produit in catalogue %}
+                                <tr>
+                                    <td>
+                                        {% if produit.photo %}
+                                            <img src="{{ produit.photo.url }}" style="width:40px;height:40px;object-fit:cover;border-radius:6px;">
+                                        {% else %}<span class="text-muted small">Aucune</span>{% endif %}
+                                    </td>
+                                    <td>{{ produit.nom }}</td>
+                                    <td>{{ produit.prix|floatformat:2 }} EUR</td>
+                                    <td>
+                                        {% if produit.stock is None %}<span class="text-muted">illimité</span>
+                                        {% elif produit.stock == 0 %}<span class="badge bg-danger">0</span>
+                                        {% else %}{{ produit.stock }}{% endif %}
+                                    </td>
+                                    <td>{% if produit.disponible %}<span class="badge bg-success">Oui</span>{% else %}<span class="badge bg-secondary">Non</span>{% endif %}</td>
+                                    <td><a href="{% url 'modifier_billet' pole.slug evenement.id produit.id %}" class="btn btn-sm btn-outline-primary">Modifier</a></td>
+                                </tr>
+                            {% empty %}
+                                <tr><td colspan="6" class="text-muted text-center py-3">Aucun produit dans le catalogue de la soirée.</td></tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p class="text-muted small">Le catalogue de la soirée (billets, écocups...) pourra être ajouté une fois l'événement enregistré.</p>
+    {% endif %}
+
+    <script>
+        function formaterDateHeure(champ) {
+            var chiffres = champ.value.replace(/\D/g, "").slice(0, 12);
+            var jour = chiffres.slice(0, 2);
+            var mois = chiffres.slice(2, 4);
+            var annee = chiffres.slice(4, 8);
+            var heure = chiffres.slice(8, 10);
+            var minute = chiffres.slice(10, 12);
+            if (jour.length === 2 && parseInt(jour, 10) > 31) { jour = "31"; }
+            if (mois.length === 2 && parseInt(mois, 10) > 12) { mois = "12"; }
+            if (heure.length === 2 && parseInt(heure, 10) > 23) { heure = "23"; }
+            if (minute.length === 2 && parseInt(minute, 10) > 59) { minute = "59"; }
+            var formate = jour;
+            if (chiffres.length > 2) { formate += "/" + mois; }
+            if (chiffres.length > 4) { formate += "/" + annee; }
+            if (chiffres.length > 8) { formate += " " + heure; }
+            if (chiffres.length > 10) { formate += ":" + minute; }
+            champ.value = formate;
+        }
+        ["id_date_evenement", "id_date_fin_vente"].forEach(function (id) {
+            var champ = document.getElementById(id);
+            if (champ) {
+                champ.addEventListener("input", function () { formaterDateHeure(champ); });
+            }
+        });
+    </script>
+{% endblock %}

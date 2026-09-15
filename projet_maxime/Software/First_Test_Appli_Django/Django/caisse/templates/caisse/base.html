@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{% block titre %}Caisse{% endblock %}</title>
+
+    <!-- PWA : permet d'ajouter l'appli a l'ecran d'accueil, en plein ecran -->
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <link rel="apple-touch-icon" href="{% static 'icone-192.png' %}">
+    <meta name="theme-color" content="#C8004B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ENSEA Cashless">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --ensea: #C8004B;
+            --ensea-dark: #960038;
+            --ensea-light: #FFF0F4;
+        }
+        body { background-color: #F8F9FA; padding-bottom: 80px; }
+
+        /* Couleur ENSEA sur les composants Bootstrap "primary" */
+        .btn-primary { --bs-btn-bg: var(--ensea); --bs-btn-border-color: var(--ensea); --bs-btn-hover-bg: var(--ensea-dark); --bs-btn-hover-border-color: var(--ensea-dark); --bs-btn-active-bg: var(--ensea-dark); --bs-btn-active-border-color: var(--ensea-dark); }
+        .btn-outline-primary { --bs-btn-color: var(--ensea); --bs-btn-border-color: var(--ensea); --bs-btn-hover-bg: var(--ensea); --bs-btn-hover-border-color: var(--ensea); --bs-btn-active-bg: var(--ensea); }
+        .bg-primary { background-color: var(--ensea) !important; }
+        .text-primary { color: var(--ensea) !important; }
+        .border-primary { border-color: var(--ensea) !important; }
+        .text-ensea { color: var(--ensea); }
+
+        /* Carte solde facon maquette */
+        .carte-solde { background: linear-gradient(135deg, var(--ensea), var(--ensea-dark)); color: #fff; border: none; border-radius: 18px; }
+
+        /* Carte solde avec cercle decoratif en relief */
+        .carte-solde { position: relative; overflow: hidden; }
+        .carte-solde::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .pastille-statut {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .point-statut { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; }
+
+        /* Avatar rond avec initiales */
+        .avatar-utilisateur {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: var(--ensea-light); color: var(--ensea);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 14px;
+            border: 2px solid #fff; box-shadow: 0 2px 8px rgba(200,0,75,0.15);
+            flex-shrink: 0;
+        }
+
+        /* Bouton adhesion en forme de carte plutot que bouton plein */
+        .bouton-adhesion {
+            background: #fff; color: var(--ensea); border: 1.5px solid var(--ensea);
+            padding: 13px 16px; border-radius: 14px; font-size: 13px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            text-decoration: none; box-shadow: 0 2px 6px rgba(200,0,75,0.06);
+        }
+        .bouton-adhesion:active { transform: scale(0.98); background: var(--ensea-light); }
+
+        /* Etat vide (aucune transaction) */
+        .etat-vide {
+            background: #fff; border: 1px dashed var(--border, #E2E8F0); border-radius: 16px;
+            padding: 30px 16px; display: flex; flex-direction: column; align-items: center;
+            justify-content: center; gap: 8px; text-align: center;
+        }
+        .etat-vide-icone {
+            width: 36px; height: 36px; border-radius: 50%; background: #F8F9FA;
+            display: flex; align-items: center; justify-content: center; color: #94A3B8;
+        }
+
+        /* Puces de filtrage par categorie (page Gerer > Catalogue) */
+        .puces-categories { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+        .puces-categories::-webkit-scrollbar { display: none; }
+        .puce-categorie {
+            padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+            background: #fff; border: 1px solid #E2E8F0; color: #64748B;
+            white-space: nowrap; text-decoration: none; display: inline-block;
+        }
+        .puce-categorie.active { background: var(--ensea-light); border-color: var(--ensea); color: var(--ensea); font-weight: 700; }
+
+        /* Carte produit (page Gerer > Catalogue) */
+        .ligne-produit {
+            background: #fff; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px;
+            display: flex; align-items: center; justify-content: space-between; gap: 10px;
+            text-decoration: none; color: inherit;
+        }
+        .miniature-produit {
+            width: 44px; height: 44px; border-radius: 10px; background: #F1F5F9;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+            border: 1px solid #E2E8F0; flex-shrink: 0;
+        }
+        .miniature-produit img { width: 100%; height: 100%; object-fit: cover; }
+        .etiquette-stock { background: #EFF6FF; color: #2563EB; padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: 600; }
+
+        /* Onglets Catalogue/Evenements : meme taille dans les deux etats,
+           seule la couleur change, pour eviter tout effet de "saut" au clic. */
+        .onglet-gerer {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            background: #fff;
+            border: 1px solid #E2E8F0;
+            color: #64748B;
+            display: inline-block;
+        }
+        .onglet-gerer.active {
+            background: var(--ensea);
+            border-color: var(--ensea);
+            color: #fff;
+        }
+
+        /* Bouton pilule discret (Modifier, Excel...) */
+        .pilule-action {
+            padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 700;
+            border: none; text-decoration: none; display: inline-block; cursor: pointer;
+        }
+        .pilule-modifier { background: var(--ensea-light); color: var(--ensea); }
+        .pilule-excel { background: #ECFDF5; color: #107C41; border: 1px solid rgba(16,124,65,0.2); }
+        .pilule-primaire { background: var(--ensea); color: #fff; }
+
+        /* Masquer les fleches natives du champ nombre */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+
+        /* Cercle d'icone des boutons d'action (espace asso) */
+        .icone-action { width: 40px; height: 40px; border-radius: 12px; background: var(--ensea-light); color: var(--ensea); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .icone-action svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* Retour visuel quand on survole/touche une carte ou un bouton cliquable
+           (categories, poles, boutons d'action...) : donne l'impression que
+           le doigt "appuie" dessus. */
+        a .card, .btn { transition: background-color .12s ease, border-color .12s ease, transform .08s ease; }
+        a .card:hover:not(.bg-primary), a .card:active:not(.bg-primary) {
+            background-color: var(--ensea-light);
+            border-color: var(--ensea);
+        }
+        .btn:active, a .card:active { transform: scale(0.97); }
+
+        /* Barre d'onglets fixee en bas */
+        .barre-onglets { position: fixed; bottom: 0; left: 0; right: 0; height: 64px; background: #fff; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-around; align-items: center; z-index: 100; }
+        .onglet { display: flex; flex-direction: column; align-items: center; gap: 3px; color: #64748B; font-size: 10px; font-weight: 600; text-decoration: none; }
+        .onglet.actif { color: var(--ensea); }
+        .onglet svg { width: 22px; height: 22px; fill: currentColor; }
+    </style>
+</head>
+<body>
+    <nav class="navbar bg-white shadow-sm mb-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-ensea" href="{% url 'accueil' %}">Mon portefeuille ENSEA</a>
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">Déconnexion</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm">Connexion</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block contenu %}{% endblock %}
+    </main>
+
+    {% if user.is_authenticated %}
+    {% with onglet=request.resolver_match.url_name %}
+    <nav class="barre-onglets">
+        <a class="onglet {% if onglet == 'accueil' %}actif{% endif %}" href="{% url 'accueil' %}">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            Accueil
+        </a>
+        {% if est_admin_ecole %}
+        <a class="onglet {% if onglet == 'espace_ecole' or onglet == 'ecole_equipe' or onglet == 'ecole_recettes' or onglet == 'ecole_adherents' or onglet == 'ecole_codes' %}actif{% endif %}" href="{% url 'espace_ecole' %}">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L3.74 12 12 7.5 20.26 12 12 16.5z"/></svg>
+            École
+        </a>
+        {% endif %}
+        {% if a_droits_vente %}
+        <a class="onglet {% if onglet == 'asso_choix' or onglet == 'espace_asso' or onglet == 'detail_pole' or onglet == 'gerer_produits' or onglet == 'equipe_pole' %}actif{% endif %}" href="{% url 'asso_choix' %}">
+            <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10z"/></svg>
+            Asso
+        </a>
+        <a class="onglet {% if onglet == 'terminal_pole' or onglet == 'terminal_choix_pole' %}actif{% endif %}" href="{% url 'terminal_choix_pole' %}">
+            <svg viewBox="0 0 24 24"><path d="M12 19c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12-12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            Terminal
+        </a>
+        {% endif %}
+        <a class="onglet {% if onglet == 'payer' %}actif{% endif %}" href="{% url 'payer' %}">
+            <svg viewBox="0 0 24 24"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/></svg>
+            Payer
+        </a>
+        <a class="onglet {% if onglet == 'recharger' %}actif{% endif %}" href="{% url 'recharger' %}">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            Recharger
+        </a>
+        <a class="onglet {% if onglet == 'info' %}actif{% endif %}" href="{% url 'info' %}">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            Info
+        </a>
+    </nav>
+    {% endwith %}
+    {% endif %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
