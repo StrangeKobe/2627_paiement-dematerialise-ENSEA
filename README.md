@@ -290,6 +290,104 @@ nécessairement l'architecture actuelle.
 ------------------------------------------------------------------------
 
 ## 9. Plan de reprise
+## Planning du projet
+
+Le projet a débuté le **23 septembre 2026** et la livraison est prévue
+début **mars 2027**.
+
+Le planning est structuré selon les lots du WBS présentés dans le document
+de précadrage.
+
+```mermaid
+gantt
+    title Projet Paiement dématérialisé ENSEA V2
+    dateFormat YYYY-MM-DD
+    axisFormat %d/%m
+
+    section W1 — Cadrage
+
+    Cadrage du projet                 :w1_1, 2026-09-23, 10d
+    Définition du périmètre V2       :w1_2, 2026-09-29, 12d
+    Objectifs / contraintes / risques :w1_3, 2026-10-02, 10d
+    Document de précadrage            :w1_4, 2026-10-05, 12d
+    Jalon — Cadrage terminé          :milestone, w1_end, 2026-10-16, 0d
+
+
+    section W2 — Diagnostic
+
+    Reprise du dépôt                 :w2_1, 2026-09-23, 15d
+    Audit logiciel                   :w2_2, 2026-10-05, 15d
+    Audit matériel                   :w2_3, 2026-10-05, 20d
+    Inventaire des anomalies         :w2_4, 2026-10-12, 10d
+    Diagnostic final                 :w2_5, 2026-10-12, 10d
+    Jalon — Diagnostic terminé       :milestone, w2_end, 2026-10-23, 0d
+
+
+    section W3 — Correction du socle
+
+    Corrections prioritaires         :w3_1, 2026-10-19, 15d
+    Tests de non-régression          :w3_2, 2026-10-26, 15d
+    Sécurisation des transactions    :w3_3, 2026-10-26, 20d
+    Validation du socle              :w3_4, 2026-11-09, 5d
+    Jalon — Socle fiabilisé          :milestone, w3_end, 2026-11-13, 0d
+
+
+    section W4 — Compléter le logiciel
+
+    HelloAsso                        :w4_1, 2026-11-09, 25d
+    RFID                             :w4_2, 2026-11-16, 20d
+    Blocage / déblocage              :w4_3, 2026-11-23, 15d
+    Gestion des droits               :w4_4, 2026-11-23, 20d
+    Authentification CAS             :w4_5, 2026-12-01, 30d
+    Tests des fonctionnalités        :w4_6, 2027-01-04, 10d
+
+
+    section W5 — Finaliser le matériel
+
+    Audit PCB V1                     :w5_1, 2026-10-05, 20d
+    Vérification schémas / empreintes:w5_2, 2026-10-12, 20d
+    Correction PCB V2                :w5_3, 2026-10-26, 20d
+    Validation BOM                   :w5_4, 2026-11-09, 10d
+    Commande composants              :w5_5, 2026-11-16, 7d
+    Fabrication PCB                  :w5_6, 2026-11-23, 20d
+    Assemblage                       :w5_7, 2026-12-07, 15d
+    Tests électriques                :w5_8, 2026-12-14, 15d
+    Tests périphériques              :w5_9, 2027-01-04, 10d
+    Jalon — Hardware validé          :milestone, w5_end, 2027-01-15, 0d
+
+
+    section W6 — Préparer l'exploitation
+
+    Migration vers PostgreSQL        :w6_1, 2026-12-14, 20d
+    Préparation serveur              :w6_2, 2027-01-04, 20d
+    HTTPS / sécurité                 :w6_3, 2027-01-04, 20d
+    Sauvegarde / restauration        :w6_4, 2027-01-11, 15d
+    Tests d'exploitation             :w6_5, 2027-01-18, 10d
+
+
+    section W7 — Intégration et validation
+
+    Intégration de la caisse         :w7_1, 2027-01-11, 10d
+    Intégration du terminal          :w7_2, 2027-01-11, 10d
+    Communication matériel / serveur:w7_3, 2027-01-18, 10d
+    Tests parcours de paiement       :w7_4, 2027-01-25, 15d
+    Tests recharge                   :w7_5, 2027-01-25, 15d
+    Tests RFID / QR                  :w7_6, 2027-02-01, 10d
+    Tests de sécurité                :w7_7, 2027-02-08, 10d
+    Tests de non-régression          :w7_8, 2027-02-15, 10d
+    Corrections finales              :w7_9, 2027-02-15, 10d
+    Jalon — V2 validée               :milestone, w7_end, 2027-02-26, 0d
+
+
+    section W8 — Documentation et livraison
+
+    Documentation technique          :w8_1, 2027-01-25, 25d
+    Documentation hardware           :w8_2, 2027-02-01, 20d
+    Documentation utilisateur        :w8_3, 2027-02-08, 15d
+    Nettoyage du dépôt GitHub        :w8_4, 2027-02-22, 5d
+    Préparation démonstration        :w8_5, 2027-02-22, 10d
+    Livraison finale                 :milestone, w8_end, 2027-03-05, 0d
+```
 
 ### Phase 1 --- Diagnostic
 
