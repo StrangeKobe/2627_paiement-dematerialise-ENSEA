@@ -1,0 +1,8 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Connexion impossible{% endblock %}
+{% block contenu %}
+<h1>Connexion impossible</h1>
+<p>La connexion ENSEA n'a pas pu être validée ou ce compte n'est pas autorisé.
+Réessayez ou contactez l'équipe responsable de l'application.</p>
+<a href="{% url 'login' %}">Recommencer la connexion</a>
+{% endblock %}

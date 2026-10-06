@@ -1,14 +1,16 @@
-from django.contrib.auth import views as auth_views
 from django.urls import path
 
 from . import views
 from . import vues_ecole
+from . import cas_views
 
 urlpatterns = [
     path("", views.accueil, name="accueil"),
     path("verifier-code/", vues_ecole.verifier_code, name="verifier_code"),
-    path("connexion/", auth_views.LoginView.as_view(template_name="caisse/login.html"), name="login"),
-    path("deconnexion/", auth_views.LogoutView.as_view(), name="logout"),
+    path("connexion/", cas_views.LoginView.as_view(), name="login"),
+    path("connexion/cas/", cas_views.cas_login, name="cas_login"),
+    path("connexion/cas/retour/", cas_views.cas_callback, name="cas_callback"),
+    path("deconnexion/", cas_views.LogoutView.as_view(), name="logout"),
     path("pole/<slug:slug>/", views.detail_pole, name="detail_pole"),
     path("ajouter/<int:produit_id>/", views.ajouter_au_panier, name="ajouter_au_panier"),
     path("pole/<slug:slug>/vider/", views.vider_panier, name="vider_panier"),

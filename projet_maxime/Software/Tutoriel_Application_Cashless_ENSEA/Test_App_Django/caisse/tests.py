@@ -4,12 +4,13 @@ from decimal import Decimal
 from django.contrib.auth import SESSION_KEY
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from django.test import Client, TestCase
+from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 
 from .models import Affectation, CodeSecuriteAdmin, ProfilUtilisateur
 
 
+@override_settings(CAS_ENABLED=False)
 class AuthenticationBaselineTests(TestCase):
     """Exercise local authentication through the views and security middleware."""
 

@@ -133,6 +133,28 @@ LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "verifier_code"
 LOGOUT_REDIRECT_URL = "login"
 
+# No ENSEA endpoint or identity attribute is assumed. See CAS_SETUP.md.
+CAS_ENABLED = os.environ.get("CAS_ENABLED", "False").lower() == "true"
+CAS_SERVER_URL = os.environ.get("CAS_SERVER_URL", "").strip()
+CAS_CALLBACK_URL = os.environ.get("CAS_CALLBACK_URL", "").strip()
+CAS_PROTOCOL_VERSION = os.environ.get("CAS_PROTOCOL_VERSION", "").strip()
+CAS_ID_ATTRIBUTE = os.environ.get("CAS_ID_ATTRIBUTE", "").strip()
+CAS_ELIGIBILITY_ATTRIBUTE = os.environ.get("CAS_ELIGIBILITY_ATTRIBUTE", "").strip()
+CAS_ELIGIBLE_VALUES = tuple(
+    value.strip() for value in os.environ.get("CAS_ELIGIBLE_VALUES", "").split(",")
+    if value.strip()
+)
+CAS_STUDENT_VALUE = os.environ.get("CAS_STUDENT_VALUE", "").strip()
+CAS_AUTO_CREATE_STUDENTS = os.environ.get("CAS_AUTO_CREATE_STUDENTS", "False").lower() == "true"
+CAS_EXISTING_ACCOUNTS_RECONCILED = os.environ.get(
+    "CAS_EXISTING_ACCOUNTS_RECONCILED", "False"
+).lower() == "true"
+
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "caisse.cas_auth.CASBackend",
+]
+
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "").replace(" ", "")
 

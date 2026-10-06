@@ -146,6 +146,19 @@ class ProfilUtilisateur(models.Model):
         self.statut_compte = "ANONYMISE"
         self.save()
 
+class CASIdentity(models.Model):
+    """Approved external identity; never inferred from names or email addresses."""
+
+    user = models.OneToOneField(User, on_delete=models.PROTECT, related_name="cas_identity")
+    issuer = models.URLField(max_length=500)
+    subject = models.CharField(max_length=255)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["issuer", "subject"], name="unique_cas_identity"),
+        ]
+
+
 class Recharge(models.Model):
     """Un rechargement du portefeuille (via HelloAsso ou en especes)."""
     STATUTS = [
@@ -395,4 +408,3 @@ class TarifAdhesion(models.Model):
     def __str__(self):
         return f"{self.description} - {self.prix} EUR ({self.pole})"
 
- 

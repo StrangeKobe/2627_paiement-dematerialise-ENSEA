@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 from django.urls import reverse
 
-URLS_EXEMPTEES = {"verifier_code", "login", "logout"}
+URLS_EXEMPTEES = {"verifier_code", "login", "logout", "cas_login", "cas_callback"}
 
 
 class VerifierCodeMiddleware:

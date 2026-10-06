@@ -1,0 +1,8 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Déconnexion{% endblock %}
+{% block contenu %}
+<h1>Vous êtes déconnecté de l'application</h1>
+<p>Votre session ENSEA peut rester ouverte. Une nouvelle connexion à cette
+application demandera à nouveau votre code de sécurité si vous en avez un.</p>
+<a href="{% url 'login' %}">Se reconnecter</a>
+{% endblock %}
