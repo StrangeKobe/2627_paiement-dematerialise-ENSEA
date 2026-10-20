@@ -1,0 +1,68 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Gérer {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+        <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm">&lsaquo; Retour</a>
+        {% include "caisse/_onglets_gerer.html" with actif="catalogue" %}
+    </div>
+
+    <h1 class="mb-3">Produits - {{ pole.nom }}</h1>
+
+    <div class="d-flex gap-2 mb-3">
+        <a href="{% url 'gerer_categories' pole.slug %}" class="btn btn-outline-secondary btn-sm">Catégories</a>
+        <a href="{% url 'creer_produit' pole.slug %}" class="btn btn-primary btn-sm">+ Nouveau produit</a>
+    </div>
+
+    <div class="puces-categories mb-3">
+        <a href="{% url 'gerer_produits' pole.slug %}" class="puce-categorie {% if not categorie_active and not voir_retires %}active{% endif %}">Tous ({{ nb_total }})</a>
+        {% for c in categories_comptes %}
+            <a href="?categorie={{ c.id }}" class="puce-categorie {% if categorie_active == c.id %}active{% endif %}">{{ c.nom }} ({{ c.nb }})</a>
+        {% endfor %}
+        {% if admin_reel %}
+            <a href="?categorie=retires" class="puce-categorie {% if voir_retires %}active{% endif %}">Retirés ({{ nb_retires }})</a>
+        {% endif %}
+    </div>
+
+    <div class="d-flex flex-column gap-2">
+        {% for produit in produits %}
+            <a href="{% url 'modifier_produit' pole.slug produit.id %}" class="ligne-produit shadow-sm">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="miniature-produit">
+                        {% if produit.photo %}
+                            <img src="{{ produit.photo.url }}">
+                        {% endif %}
+                    </div>
+                    <div>
+                        <div class="fw-bold small">{{ produit.nom }}</div>
+                        <div class="text-muted" style="font-size:11px;">
+                            {{ produit.categorie.nom|default:"Sans categorie" }}
+                            {% if produit.stock is not None %}
+                                <span class="etiquette-stock ms-1">Stock : {{ produit.stock }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <div class="fw-bold">{{ produit.prix|floatformat:2 }} EUR</div>
+                    {% if voir_retires %}
+                        <span class="badge bg-secondary">Retiré</span>
+                    {% elif not produit.disponible %}
+                        <span class="badge bg-secondary">Masqué</span>
+                    {% elif produit.stock == 0 %}
+                        <span class="badge bg-danger">Épuisé</span>
+                    {% else %}
+                        <span class="badge bg-success">En vente</span>
+                    {% endif %}
+                </div>
+            </a>
+        {% empty %}
+            {% if voir_retires %}
+                <p class="text-muted text-center py-3">Aucun produit retiré.</p>
+            {% else %}
+                <p class="text-muted text-center py-3">Aucun produit pour ce pôle.</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

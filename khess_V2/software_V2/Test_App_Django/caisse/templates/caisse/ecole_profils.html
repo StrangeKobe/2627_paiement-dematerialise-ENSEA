@@ -1,0 +1,83 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Corriger un profil{% endblock %}
+{% block contenu %}
+    <a href="{% url 'ecole_comptes' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Corriger un profil</h1>
+
+    <form method="get" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="identifiant" class="form-control" placeholder="identifiant école" value="{{ identifiant }}" required>
+            <button type="submit" class="btn btn-primary">Rechercher</button>
+        </div>
+    </form>
+
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    {% if profil %}
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <div class="avatar-utilisateur">
+                        {% if profil.user.first_name or profil.user.last_name %}{{ profil.user.first_name|first|upper }}{{ profil.user.last_name|first|upper }}{% else %}{{ profil.user.username|slice:":2"|upper }}{% endif %}
+                    </div>
+                    <div>
+                        <div class="fw-bold">
+                            {% if profil.user.first_name or profil.user.last_name %}{{ profil.user.first_name }} {{ profil.user.last_name }}{% else %}{{ profil.user.username }}{% endif %}
+                        </div>
+                        <div class="text-muted small">
+                            <span class="fw-bold">{{ profil.user.username }}</span>
+                            {% if age is not None %} · <span class="fw-bold">{{ age }} ans</span>{% endif %}
+                        </div>
+                    </div>
+                </div>
+                <p class="text-muted small">
+                    Ces champs sont normalement verrouillés après la première saisie
+                    par l'étudiant. En tant qu'admin école, tu peux les corriger ici
+                    a tout moment, par exemple suite a une erreur signalee.
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="identifiant" value="{{ identifiant }}">
+                    <div class="mb-3">
+                        <label class="form-label">Nom</label>
+                        {{ form.nom }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Prénom</label>
+                        {{ form.prenom }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Date de naissance</label>
+                        {{ form.date_naissance }}
+                        {% if form.date_naissance.errors %}<div class="text-danger small mt-1">{{ form.date_naissance.errors.0 }}</div>{% endif %}
+                    </div>
+                    <button type="submit" name="enregistrer" value="1" class="btn btn-primary w-100">Enregistrer les corrections</button>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+    <script>
+        var champDateNaissanceCorrection = document.getElementById("id_date_naissance");
+        if (champDateNaissanceCorrection) {
+            champDateNaissanceCorrection.addEventListener("input", function () {
+                var chiffres = champDateNaissanceCorrection.value.replace(/\D/g, "").slice(0, 8);
+                var jour = chiffres.slice(0, 2);
+                var mois = chiffres.slice(2, 4);
+                var annee = chiffres.slice(4);
+                if (jour.length === 2 && parseInt(jour, 10) > 31) { jour = "31"; }
+                if (mois.length === 2 && parseInt(mois, 10) > 12) { mois = "12"; }
+                var formate = jour;
+                if (chiffres.length > 2) { formate += "/" + mois; }
+                if (chiffres.length > 4) { formate += "/" + annee; }
+                champDateNaissanceCorrection.value = formate;
+            });
+        }
+    </script>
+{% endblock %}

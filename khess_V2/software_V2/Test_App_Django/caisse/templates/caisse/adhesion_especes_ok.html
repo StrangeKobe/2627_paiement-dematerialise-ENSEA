@@ -1,0 +1,27 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Adhésion encaissée{% endblock %}
+
+{% block contenu %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="card shadow-sm">
+                <div class="card-body py-5">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" class="mb-3">
+                        <circle cx="12" cy="12" r="10" fill="#ECFDF5"/>
+                        <path d="M8 12.5l2.5 2.5L16 9" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="display-6 text-success mb-3">Adhésion encaissée</div>
+                    <p class="text-muted mb-1">
+                        {% if profil.user.first_name or profil.user.last_name %}
+                            {{ profil.user.first_name }} {{ profil.user.last_name }}
+                        {% else %}
+                            {{ profil.user.username }}
+                        {% endif %}
+                    </p>
+                    <a href="{% url 'payer_adhesion_especes' pole.slug %}" class="btn btn-primary mt-3">Nouvelle adhésion</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Adhérents {{ pole.nom }}{% endblock %}
+{% block contenu %}
+    <a href="{% url 'ecole_adherents' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">{{ pole.nom }} - {{ annee }}-{{ annee|add:1 }}</h1>
+
+    <input type="text" id="rechercheAdherents" class="form-control mb-3" placeholder="Rechercher un nom..." oninput="filtrerAdherents()">
+
+    <table class="table align-middle bg-white shadow-sm">
+        <thead><tr><th>Nom</th><th>Âge</th></tr></thead>
+        <tbody id="corpsTableau">
+            {% for item in liste %}
+                <tr data-nom="{{ item.user.first_name|lower }} {{ item.user.last_name|lower }} {{ item.user.username|lower }}">
+                    <td>
+                        {% if item.user.first_name or item.user.last_name %}
+                            {{ item.user.first_name }} {{ item.user.last_name }}
+                        {% else %}
+                            {{ item.user.username }} <span class="badge bg-secondary">Identifiant</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if item.age %}{{ item.age }} ans{% else %}<span class="text-muted">-</span>{% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="2" class="text-muted text-center py-3">Aucun adhérent.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p id="aucunResultat" class="text-muted text-center py-3 d-none">Aucun résultat pour cette recherche.</p>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function filtrerAdherents() {
+        const recherche = document.getElementById('rechercheAdherents').value.trim().toLowerCase();
+        const lignes = document.querySelectorAll('#corpsTableau tr[data-nom]');
+        let visibles = 0;
+        lignes.forEach(function (ligne) {
+            const correspond = ligne.dataset.nom.includes(recherche);
+            ligne.classList.toggle('d-none', !correspond);
+            if (correspond) visibles++;
+        });
+        document.getElementById('aucunResultat').classList.toggle('d-none', visibles > 0 || lignes.length === 0);
+    }
+</script>
+{% endblock %}

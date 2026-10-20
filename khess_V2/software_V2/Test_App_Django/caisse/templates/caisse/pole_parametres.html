@@ -1,0 +1,27 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Paramètres {{ pole.nom }}{% endblock %}
+{% block contenu %}
+    <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Paramètres - {{ pole.nom }}</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    {% if pole.logo %}
+                        <img src="{{ pole.logo.url }}" class="mb-3" style="max-width:120px;border-radius:12px;">
+                    {% endif %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Logo du pôle</label>
+                            {{ form.logo }}
+                            {% if form.logo.errors %}<div class="text-danger small mt-1">{{ form.logo.errors.0 }}</div>{% endif %}
+                            <p class="text-muted small mt-1">Affiché sur l'Espace Asso et la liste d'adhésion. 5 Mo maximum.</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

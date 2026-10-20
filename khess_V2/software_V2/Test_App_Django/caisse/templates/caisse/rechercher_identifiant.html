@@ -1,0 +1,44 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Rechercher un identifiant{% endblock %}
+{% block contenu %}
+    <h1 class="mb-4">Rechercher un identifiant</h1>
+    <p class="text-muted small">
+        Les exports de ventes affichent un identifiant anonyme (ex. "ETU-00042") au lieu du
+        nom, pour protéger les habitudes d'achat de chacun. Cet outil permet de retrouver, au
+        cas par cas, la personne derrière un identifiant précis — à n'utiliser que si c'est
+        réellement nécessaire.
+    </p>
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <form method="post" class="d-flex gap-2">
+                {% csrf_token %}
+                <input type="text" name="identifiant" class="form-control" placeholder="ETU-00042" autofocus>
+                <button type="submit" class="btn btn-primary text-nowrap">Rechercher</button>
+            </form>
+        </div>
+    </div>
+
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    {% if resultat %}
+        <div class="card shadow-sm">
+            <div class="card-body">
+                {% if resultat.statut_compte == "ANONYMISE" %}
+                    <p class="text-muted mb-0">Ce compte a été supprimé (anonymisé) : aucune identification n'est plus possible.</p>
+                {% else %}
+                    <div class="fw-bold fs-5">
+                        {% if resultat.user.first_name or resultat.user.last_name %}
+                            {{ resultat.user.first_name }} {{ resultat.user.last_name }}
+                        {% else %}
+                            {{ resultat.user.username }}
+                        {% endif %}
+                    </div>
+                    <div class="text-muted small">{{ resultat.user.username }}{% if resultat.user.email %} · {{ resultat.user.email }}{% endif %}</div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

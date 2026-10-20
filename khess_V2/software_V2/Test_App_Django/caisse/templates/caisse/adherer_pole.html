@@ -1,0 +1,72 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Adhérer à {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+<a href="{% url 'adherer_liste' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm text-center">
+            <div class="card-body p-4">
+                <h4>Adhésion {{ pole.nom }}</h4>
+                <p class="text-muted">Année {{ annee }}-{{ annee|add:1 }}</p>
+                {% if deja_adherent %}
+                    <div class="alert alert-success">Tu es déjà adhérent pour cette année.</div>
+                {% else %}
+                    <div class="d-flex flex-column gap-2 text-start mb-3">
+                        {% for t in tarifs %}
+                            <label class="d-flex justify-content-between align-items-center border rounded p-2" style="cursor:pointer;">
+                                <span>
+                                    <input type="radio" name="tarifChoisi" value="{{ t.id }}" data-description="{{ t.description }}" data-prix="{{ t.prix|floatformat:2 }}" class="form-check-input me-2" {% if forloop.first %}checked{% endif %}>
+                                    {{ t.description }}
+                                </span>
+                                <span class="fw-bold">{{ t.prix|floatformat:2 }} EUR</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                    <button type="button" id="btnPayer" class="btn btn-primary w-100 py-2" data-bs-toggle="modal" data-bs-target="#confirmationAdhesion">Payer avec mon portefeuille</button>
+                {% endif %}
+                {% if erreur %}
+                    <div class="alert alert-danger mt-3">{{ erreur }}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="modal fade" id="confirmationAdhesion" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmer l'adhésion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Es-tu sûr de vouloir devenir adhérent de <strong>{{ pole.nom }}</strong> pour {{ annee }}-{{ annee|add:1 }}, au tarif "<span id="descriptionChoisie"></span>" ?</p>
+                    <p class="text-danger small mb-0">Attention, cette action est irréversible : <span id="prixChoisi"></span> EUR seront débités immédiatement de ton portefeuille.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="tarif" id="champTarifCache">
+                        <button type="submit" class="btn btn-success">Confirmer le paiement</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var btnPayer = document.getElementById("btnPayer");
+        if (btnPayer) {
+            btnPayer.addEventListener("click", function () {
+                var radio = document.querySelector('input[name="tarifChoisi"]:checked');
+                document.getElementById("descriptionChoisie").textContent = radio.dataset.description;
+                document.getElementById("prixChoisi").textContent = radio.dataset.prix;
+                document.getElementById("champTarifCache").value = radio.value;
+            });
+        }
+    </script>
+{% endblock %}

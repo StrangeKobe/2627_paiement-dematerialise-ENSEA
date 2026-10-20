@@ -1,0 +1,18 @@
+{% extends "caisse/base.html" %}
+{% block titre %}Adhérents{% endblock %}
+{% block contenu %}
+    <a href="{% url 'espace_ecole' %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Adhérents {{ annee }}-{{ annee|add:1 }}</h1>
+    <div class="d-flex flex-column gap-2">
+        {% for pole in poles %}
+            <a href="{% url 'ecole_adherents_pole' pole.slug %}" class="card shadow-sm text-decoration-none">
+                <div class="card-body d-flex justify-content-between align-items-center py-3">
+                    <span class="fw-bold">{{ pole.nom }}</span>
+                    <span class="text-muted">&rsaquo;</span>
+                </div>
+            </a>
+        {% empty %}
+            <p class="text-muted">Aucun pôle ne propose d'adhésion.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

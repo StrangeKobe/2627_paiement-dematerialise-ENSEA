@@ -1,0 +1,29 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Modifier catégorie{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'gerer_categories' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Modifier la catégorie</h1>
+
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Nom</label>
+                    {{ form.nom }}
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-2">Enregistrer</button>
+            </form>
+            <form method="post" id="formSupprimerCategorie">
+                {% csrf_token %}
+                <button type="submit" name="supprimer" value="1" class="btn btn-outline-danger w-100">Supprimer la catégorie</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

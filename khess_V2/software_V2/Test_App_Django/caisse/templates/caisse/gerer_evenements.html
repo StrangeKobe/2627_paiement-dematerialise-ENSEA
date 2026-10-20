@@ -1,0 +1,44 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Événements {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+        <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm">&lsaquo; Retour</a>
+        {% include "caisse/_onglets_gerer.html" with actif="evenements" %}
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Événements - {{ pole.nom }}</h1>
+        <a href="{% url 'creer_evenement' pole.slug %}" class="btn btn-primary">+ Nouvel événement</a>
+    </div>
+
+    {% for evenement in evenements %}
+        <a href="{% url 'modifier_evenement' pole.slug evenement.id %}" class="text-decoration-none">
+            <div class="card shadow-sm mb-3 overflow-hidden {% if not evenement.actif %}opacity-50{% endif %}">
+                <div class="position-relative">
+                    {% if evenement.photo %}
+                        <img src="{{ evenement.photo.url }}" style="width:100%;height:160px;object-fit:cover;">
+                    {% else %}
+                        <div style="width:100%;height:160px;background:linear-gradient(135deg,#1E1B4B,#431407);display:flex;align-items:center;justify-content:center;">
+                            <span class="text-white fw-bold text-uppercase" style="letter-spacing:2px;">{{ evenement.nom }}</span>
+                        </div>
+                    {% endif %}
+                    <span class="position-absolute top-0 start-0 m-2 badge {% if evenement.actif %}bg-success{% else %}bg-secondary{% endif %}">
+                        {% if evenement.actif %}Actif{% else %}Terminé{% endif %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title mb-2 text-dark">{{ evenement.nom }}</h5>
+                    <div class="text-muted small mb-1">
+                        {% if evenement.date_evenement %}{{ evenement.date_evenement|date:"l d F Y, H:i" }}{% else %}Date non définie{% endif %}
+                    </div>
+                    {% if evenement.lieu %}
+                        <div class="text-muted small">{{ evenement.lieu }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+    {% empty %}
+        <p class="text-muted">Aucun événement pour ce pôle.</p>
+    {% endfor %}
+{% endblock %}

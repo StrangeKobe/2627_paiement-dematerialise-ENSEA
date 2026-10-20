@@ -1,0 +1,230 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Équipe {{ pole.nom }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'espace_asso' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Équipe - {{ pole.nom }}</h1>
+    {% if erreur %}
+        <div class="alert alert-danger">{{ erreur }}</div>
+    {% endif %}
+
+    {% if peut_modifier %}
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h6 class="mb-3">Ajouter un droit</h6>
+            <form method="post" class="row g-2">
+                {% csrf_token %}
+                <div class="col-12 col-sm-6">
+                    <input type="text" name="identifiant" class="form-control" placeholder="identifiant école" required>
+                </div>
+                <div class="col-8 col-sm-4">
+                    <select name="role" class="form-select">
+                        <option value="VENDEUR">Vendeur</option>
+                        <option value="ADMIN_POLE">Admin de pôle</option>
+                    </select>
+                </div>
+                <div class="col-4 col-sm-2">
+                    <button type="submit" name="ajouter" value="1" class="btn btn-primary w-100">Ajouter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endif %}
+
+    <h6 class="text-muted text-uppercase mb-2">Membres actuels</h6>
+    {% for a in affectations %}
+        <div class="card shadow-sm mb-2">
+            <div class="card-body d-flex justify-content-between align-items-center py-2">
+                <div>
+                    <span class="fw-bold">
+                        {% if a.user.first_name or a.user.last_name %}
+                            {{ a.user.first_name }} {{ a.user.last_name }}
+                        {% else %}
+                            {{ a.user.username }} <span class="badge bg-secondary">Identifiant</span>
+                        {% endif %}
+                    </span>
+                    <span class="badge bg-secondary ms-2">{{ a.get_role_display }}</span>
+                </div>
+                {% if peut_modifier %}
+                    {% if a.role == "VENDEUR" %}
+                        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modaleDroits{{ a.id }}">Modifier</button>
+                    {% elif a.role == "ADMIN_POLE" and admin_ade %}
+                        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modaleDroits{{ a.id }}">Modifier</button>
+                    {% else %}
+                        <button type="button" class="btn btn-sm btn-outline-danger"
+                                data-affectation-id="{{ a.id }}"
+                                data-nom="{% if a.user.first_name or a.user.last_name %}{{ a.user.first_name }} {{ a.user.last_name }}{% else %}{{ a.user.username }}{% endif %}"
+                                onclick="declencherRetrait(this)">Retirer</button>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        {% if peut_modifier and a.role == "VENDEUR" or peut_modifier and a.role == "ADMIN_POLE" and admin_ade %}
+        <div class="modal fade" id="modaleDroits{{ a.id }}" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-utilisateur" style="width:32px;height:32px;font-size:11px;">
+                                {% if a.user.first_name or a.user.last_name %}{{ a.user.first_name|first|upper }}{{ a.user.last_name|first|upper }}{% else %}{{ a.user.username|slice:":2"|upper }}{% endif %}
+                            </div>
+                            <h5 class="modal-title mb-0">
+                                Droits de
+                                {% if a.user.first_name or a.user.last_name %}{{ a.user.first_name }} {{ a.user.last_name }}{% else %}{{ a.user.username }}{% endif %}
+                            </h5>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="affectation" value="{{ a.id }}">
+                        <div class="modal-body">
+                            {% if a.role == "VENDEUR" %}
+                            <p class="text-muted small">
+                                Un vendeur peut encaisser les ventes par défaut. Active ici les accès
+                                supplémentaires autorisés.
+                            </p>
+                            <label class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <span>
+                                    <span class="d-block fw-bold small">Adhésion en espèces</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Encaisser une cotisation en liquide</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_adhesion_especes" {% if a.droit_adhesion_especes %}checked{% endif %}>
+                                </span>
+                            </label>
+                            <label class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <span>
+                                    <span class="d-block fw-bold small">Gérer</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Catalogue, prix et stocks</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_gerer_produits" {% if a.droit_gerer_produits %}checked{% endif %}>
+                                </span>
+                            </label>
+                            <label class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <span>
+                                    <span class="d-block fw-bold small">Adhésions</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Prix, liste des adhérents et export</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_adhesions" {% if a.droit_adhesions %}checked{% endif %}>
+                                </span>
+                            </label>
+                            <label class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <span>
+                                    <span class="d-block fw-bold small">Équipe</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Voir qui a quels droits, jamais modifier</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_equipe" {% if a.droit_equipe %}checked{% endif %}>
+                                </span>
+                            </label>
+                            <label class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <span>
+                                    <span class="d-block fw-bold small">Exporter</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Ventes au format Excel</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_exporter" {% if a.droit_exporter %}checked{% endif %}>
+                                </span>
+                            </label>
+                            <label class="d-flex justify-content-between align-items-center py-2 border-bottom">
+                                <span>
+                                    <span class="d-block fw-bold small">Paramètres</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Logo du pôle</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_parametres" {% if a.droit_parametres %}checked{% endif %}>
+                                </span>
+                            </label>
+                            {% else %}
+                            <p class="text-muted small">
+                                Un admin de pôle a déjà accès à tout sur son pôle. Seul "Recharger en
+                                espèces" reste à accorder au cas par cas, réservé à l'admin ADE.
+                            </p>
+                            {% endif %}
+                            {% if admin_ade %}
+                            <label class="d-flex justify-content-between align-items-center py-2">
+                                <span>
+                                    <span class="d-block fw-bold small">Recharger en espèces</span>
+                                    <span class="d-block text-muted" style="font-size:11px;">Créditer un compte contre du liquide (donne aussi accès au suivi espèces)</span>
+                                </span>
+                                <span class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="droit_recharger_especes" {% if a.droit_recharger_especes %}checked{% endif %}>
+                                </span>
+                            </label>
+                            {% else %}
+                            <p class="text-muted small mt-2 mb-0">
+                                "Recharger en espèces" ne peut être accordé que par un admin ADE.
+                            </p>
+                            {% endif %}
+                        </div>
+                        <div class="modal-footer d-flex gap-2">
+                            <button type="button" class="btn btn-outline-danger flex-fill"
+                                    data-affectation-id="{{ a.id }}"
+                                    data-nom="{% if a.user.first_name or a.user.last_name %}{{ a.user.first_name }} {{ a.user.last_name }}{% else %}{{ a.user.username }}{% endif %}"
+                                    data-modale-actuelle="modaleDroits{{ a.id }}"
+                                    onclick="declencherRetrait(this)">Retirer le rôle</button>
+                            <button type="submit" name="modifier_droits" value="1" class="btn btn-primary flex-fill">Enregistrer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% empty %}
+        <p class="text-muted">Personne pour le moment.</p>
+    {% endfor %}
+
+    <form method="post" id="formRetirer" class="d-none">
+        {% csrf_token %}
+        <input type="hidden" name="retirer" id="champRetirerId">
+    </form>
+
+    <div class="modal fade" id="modaleConfirmerRetrait" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Retirer de l'équipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0" id="texteConfirmerRetrait"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger" id="btnConfirmerRetrait">Oui, retirer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modaleConfirmerRetraitEl = document.getElementById("modaleConfirmerRetrait");
+
+        function declencherRetrait(bouton) {
+            document.getElementById("champRetirerId").value = bouton.dataset.affectationId;
+            document.getElementById("texteConfirmerRetrait").textContent =
+                "Vous êtes sûr(e) de vouloir retirer " + bouton.dataset.nom + " de l'équipe ?";
+
+            var idModaleActuelle = bouton.dataset.modaleActuelle;
+            if (idModaleActuelle) {
+                var modaleActuelleEl = document.getElementById(idModaleActuelle);
+                modaleActuelleEl.addEventListener("hidden.bs.modal", function surAttente() {
+                    modaleActuelleEl.removeEventListener("hidden.bs.modal", surAttente);
+                    new bootstrap.Modal(modaleConfirmerRetraitEl).show();
+                });
+                bootstrap.Modal.getInstance(modaleActuelleEl).hide();
+            } else {
+                new bootstrap.Modal(modaleConfirmerRetraitEl).show();
+            }
+        }
+
+        document.getElementById("btnConfirmerRetrait").addEventListener("click", function () {
+            document.getElementById("formRetirer").submit();
+        });
+    </script>
+{% endblock %}

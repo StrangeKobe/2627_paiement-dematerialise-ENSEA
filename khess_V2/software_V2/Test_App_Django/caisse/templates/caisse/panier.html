@@ -1,0 +1,33 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Panier{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'detail_pole' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Panier - {{ pole.nom }}</h1>
+
+    {% if lignes_panier %}
+        <div class="card shadow-sm mb-3">
+            <ul class="list-group list-group-flush">
+                {% for ligne in lignes_panier %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{{ ligne.quantite }} x {{ ligne.produit.nom }}</span>
+                        <span class="fw-bold">{{ ligne.sous_total }} EUR</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="card-footer d-flex justify-content-between align-items-center fs-5 fw-bold">
+                <span>Total</span>
+                <span>{{ total }} EUR</span>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <a href="{% url 'vider_panier' pole.slug %}" class="btn btn-outline-danger flex-fill">Vider</a>
+            <a href="{% url 'encaisser' pole.slug %}" class="btn btn-success flex-fill">Encaisser</a>
+        </div>
+    {% else %}
+        <p class="text-muted">Le panier est vide.</p>
+        <a href="{% url 'detail_pole' pole.slug %}" class="btn btn-primary">Retour aux produits</a>
+    {% endif %}
+{% endblock %}

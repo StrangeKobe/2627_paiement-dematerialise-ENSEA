@@ -1,0 +1,54 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}{{ titre }}{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'modifier_evenement' pole.slug evenement.id %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">{{ titre }}</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    {% if billet.photo %}
+                        <img src="{{ billet.photo.url }}" class="mb-3" style="max-width:120px;border-radius:8px;">
+                    {% endif %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Nom</label>
+                            {{ form.nom }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Prix (EUR)</label>
+                            {{ form.prix }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Stock (laisser vide = illimité)</label>
+                            {{ form.stock }}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Photo</label>
+                            {{ form.photo }}
+                            {% if form.photo.errors %}<div class="text-danger small mt-1">{{ form.photo.errors.0 }}</div>{% endif %}
+                            <p class="text-muted small mt-1">5 Mo maximum.</p>
+                        </div>
+                        <div class="form-check mb-2">
+                            {{ form.est_billet }}
+                            <label class="form-check-label">
+                                Compte comme une entrée (apparaît dans la liste des
+                                participants et se synchronise avec HelloAsso).
+                                Décoche pour un simple produit du catalogue (boisson, écocup...).
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            {{ form.disponible }}
+                            <label class="form-check-label">Disponible à la vente</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Enregistrer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

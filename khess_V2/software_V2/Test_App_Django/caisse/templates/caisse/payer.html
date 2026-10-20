@@ -1,0 +1,38 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Payer{% endblock %}
+
+{% block contenu %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 col-md-5">
+            <div class="card shadow-sm text-center">
+                <div class="card-body p-4">
+                    <h4 class="mb-3">Scanner pour payer</h4>
+                    <img src="{{ qr_uri }}" alt="QR de paiement" class="img-fluid mb-3 mx-auto d-block" style="width:100%;max-width:300px;">
+                    <div class="mb-2">
+                        <span class="badge bg-primary fs-6">QR code valable encore <span id="minuteur">--:--</span></span>
+                    </div>
+                    <p class="text-muted small mb-0">QR code change toutes les deux minutes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let reste = {{ duree }};
+    const el = document.getElementById("minuteur");
+    function afficher() {
+        const m = Math.floor(reste / 60);
+        const s = reste % 60;
+        el.textContent = m + ":" + (s < 10 ? "0" + s : s);
+    }
+    afficher();
+    setInterval(function () {
+        reste = reste - 1;
+        if (reste <= 0) { location.reload(); return; }
+        afficher();
+    }, 1000);
+</script>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Accueil{% endblock %}
+
+{% block contenu %}
+    {% if profil.user.first_name or profil.user.last_name %}
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <div>
+                <div class="text-muted small" id="salutation">Bon retour,</div>
+                <div class="fw-bold fs-5">{{ profil.user.first_name }} {{ profil.user.last_name }}</div>
+            </div>
+            <a href="{% url 'info' %}" class="avatar-utilisateur text-decoration-none">
+                {{ profil.user.first_name|first|upper }}{{ profil.user.last_name|first|upper }}
+            </a>
+        </div>
+    {% endif %}
+
+    <div class="card carte-solde shadow-sm mb-3">
+        <div class="card-body text-center py-4">
+            <div class="text-uppercase small" style="opacity:.9;letter-spacing:1px;">Solde disponible</div>
+            <div class="display-5 fw-bold my-1">{{ profil.solde|floatformat:2 }} EUR</div>
+        </div>
+    </div>
+
+    <a href="{% url 'adherer_liste' %}" class="bouton-adhesion mb-4">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        <span>Devenir adhérent d'un pôle</span>
+    </a>
+
+    <h6 class="text-muted text-uppercase mb-2">Dernières transactions</h6>
+    {% for m in mouvements %}
+        <div class="card shadow-sm mb-2">
+            <div class="card-body py-2 d-flex align-items-center">
+                {% if m.photo %}
+                    <img src="{{ m.photo.url }}" class="rounded me-2" style="width:36px;height:36px;object-fit:cover;">
+                {% else %}
+                    <div class="rounded bg-light me-2 d-flex align-items-center justify-content-center" style="width:36px;height:36px;">
+                        {% if m.sens == "credit" %}+{% else %}-{% endif %}
+                    </div>
+                {% endif %}
+                <div class="flex-grow-1">
+                    <div class="fw-bold">{{ m.titre }}</div>
+                    <div class="text-muted small">{{ m.date|date:"d/m/Y H:i" }}</div>
+                </div>
+                {% if m.sens == "credit" %}
+                    <div class="fw-bold text-success">+{{ m.montant|floatformat:2 }} EUR</div>
+                {% else %}
+                    <div class="fw-bold text-danger">-{{ m.montant|floatformat:2 }} EUR</div>
+                {% endif %}
+            </div>
+        </div>
+    {% empty %}
+        <div class="etat-vide">
+            <div class="etat-vide-icone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <span class="text-muted small">Aucune transaction pour le moment.</span>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const heure = new Date().getHours();
+    let salutation;
+    if (heure < 6) {
+        salutation = "Bonne nuit,";
+    } else if (heure < 12) {
+        salutation = "Bonjour,";
+    } else if (heure < 18) {
+        salutation = "Bon après-midi,";
+    } else {
+        salutation = "Bonsoir,";
+    }
+    const el = document.getElementById("salutation");
+    if (el) el.textContent = salutation;
+</script>
+{% endblock %}

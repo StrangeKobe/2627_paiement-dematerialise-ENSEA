@@ -1,0 +1,45 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Encaisser{% endblock %}
+
+{% block contenu %}
+    <a href="{% url 'detail_pole' pole.slug %}" class="btn btn-outline-secondary btn-sm mb-3">Retour</a>
+    <h1 class="mb-4">Encaisser</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-3">
+                <div class="card-header fw-bold">Récapitulatif</div>
+                <ul class="list-group list-group-flush">
+                    {% for ligne in lignes_panier %}
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>{{ ligne.quantite }} x {{ ligne.produit.nom }}</span>
+                            <span>{{ ligne.sous_total }} EUR</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="card-footer d-flex justify-content-between fw-bold">
+                    <span>Total</span>
+                    <span>{{ total }} EUR</span>
+                </div>
+            </div>
+
+            {% if erreur %}
+                <div class="alert alert-danger">{{ erreur }}</div>
+            {% endif %}
+
+            <form method="post" id="formEncaisser">
+                {% csrf_token %}
+                <input type="hidden" name="jeton" id="champJeton">
+                <button type="button" class="btn btn-outline-primary w-100 mb-2" id="btnScannerQR">
+                    Scanner le QR de l'acheteur
+                </button>
+                <label class="form-label">Identifiant de l'acheteur</label>
+                <input type="text" name="identifiant" class="form-control mb-3" placeholder="compte école" autofocus>
+                <button type="submit" class="btn btn-success w-100">Valider le paiement de {{ total }} EUR</button>
+            </form>
+        </div>
+    </div>
+
+    {% include "caisse/_scan_qr.html" %}
+{% endblock %}

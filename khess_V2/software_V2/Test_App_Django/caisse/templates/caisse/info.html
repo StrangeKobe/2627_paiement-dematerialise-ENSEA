@@ -1,0 +1,206 @@
+{% extends "caisse/base.html" %}
+
+{% block titre %}Info{% endblock %}
+
+{% block contenu %}
+    <h1 class="mb-4">Mon profil</h1>
+
+    {% if enregistre %}
+        <div class="alert alert-success">Tes informations ont bien été enregistrées.</div>
+    {% endif %}
+    {% if form.errors %}
+        <div class="alert alert-danger">Certains champs obligatoires ne sont pas renseignés correctement, corrige-les ci-dessous.</div>
+    {% endif %}
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            {% if form.fields %}<form method="post" id="formInfo" novalidate>{% csrf_token %}{% endif %}
+
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span class="text-muted">Nom{% if form.nom %} <span class="text-danger">*</span>{% endif %}</span>
+                {% if profil.user.last_name %}
+                    <span class="fw-bold">{{ profil.user.last_name }} <span class="badge bg-secondary">Ancré</span></span>
+                {% else %}
+                    <div style="max-width:200px;">
+                        {{ form.nom }}
+                        {% if form.nom.errors %}<div class="text-danger small mt-1">{{ form.nom.errors.0 }}</div>{% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span class="text-muted">Prénom{% if form.prenom %} <span class="text-danger">*</span>{% endif %}</span>
+                {% if profil.user.first_name %}
+                    <span class="fw-bold">{{ profil.user.first_name }} <span class="badge bg-secondary">Ancré</span></span>
+                {% else %}
+                    <div style="max-width:200px;">
+                        {{ form.prenom }}
+                        {% if form.prenom.errors %}<div class="text-danger small mt-1">{{ form.prenom.errors.0 }}</div>{% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+                <span class="text-muted">Email ENSEA{% if form.email %} <span class="text-danger">*</span>{% endif %}</span>
+                {% if profil.user.email %}
+                    <span class="fw-bold">{{ profil.user.email }} <span class="badge bg-secondary">Ancré</span></span>
+                {% else %}
+                    <div style="max-width:200px;">
+                        {{ form.email }}
+                        {% if form.email.errors %}<div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>{% endif %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="d-flex justify-content-between align-items-center py-2">
+                <span class="text-muted">Date de naissance{% if form.date_naissance %} <span class="text-danger">*</span>{% endif %}</span>
+                {% if profil.date_naissance %}
+                    <span class="fw-bold">{{ profil.date_naissance|date:"d/m/Y" }} <span class="badge bg-secondary">Ancré</span></span>
+                {% else %}
+                    <div style="max-width:200px;">
+                        {{ form.date_naissance }}
+                        {% if form.date_naissance.errors %}<div class="text-danger small mt-1">{{ form.date_naissance.errors.0 }}</div>{% endif %}
+                    </div>
+                {% endif %}
+            </div>
+
+            {% if form.fields %}
+                <p class="text-danger small mt-3 mb-1"><span class="text-danger">*</span> Champ obligatoire.</p>
+                <p class="text-danger small mb-2">
+                    Attention : une fois enregistrées, ces informations ne pourront plus être modifiées par toi-même.<br>
+                    Cette action est irréversible.<br>
+                    Seul un administrateur école pourra corriger une erreur
+                    {% if admins_ecole %}
+                        ({% for a in admins_ecole %}{{ a.first_name }} {{ a.last_name }}{% if not forloop.last %}, {% endif %}{% endfor %})
+                    {% endif %}.
+                </p>
+                <button type="button" id="btnEnregistrerInfo" class="btn btn-primary w-100">Enregistrer les modifications</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if form.fields %}
+    <div class="modal fade" id="confirmationInfo" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmer l'enregistrement</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger mb-0">Une fois enregistrées, ces informations ne pourront plus être modifiées par toi-même. Cette action est irréversible.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-success" id="btnConfirmerInfo1">Confirmer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmationInfo2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Dernière vérification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Vous êtes bien sûr(e) de vouloir enregistrer définitivement ces informations ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" id="btnConfirmerInfo2" class="btn btn-success">Oui, enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var champDateNaissance = document.getElementById("id_date_naissance");
+        if (champDateNaissance) {
+            champDateNaissance.addEventListener("input", function () {
+                var chiffres = champDateNaissance.value.replace(/\D/g, "").slice(0, 8);
+                var jour = chiffres.slice(0, 2);
+                var mois = chiffres.slice(2, 4);
+                var annee = chiffres.slice(4);
+                if (jour.length === 2 && parseInt(jour, 10) > 31) { jour = "31"; }
+                if (mois.length === 2 && parseInt(mois, 10) > 12) { mois = "12"; }
+                var formate = jour;
+                if (chiffres.length > 2) { formate += "/" + mois; }
+                if (chiffres.length > 4) { formate += "/" + annee; }
+                champDateNaissance.value = formate;
+            });
+        }
+
+        function dateNaissanceValide(valeur) {
+            var correspondance = valeur.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+            if (!correspondance) { return false; }
+            var jour = parseInt(correspondance[1], 10);
+            var mois = parseInt(correspondance[2], 10);
+            var annee = parseInt(correspondance[3], 10);
+            if (mois < 1 || mois > 12 || jour < 1 || jour > 31) { return false; }
+            var date = new Date(annee, mois - 1, jour);
+            if (date.getFullYear() !== annee || date.getMonth() !== mois - 1 || date.getDate() !== jour) {
+                return false;
+            }
+            if (date > new Date()) { return false; }
+            return true;
+        }
+
+        var formulaireInfo = document.getElementById("formInfo");
+        var envoiAutorise = false;
+        formulaireInfo.addEventListener("submit", function (e) {
+            if (!envoiAutorise) { e.preventDefault(); }
+        });
+
+        document.getElementById("btnEnregistrerInfo").addEventListener("click", function () {
+            var champsObligatoires = document.querySelectorAll("#formInfo [required]");
+            var toutRempli = true;
+            champsObligatoires.forEach(function (champ) {
+                var conteneur = champ.closest("div");
+                var ancienMessage = conteneur.querySelector(".erreur-client");
+                if (ancienMessage) { ancienMessage.remove(); }
+                champ.classList.remove("is-invalid");
+                if (!champ.value.trim()) {
+                    toutRempli = false;
+                    champ.classList.add("is-invalid");
+                    var message = document.createElement("div");
+                    message.className = "text-danger small mt-1 erreur-client";
+                    message.textContent = "Ce champ est obligatoire.";
+                    conteneur.appendChild(message);
+                } else if (champ === champDateNaissance && !dateNaissanceValide(champ.value.trim())) {
+                    toutRempli = false;
+                    champ.classList.add("is-invalid");
+                    var messageDate = document.createElement("div");
+                    messageDate.className = "text-danger small mt-1 erreur-client";
+                    messageDate.textContent = "Date invalide : vérifie le jour, le mois et l'année (jj/mm/aaaa).";
+                    conteneur.appendChild(messageDate);
+                }
+            });
+            if (toutRempli) {
+                var modaleConfirmation = new bootstrap.Modal(document.getElementById("confirmationInfo"));
+                modaleConfirmation.show();
+            } else {
+                champsObligatoires[0].focus();
+            }
+        });
+
+        var modaleInfo1 = document.getElementById("confirmationInfo");
+        var modaleInfo2 = document.getElementById("confirmationInfo2");
+        var passageVersModale2 = false;
+        document.getElementById("btnConfirmerInfo1").addEventListener("click", function () {
+            passageVersModale2 = true;
+            bootstrap.Modal.getInstance(modaleInfo1).hide();
+        });
+        modaleInfo1.addEventListener("hidden.bs.modal", function () {
+            if (passageVersModale2) {
+                passageVersModale2 = false;
+                new bootstrap.Modal(modaleInfo2).show();
+            }
+        });
+        document.getElementById("btnConfirmerInfo2").addEventListener("click", function () {
+            envoiAutorise = true;
+            formulaireInfo.requestSubmit();
+        });
+    </script>
+    {% endif %}
+{% endblock %}
