@@ -1,0 +1,130 @@
+(footprint "L1"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 9.025 16.85 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "e575ada0-46ae-4de8-b92a-5b7cb7cdd600")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "7u2"
+		(at 9.025 18.35 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3d2d72a3-e9d1-425a-a65e-4072186aba31")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://yageogroup.com/content/datasheet/asset/file/DATASHEET_P896"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3b84a5bf-6409-44eb-9ee0-79c71bba329c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Inductor with iron core, small symbol"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "99f6ac6f-95da-44b0-8012-02ae7142b5a9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "PM5433.722NLT"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bbf15ce4-5064-4a87-b767-875a538588da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Pulse Electronics"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1fae23f8-20dc-4336-9ca2-edd39acfa04e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -0.025 0)
+		(end 16.5 0)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "675ee7e4-d181-48c3-8322-7608dd055418")
+	)
+	(fp_line
+		(start 0 15.5)
+		(end 16.475 15.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "7975aa06-251b-4cbf-8cae-e1ecb62fdecd")
+	)
+	(fp_rect
+		(start -0.275 -0.2)
+		(end 16.75 15.725)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "1116b208-f08e-4d13-ac26-2be3b2613e87")
+	)
+	(pad "1" smd roundrect
+		(at 8.4 1.65)
+		(size 16.3 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(uuid "01cad12c-55c9-4fbe-b9e5-470223978135")
+	)
+	(pad "2" smd roundrect
+		(at 8.3 13.85)
+		(size 16.3 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.15)
+		(uuid "5da97bbf-de94-47b8-ba5a-c47c604974b0")
+	)
+	(embedded_fonts no)
+)

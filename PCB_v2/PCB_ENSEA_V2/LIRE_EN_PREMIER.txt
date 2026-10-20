@@ -1,0 +1,12 @@
+PCB ENSEA - V2 du 20 octobre 2026
+
+Ouvrir README.md, puis MODIFICATIONS.md.
+Les deux projets KiCad 9 sont dans Hardware/Caisse_Fixe et Hardware/Terminal_Mobile.
+Les bibliotheques locales doivent rester avec les projets.
+
+Controle final : ERC 0 anomalie ; DRC 0 anomalie ; 0 liaison non routee ; 0 ecart schema/PCB pour chaque carte.
+
+Le lecteur QR exact et les essais sur prototype restent a valider.
+Buzzer retenu : CMI-1295-0585T actif 5 V.
+D8 de la caisse fixe est montee au dessous.
+Lire les limites et essais restants dans MODIFICATIONS.md avant fabrication en serie.

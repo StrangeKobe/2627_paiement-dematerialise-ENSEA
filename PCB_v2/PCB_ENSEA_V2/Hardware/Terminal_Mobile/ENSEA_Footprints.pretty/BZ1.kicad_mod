@@ -1,0 +1,156 @@
+(footprint "BZ1"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Generic Buzzer, D12mm height 9.5mm with RM7.6mm")
+	(tags "buzzer")
+	(property "Reference" "REF**"
+		(at 3.8 -7.2 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "5675d9f5-0076-42a4-93fb-1f538a7520ff")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CMI-1295-0585T"
+		(at 3.8 7.4 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2a5dee31-06c3-4626-84d7-dfbeb5274b2d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.sameskydevices.com/product/resource/cmi-1295-0585t.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2026be16-5803-4785-be49-a1d36c765152")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Buzzer, polarized"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "433b993f-b4df-43a6-af0d-d8c4c12deaab")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MPN" "CMI-1295-0585T"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fefcc932-3c31-4571-824b-3b2d9b4c2315")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer" "Same Sky"
+		(at 0 0 270)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "86d0d445-952b-46c0-ae62-39268db694c7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_circle
+		(center 3.8 0)
+		(end 9.9 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "b6c812d4-0c02-4c60-847b-af52c1bd34ad")
+	)
+	(fp_circle
+		(center 3.8 0)
+		(end 10.05 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "50309aca-1f84-4a81-bc0c-3149724b2c05")
+	)
+	(fp_circle
+		(center 3.8 0)
+		(end 4.8 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ca919ef5-0317-421c-99a8-b5b21b7163cb")
+	)
+	(fp_circle
+		(center 3.8 0)
+		(end 9.8 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "48e7a4f0-fb32-42a3-8bef-6ed2b5967475")
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2 2)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e28fd8ff-fbaf-40e8-83d6-71a76cdb3f64")
+	)
+	(pad "2" thru_hole circle
+		(at 7.6 0)
+		(size 2 2)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "36f77743-a743-4a0d-bb46-23b0120674b1")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Buzzer_Beeper.3dshapes/Buzzer_12x9.5RM7.6.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

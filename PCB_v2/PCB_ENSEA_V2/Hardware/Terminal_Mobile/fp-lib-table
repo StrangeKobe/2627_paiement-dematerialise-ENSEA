@@ -1,0 +1,2 @@
+(fp_lib_table (version 7)
+(lib (name "ENSEA_Footprints") (type "KiCad") (uri "${KIPRJMOD}/ENSEA_Footprints.pretty") (options "") (descr "Empreintes locales V2")))

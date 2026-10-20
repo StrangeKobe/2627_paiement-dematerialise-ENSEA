@@ -1,0 +1,27 @@
+Drill report for PCB_Caisse_Dématérialisée.kicad_pcb
+Created on 2026-10-20T07:22:56+0100
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1_PWR.Cu                in1
+    L3 :  In2_GND.Cu                in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'PCB_Caisse_Dématérialisée-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (175 holes)
+    T2  0.750mm  0.0295"  (19 holes)
+    T3  1.000mm  0.0394"  (42 holes)
+
+    Total plated holes count 236
+
+
+Drill file 'PCB_Caisse_Dématérialisée-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  2.750mm  0.1083"  (4 holes)
+
+    Total unplated holes count 4

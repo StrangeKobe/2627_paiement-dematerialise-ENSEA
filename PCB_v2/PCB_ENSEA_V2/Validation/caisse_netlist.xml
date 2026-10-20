@@ -1,0 +1,2054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/workspace/scratch/18f33083818f/output/PCB_ENSEA_V2/Hardware/Caisse_Fixe/PCB_Caisse_Enregistreuse.kicad_sch</source>
+    <date>2026-10-20T07:22:46+0100</date>
+    <tool>Eeschema 9.0.9-9.0.9~ubuntu24.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>PCB_Caisse_Enregistreuse</title>
+        <company>ENSEA</company>
+        <rev>V2</rev>
+        <date>2026-10-20</date>
+        <source>PCB_Caisse_Enregistreuse.kicad_sch</source>
+        <comment number="1" value="Maxime RAMBARANE-BARAT"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Power_supply.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="BZ1">
+      <value>CMI-1295-0585T</value>
+      <footprint>ENSEA_Footprints:BZ1</footprint>
+      <datasheet>https://www.sameskydevices.com/product/resource/cmi-1295-0585t.pdf</datasheet>
+      <description>Buzzer, polarized</description>
+      <fields>
+        <field name="MPN">CMI-1295-0585T</field>
+        <field name="Manufacturer">Same Sky</field>
+        <field name="Footprint">ENSEA_Footprints:BZ1</field>
+        <field name="Datasheet">https://www.sameskydevices.com/product/resource/cmi-1295-0585t.pdf</field>
+        <field name="Description">Buzzer, polarized</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__Buzzer" description="Buzzer, polarized"/>
+      <property name="MPN" value="CMI-1295-0585T"/>
+      <property name="Manufacturer" value="Same Sky"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="quartz resonator ceramic"/>
+      <property name="ki_fp_filters" value="*Buzzer*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ddf77af6-1031-4624-8fcc-44f9411712cc</tstamps>
+    </comp>
+    <comp ref="C1">
+      <value>100n</value>
+      <footprint>ENSEA_Footprints:C1</footprint>
+      <datasheet>~</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">KAM15AR71C104KM</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:C1</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="KAM15AR71C104KM"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0baadc8e-21e6-4c5f-9dca-c3ba1f81d334</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>4u7</value>
+      <footprint>ENSEA_Footprints:C3</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012106025.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012106025</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C3</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012106025.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012106025"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>77bf116e-7149-4179-a1da-0c35add4d485</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>100n</value>
+      <footprint>ENSEA_Footprints:C4</footprint>
+      <datasheet>~</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">KAM15AR71C104KM</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:C4</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="KAM15AR71C104KM"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>66028896-81a2-427b-b13f-401205457cc9</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>1u</value>
+      <footprint>ENSEA_Footprints:C14</footprint>
+      <datasheet>~</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012206002</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:C14</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012206002"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8faf9bce-4586-4e4b-b615-9f514483fe22</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>4u7</value>
+      <footprint>ENSEA_Footprints:C17</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012106025.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012106025</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C17</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012106025.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012106025"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>97ed08a0-213c-41a5-9ee6-76f57e101006</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>Green_LED</value>
+      <footprint>ENSEA_Footprints:D1</footprint>
+      <datasheet>~</datasheet>
+      <description>Light emitting diode</description>
+      <fields>
+        <field name="MPN">150060GS55040</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:D1</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Light emitting diode</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__LED" description="Light emitting diode"/>
+      <property name="MPN" value="150060GS55040"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <property name="ki_fp_filters" value="LED* LED_SMD:* LED_THT:*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f7fbe243-8a67-4d87-a229-79104fda67e2</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>Amber_LED</value>
+      <footprint>ENSEA_Footprints:D4</footprint>
+      <datasheet>~</datasheet>
+      <description>Light emitting diode</description>
+      <fields>
+        <field name="MPN">150060AS55040</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:D4</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Light emitting diode</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__LED" description="Light emitting diode"/>
+      <property name="MPN" value="150060AS55040"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <property name="ki_fp_filters" value="LED* LED_SMD:* LED_THT:*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>09c7ba81-e016-46a7-a270-078a50a98e39</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>SS19</value>
+      <footprint>ENSEA_Footprints:D6</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/ss19-d.pdf</datasheet>
+      <description>Diode</description>
+      <fields>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+        <field name="MPN">SS19</field>
+        <field name="Manufacturer">onsemi</field>
+        <field name="Footprint">ENSEA_Footprints:D6</field>
+        <field name="Datasheet">https://www.onsemi.com/pdf/datasheet/ss19-d.pdf</field>
+        <field name="Description">Diode</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__D" description="Diode"/>
+      <property name="Sim.Device" value="D"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="MPN" value="SS19"/>
+      <property name="Manufacturer" value="onsemi"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b74e9107-083c-4817-9195-ae3753f51b53</tstamps>
+    </comp>
+    <comp ref="D7">
+      <value>SS19</value>
+      <footprint>ENSEA_Footprints:D7</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/ss19-d.pdf</datasheet>
+      <description>Diode</description>
+      <fields>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+        <field name="MPN">SS19</field>
+        <field name="Manufacturer">onsemi</field>
+        <field name="Footprint">ENSEA_Footprints:D7</field>
+        <field name="Datasheet">https://www.onsemi.com/pdf/datasheet/ss19-d.pdf</field>
+        <field name="Description">Diode</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__D" description="Diode"/>
+      <property name="Sim.Device" value="D"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="MPN" value="SS19"/>
+      <property name="Manufacturer" value="onsemi"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d8575509-3f30-438b-a9e0-d212b2b5fb1a</tstamps>
+    </comp>
+    <comp ref="D8">
+      <value>BZT52H-C5V1</value>
+      <footprint>ENSEA_Footprints:D8</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf</datasheet>
+      <fields>
+        <field name="MPN">BZT52H-C5V1,115</field>
+        <field name="Manufacturer">Nexperia</field>
+        <field name="Statut_MPN">Selection V2</field>
+        <field name="Footprint">ENSEA_Footprints:D8</field>
+        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="ENSEA_V2__D_Zener_5V1" description="Zener diode"/>
+      <property name="MPN" value="BZT52H-C5V1,115"/>
+      <property name="Manufacturer" value="Nexperia"/>
+      <property name="Statut_MPN" value="Selection V2"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3f100fe8-369e-4026-93bd-c43d3fb59054</tstamps>
+    </comp>
+    <comp ref="D9">
+      <value>BZT52H-C5V1</value>
+      <footprint>ENSEA_Footprints:D9</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf</datasheet>
+      <fields>
+        <field name="MPN">BZT52H-C5V1,115</field>
+        <field name="Manufacturer">Nexperia</field>
+        <field name="Statut_MPN">Selection V2</field>
+        <field name="Footprint">ENSEA_Footprints:D9</field>
+        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="ENSEA_V2__D_Zener_5V1" description="Zener diode"/>
+      <property name="MPN" value="BZT52H-C5V1,115"/>
+      <property name="Manufacturer" value="Nexperia"/>
+      <property name="Statut_MPN" value="Selection V2"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bb66c2f4-4814-4150-9479-29ed42e1f031</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole_Pad</value>
+      <footprint>ENSEA_Footprints:H1</footprint>
+      <datasheet>~</datasheet>
+      <description>Mounting Hole with connection</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:H1</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Mechanical__MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0e2e9b0d-c2c8-4433-b299-7c9bd948c8f0</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole_Pad</value>
+      <footprint>ENSEA_Footprints:H2</footprint>
+      <datasheet>~</datasheet>
+      <description>Mounting Hole with connection</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:H2</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Mechanical__MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0f96c45d-3f45-44b6-ad6c-d4fcce1f3cf6</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole_Pad</value>
+      <footprint>ENSEA_Footprints:H3</footprint>
+      <datasheet>~</datasheet>
+      <description>Mounting Hole with connection</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:H3</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Mechanical__MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f9745261-34ca-43bb-9e14-0240aa767b72</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole_Pad</value>
+      <footprint>ENSEA_Footprints:H4</footprint>
+      <datasheet>~</datasheet>
+      <description>Mounting Hole with connection</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:H4</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Mechanical__MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <property name="ki_fp_filters" value="MountingHole*Pad*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0481b56d-b46e-4c9a-9284-91204a83e449</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x02</value>
+      <footprint>ENSEA_Footprints:J1</footprint>
+      <datasheet>~</datasheet>
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <fields>
+        <field name="MPN">B2B-XH-A(LF)(SN)</field>
+        <field name="Manufacturer">JST</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:J1</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector_Generic__Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="B2B-XH-A(LF)(SN)"/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dfc31805-6cea-4d47-8bbb-00fbf76b2516</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x04</value>
+      <footprint>ENSEA_Footprints:J4</footprint>
+      <datasheet>~</datasheet>
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <fields>
+        <field name="MPN">B4B-XH-A(LF)(SN)</field>
+        <field name="Manufacturer">JST</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:J4</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector_Generic__Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="B4B-XH-A(LF)(SN)"/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1d34cf1b-1516-48f7-8a8a-812dac00aee7</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>SQ2310ES-T1_BE3</value>
+      <footprint>ENSEA_Footprints:Q1</footprint>
+      <datasheet>https://www.vishay.com/docs/67036/sq2310es.pdf</datasheet>
+      <description>N-channel MOSFET, G=1 S=2 D=3, active HIGH</description>
+      <fields>
+        <field name="MPN">SQ2310ES-T1_BE3</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Footprint">ENSEA_Footprints:Q1</field>
+        <field name="Datasheet">https://www.vishay.com/docs/67036/sq2310es.pdf</field>
+        <field name="Description">N-channel MOSFET, G=1 S=2 D=3, active HIGH</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="ENSEA_V2__SQ2310ES_G1_S2_D3" description="SQ2310ES, N-channel, G=1 S=2 D=3, VGS abs max +/-8V"/>
+      <property name="MPN" value="SQ2310ES-T1_BE3"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET simulation"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eba22dcf-9815-4793-84a6-f86c64ba0da6</tstamps>
+    </comp>
+    <comp ref="Q3">
+      <value>SQ2310ES-T1_BE3</value>
+      <footprint>ENSEA_Footprints:Q3</footprint>
+      <datasheet>https://www.vishay.com/docs/67036/sq2310es.pdf</datasheet>
+      <description>N-channel MOSFET, G=1 S=2 D=3, active HIGH</description>
+      <fields>
+        <field name="MPN">SQ2310ES-T1_BE3</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Footprint">ENSEA_Footprints:Q3</field>
+        <field name="Datasheet">https://www.vishay.com/docs/67036/sq2310es.pdf</field>
+        <field name="Description">N-channel MOSFET, G=1 S=2 D=3, active HIGH</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="ENSEA_V2__SQ2310ES_G1_S2_D3" description="SQ2310ES, N-channel, G=1 S=2 D=3, VGS abs max +/-8V"/>
+      <property name="MPN" value="SQ2310ES-T1_BE3"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET simulation"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>446f2abc-c924-43ac-afd3-d93124c56891</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>4k7</value>
+      <footprint>ENSEA_Footprints:R1</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-074K7L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R1</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-074K7L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9a686a28-0fac-4d0e-a4a8-ccaaefdb570d</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>4k99</value>
+      <footprint>ENSEA_Footprints:R3</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-074K99L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R3</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-074K99L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ad8290c9-7a6c-4726-8b98-a1b5a00a099b</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>ENSEA_Footprints:R4</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Statut_MPN">Selection V2</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R4</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Statut_MPN" value="Selection V2"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b65822b7-29f0-4be3-b95b-bf60ef80ee5a</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>1k</value>
+      <footprint>ENSEA_Footprints:R5</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-071KL</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R5</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-071KL"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>57542ee9-44e6-4f72-b830-544bbfc1035f</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>4k99</value>
+      <footprint>ENSEA_Footprints:R6</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-074K99L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R6</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-074K99L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08c8f546-0795-4917-bbec-acfa761024cd</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>1k</value>
+      <footprint>ENSEA_Footprints:R7</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-071KL</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R7</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-071KL"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ce2aabe5-0327-4bed-8e58-d3b5160ed80f</tstamps>
+    </comp>
+    <comp ref="R15">
+      <value>10k</value>
+      <footprint>ENSEA_Footprints:R15</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-0710KL</field>
+        <field name="Statut_MPN">Selection V2</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R15</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-0710KL"/>
+      <property name="Statut_MPN" value="Selection V2"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5dcfbe72-8ce8-4c69-a580-95d0e5aba7f4</tstamps>
+    </comp>
+    <comp ref="R19">
+      <value>4k7</value>
+      <footprint>ENSEA_Footprints:R19</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-074K7L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R19</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-074K7L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1829ba79-da04-4780-b303-9fbca74d5a09</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>TestPoint</value>
+      <footprint>ENSEA_Footprints:TP1</footprint>
+      <datasheet>~</datasheet>
+      <description>test point</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:TP1</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">test point</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector__TestPoint" description="test point"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fb6502e3-8297-48f3-ae45-05d59aebeb92</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>TestPoint</value>
+      <footprint>ENSEA_Footprints:TP2</footprint>
+      <datasheet>~</datasheet>
+      <description>test point</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:TP2</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">test point</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector__TestPoint" description="test point"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1b7a3ef7-5bdf-43f2-b134-6ea5219a1d2d</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>TestPoint</value>
+      <footprint>ENSEA_Footprints:TP3</footprint>
+      <datasheet>~</datasheet>
+      <description>test point</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:TP3</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">test point</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector__TestPoint" description="test point"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3445301a-3f6e-43a6-8d82-33221343c101</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>TestPoint</value>
+      <footprint>ENSEA_Footprints:TP4</footprint>
+      <datasheet>~</datasheet>
+      <description>test point</description>
+      <fields>
+        <field name="MPN">N/A - element cuivre/mecanique du PCB</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="Footprint">ENSEA_Footprints:TP4</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">test point</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector__TestPoint" description="test point"/>
+      <property name="MPN" value="N/A - element cuivre/mecanique du PCB"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <property name="ki_fp_filters" value="Pin* Test*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b69ba2c0-55ed-4831-8624-0659ca7725a1</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>GPIO_2x20_P2.54</value>
+      <footprint>ENSEA_Footprints:U1</footprint>
+      <fields>
+        <field name="Commentaire_BOM">Connecteur PCB 2x20 ; Raspberry Pi 5 externe</field>
+        <field name="MPN">61304021121</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:U1</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Mylibrary__Raspberry_Pi_5" description=""/>
+      <property name="Commentaire_BOM" value="Connecteur PCB 2x20 ; Raspberry Pi 5 externe"/>
+      <property name="MPN" value="61304021121"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="PCB_Caisse_Enregistreuse.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>edf12b8a-2109-409d-ac40-69a67c3b878c</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>100n</value>
+      <footprint>ENSEA_Footprints:C2</footprint>
+      <datasheet>https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">KAM15AR71C104KM</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="Footprint">ENSEA_Footprints:C2</field>
+        <field name="Datasheet">https://ele.kyocera.com/assets/products/capacitor/KGM_Series_e.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="KAM15AR71C104KM"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>99e3b2a7-4f76-4ead-807b-85e296be5726</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>47u</value>
+      <footprint>ENSEA_Footprints:C5</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012109011.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012109011</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C5</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012109011.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012109011"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>b6f802e9-1e6c-467a-9c26-e0c02d454e83</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>2u2</value>
+      <footprint>ENSEA_Footprints:C6</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012106029.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012106029</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C6</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012106029.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012106029"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>6608ac8a-8ea8-472a-a700-7097932287f7</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>2u2</value>
+      <footprint>ENSEA_Footprints:C7</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012106029.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012106029</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C7</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012106029.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012106029"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>fceb7401-d9fe-4a0d-8f6e-d450e7b0bad4</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>2u2</value>
+      <footprint>ENSEA_Footprints:C8</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012106029.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012106029</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C8</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012106029.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012106029"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>5349e93b-94e4-47e2-b2f6-f07956062299</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>220u</value>
+      <footprint>ENSEA_Footprints:C9</footprint>
+      <datasheet>~</datasheet>
+      <description>Polarized capacitor</description>
+      <fields>
+        <field name="MPN">865060657012</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C9</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Polarized" description="Polarized capacitor"/>
+      <property name="MPN" value="865060657012"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>fc696e10-c8c2-4ef6-aec5-11c5c6bc99ed</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>2u2</value>
+      <footprint>ENSEA_Footprints:C10</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012106029.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012106029</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C10</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012106029.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012106029"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>68ac78d5-be21-40d6-a157-0ec31a5f3fb9</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>100n</value>
+      <footprint>ENSEA_Footprints:C11</footprint>
+      <datasheet>~</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">KAM15AR71C104KM</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:C11</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="KAM15AR71C104KM"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>3cf7af44-c01c-4fa8-8f57-600d28f53772</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>47u</value>
+      <footprint>ENSEA_Footprints:C12</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012109011.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012109011</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C12</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012109011.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012109011"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>f1973bd2-6e7d-4b2a-be04-02001f6fc25c</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>47u</value>
+      <footprint>ENSEA_Footprints:C13</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/885012109011.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">885012109011</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:C13</field>
+        <field name="Datasheet">https://www.we-online.com/components/products/datasheet/885012109011.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="885012109011"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>d3b4f7cc-8af0-44e3-b4bb-07160e937931</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>4n7</value>
+      <footprint>ENSEA_Footprints:C15</footprint>
+      <datasheet>https://yageogroup.com/download/specsheet/CC0805JRNPO9BN472</datasheet>
+      <description>4.7 nF C0G 5% 50 V 0805, compensation TPS54560B</description>
+      <fields>
+        <field name="MPN">CC0805JRNPO9BN472</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:C15</field>
+        <field name="Datasheet">https://yageogroup.com/download/specsheet/CC0805JRNPO9BN472</field>
+        <field name="Description">4.7 nF C0G 5% 50 V 0805, compensation TPS54560B</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="CC0805JRNPO9BN472"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>ff6b028c-96ce-4755-a032-1cbc46a59067</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>47p</value>
+      <footprint>ENSEA_Footprints:C16</footprint>
+      <datasheet>https://datasheets.kyocera-avx.com/U-Series.pdf</datasheet>
+      <description>Unpolarized capacitor, small symbol</description>
+      <fields>
+        <field name="MPN">06035U470GAT2A</field>
+        <field name="Manufacturer">KYOCERA AVX</field>
+        <field name="Footprint">ENSEA_Footprints:C16</field>
+        <field name="Datasheet">https://datasheets.kyocera-avx.com/U-Series.pdf</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="06035U470GAT2A"/>
+      <property name="Manufacturer" value="KYOCERA AVX"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>4a3cc409-dd1e-488f-8e89-36b4723b58c3</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>B560C</value>
+      <footprint>ENSEA_Footprints:D2</footprint>
+      <datasheet>https://4donline.ihs.com/images/VipMasterIC/IC/DIOD/DIOD-S-A0007810469/DIOD-S-A0007810469-1.pdf?hkey=CECEF36DEECDED6468708AAF2E19C0C6</datasheet>
+      <description>B560C Schottky 5A 60V, cathode=1 anode=2</description>
+      <fields>
+        <field name="MPN">B560C-13-F</field>
+        <field name="Manufacturer">Diodes Incorporated</field>
+        <field name="Footprint">ENSEA_Footprints:D2</field>
+        <field name="Datasheet">https://4donline.ihs.com/images/VipMasterIC/IC/DIOD/DIOD-S-A0007810469/DIOD-S-A0007810469-1.pdf?hkey=CECEF36DEECDED6468708AAF2E19C0C6</field>
+        <field name="Description">B560C Schottky 5A 60V, cathode=1 anode=2</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Diode__MBRS340" description="40V 3A Schottky Barrier Rectifier Diode, SMC (DO-214AB)"/>
+      <property name="MPN" value="B560C-13-F"/>
+      <property name="Manufacturer" value="Diodes Incorporated"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="*D*SMC*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>14c1e8e4-fef5-4586-ad32-838248fdd8b1</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>Amber_LED</value>
+      <footprint>ENSEA_Footprints:D3</footprint>
+      <datasheet>~</datasheet>
+      <description>Light emitting diode</description>
+      <fields>
+        <field name="MPN">150060AS55040</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:D3</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Light emitting diode</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__LED" description="Light emitting diode"/>
+      <property name="MPN" value="150060AS55040"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <property name="ki_fp_filters" value="LED* LED_SMD:* LED_THT:*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>13574873-1d15-4f5d-a030-c2e84f2effc4</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>Green_LED</value>
+      <footprint>ENSEA_Footprints:D5</footprint>
+      <datasheet>~</datasheet>
+      <description>Light emitting diode</description>
+      <fields>
+        <field name="MPN">150060GS55040</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+        <field name="Manufacturer">Wurth Elektronik</field>
+        <field name="Footprint">ENSEA_Footprints:D5</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Light emitting diode</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__LED" description="Light emitting diode"/>
+      <property name="MPN" value="150060GS55040"/>
+      <property name="Sim.Pins" value="1=K 2=A"/>
+      <property name="Manufacturer" value="Wurth Elektronik"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="LED diode"/>
+      <property name="ki_fp_filters" value="LED* LED_SMD:* LED_THT:*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>ad7d1c47-3bb2-4998-9445-2cd536c77225</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Barrel_Jack_Switch</value>
+      <footprint>ENSEA_Footprints:J2</footprint>
+      <datasheet>https://fr.farnell.com/cliff-electronic-components/fc681465s/double-alim-dc-jack-2a-12vdc-cms/dp/2520583</datasheet>
+      <description>DC Barrel Jack with an internal switch</description>
+      <fields>
+        <field name="MPN">FC681465S</field>
+        <field name="Manufacturer">CLIFF</field>
+        <field name="Footprint">ENSEA_Footprints:J2</field>
+        <field name="Datasheet">https://fr.farnell.com/cliff-electronic-components/fc681465s/double-alim-dc-jack-2a-12vdc-cms/dp/2520583</field>
+        <field name="Description">DC Barrel Jack with an internal switch</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector__Barrel_Jack_Switch" description="DC Barrel Jack with an internal switch"/>
+      <property name="MPN" value="FC681465S"/>
+      <property name="Manufacturer" value="CLIFF"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="DC power barrel jack connector"/>
+      <property name="ki_fp_filters" value="BarrelJack*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>21630270-0f76-410d-a0b4-091806cd1e91</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x02</value>
+      <footprint>ENSEA_Footprints:J3</footprint>
+      <datasheet>~</datasheet>
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <fields>
+        <field name="MPN">B2B-XH-A(LF)(SN)</field>
+        <field name="Manufacturer">JST</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:J3</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Connector_Generic__Conn_01x02" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="B2B-XH-A(LF)(SN)"/>
+      <property name="Manufacturer" value="JST"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>78f8bdc7-439e-4854-8dcf-342676b05896</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>7u2</value>
+      <footprint>ENSEA_Footprints:L1</footprint>
+      <datasheet>https://yageogroup.com/content/datasheet/asset/file/DATASHEET_P896</datasheet>
+      <description>Inductor with iron core, small symbol</description>
+      <fields>
+        <field name="MPN">PM5433.722NLT</field>
+        <field name="Manufacturer">Pulse Electronics</field>
+        <field name="Footprint">ENSEA_Footprints:L1</field>
+        <field name="Datasheet">https://yageogroup.com/content/datasheet/asset/file/DATASHEET_P896</field>
+        <field name="Description">Inductor with iron core, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__L_Iron_Small" description="Inductor with iron core, small symbol"/>
+      <property name="MPN" value="PM5433.722NLT"/>
+      <property name="Manufacturer" value="Pulse Electronics"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>dd0d66e0-62f7-44f4-acc5-23ed966a2ee1</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>53k6</value>
+      <footprint>ENSEA_Footprints:R2</footprint>
+      <datasheet>https://www.mouser.fr/datasheet/3/508/1/PYU_AC_51_ROHS_L.pdf</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">AC0603FR-1353K6L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R2</field>
+        <field name="Datasheet">https://www.mouser.fr/datasheet/3/508/1/PYU_AC_51_ROHS_L.pdf</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603FR-1353K6L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>9d4b29ab-a9ef-4657-a752-5dc699e64594</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>4k99</value>
+      <footprint>ENSEA_Footprints:R8</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-074K99L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R8</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-074K99L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>b8372c19-7dd9-40f2-b982-43da39994b69</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>10k2</value>
+      <footprint>ENSEA_Footprints:R9</footprint>
+      <datasheet>https://www.mouser.fr/datasheet/3/508/1/PYU_AC_51_ROHS_L.pdf</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">AC0603FR-1310K2L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R9</field>
+        <field name="Datasheet">https://www.mouser.fr/datasheet/3/508/1/PYU_AC_51_ROHS_L.pdf</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AC0603FR-1310K2L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>5dad25a9-03f3-4747-81c4-d5b0e99125c6</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>16k9</value>
+      <footprint>ENSEA_Footprints:R10</footprint>
+      <datasheet>https://www.mouser.fr/datasheet/3/508/1/PYu-AA_51_RoHS_L_3.pdf</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">AA0603FR-0716K9L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R10</field>
+        <field name="Datasheet">https://www.mouser.fr/datasheet/3/508/1/PYu-AA_51_RoHS_L_3.pdf</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="AA0603FR-0716K9L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>03bbf05b-9838-4d55-9d63-38afbde6b683</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>243k</value>
+      <footprint>ENSEA_Footprints:R11</footprint>
+      <datasheet>https://www.mouser.fr/datasheet/3/72/1/PYU_RT_1_TO_0_01_ROHS_L.pdf</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RT0603DRE07243KL</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R11</field>
+        <field name="Datasheet">https://www.mouser.fr/datasheet/3/72/1/PYU_RT_1_TO_0_01_ROHS_L.pdf</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RT0603DRE07243KL"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>1a1ef738-e442-4fdc-8f78-d9c15071fd0c</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>90k9</value>
+      <footprint>ENSEA_Footprints:R12</footprint>
+      <datasheet>https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&amp;DocId=Data+Sheet%7F1773200%7FM%7Fpdf%7FEnglish%7FENG_DS_1773200_M.pdf</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-0790K9L</field>
+        <field name="Statut_MPN">Selection V2</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Footprint">ENSEA_Footprints:R12</field>
+        <field name="Datasheet">https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&amp;DocId=Data+Sheet%7F1773200%7FM%7Fpdf%7FEnglish%7FENG_DS_1773200_M.pdf</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-0790K9L"/>
+      <property name="Statut_MPN" value="Selection V2"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>721cde57-3ae0-4369-b907-46f9f08336ce</tstamps>
+    </comp>
+    <comp ref="R13">
+      <value>442k</value>
+      <footprint>ENSEA_Footprints:R13</footprint>
+      <datasheet>https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C334.pdf</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">ERJ-S03F4423V</field>
+        <field name="Manufacturer">Panasonic</field>
+        <field name="Footprint">ENSEA_Footprints:R13</field>
+        <field name="Datasheet">https://industrial.panasonic.com/cdbs/www-data/pdf/RDP0000/AOA0000C334.pdf</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="ERJ-S03F4423V"/>
+      <property name="Manufacturer" value="Panasonic"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>9cabc01e-1023-4163-9380-697e6b3f7933</tstamps>
+    </comp>
+    <comp ref="R14">
+      <value>4k99</value>
+      <footprint>ENSEA_Footprints:R14</footprint>
+      <datasheet>~</datasheet>
+      <description>Resistor, small symbol</description>
+      <fields>
+        <field name="MPN">RC0603FR-074K99L</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="Statut_MPN">Selection V2 - controle mecanique avant commande</field>
+        <field name="Footprint">ENSEA_Footprints:R14</field>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="RC0603FR-074K99L"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="Statut_MPN" value="Selection V2 - controle mecanique avant commande"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>42b410da-87b2-47f5-80b9-324d7685a9c1</tstamps>
+    </comp>
+    <comp ref="U5">
+      <value>TPS54560BDDA</value>
+      <footprint>ENSEA_Footprints:U5</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tps54560b.pdf</datasheet>
+      <description>5A, Step Down DC-DC Converter, 4.5-60V Input Voltage, Texas R-PDSO-G8</description>
+      <fields>
+        <field name="MPN">TPS54560BDDA</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Footprint">ENSEA_Footprints:U5</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps54560b.pdf</field>
+        <field name="Description">5A, Step Down DC-DC Converter, 4.5-60V Input Voltage, Texas R-PDSO-G8</field>
+      </fields>
+      <libsource lib="ENSEA_Symbols" part="Regulator_Switching__TPS54560BDDA" description="5A, Step Down DC-DC Converter, 4.5-60V Input Voltage, Texas R-PDSO-G8"/>
+      <property name="MPN" value="TPS54560BDDA"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Sheetname" value="Power_supply"/>
+      <property name="Sheetfile" value="Power_supply.kicad_sch"/>
+      <property name="ki_keywords" value="buck controller"/>
+      <property name="ki_fp_filters" value="Texas*R*PDSO*G8*"/>
+      <sheetpath names="/Power_supply/" tstamps="/583caee4-06cb-464d-94cc-72050f5141d6/"/>
+      <tstamps>94a87ae4-9857-4c57-a5b2-f2c08a5e5865</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="ENSEA_Symbols" part="Connector_Generic__Conn_01x02">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Connector_Generic__Conn_01x04">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Connector__Barrel_Jack_Switch">
+      <description>DC Barrel Jack with an internal switch</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>BarrelJack*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Barrel_Jack_Switch</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">DC Barrel Jack with an internal switch</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+        <pin num="3" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Connector__TestPoint">
+      <description>test point</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Pin*</fp>
+        <fp>Test*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TestPoint</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">test point</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__Buzzer">
+      <description>Buzzer, polarized</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>*Buzzer*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">BZ</field>
+        <field name="Value">Buzzer</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Buzzer, polarized</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__C_Polarized">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__D">
+      <description>Diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Diode</field>
+        <field name="Sim.Device">D</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Light emitting diode</field>
+        <field name="Sim.Pins">1=K 2=A</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__L_Iron_Small">
+      <description>Inductor with iron core, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L_Iron_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Inductor with iron core, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Device__R_Small">
+      <description>Resistor, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Diode__MBRS340">
+      <description>40V 3A Schottky Barrier Rectifier Diode, SMC (DO-214AB)</description>
+      <docs>https://www.onsemi.com/download/data-sheet/pdf/mbrs340t3-d.pdf</docs>
+      <footprints>
+        <fp>*D*SMC*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">MBRS340</field>
+        <field name="Footprint">Diode_SMD:D_SMC</field>
+        <field name="Datasheet">https://www.onsemi.com/download/data-sheet/pdf/mbrs340t3-d.pdf</field>
+        <field name="Description">40V 3A Schottky Barrier Rectifier Diode, SMC (DO-214AB)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="ENSEA_V2__D_Zener_5V1">
+      <description>Zener diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Zener</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Zener diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="ENSEA_V2__SQ2310ES_G1_S2_D3">
+      <description>SQ2310ES, N-channel, G=1 S=2 D=3, VGS abs max +/-8V</description>
+      <docs>https://www.vishay.com/docs/67036/sq2310es.pdf</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">NMOS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">https://www.vishay.com/docs/67036/sq2310es.pdf</field>
+        <field name="Description">SQ2310ES, N-channel, G=1 S=2 D=3, VGS abs max +/-8V</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Mechanical__MountingHole_Pad">
+      <description>Mounting Hole with connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*Pad*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole_Pad</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Mounting Hole with connection</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Mylibrary__Raspberry_Pi_5">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value"/>
+        <field name="Footprint">Connector_PinHeader_2.54mm:PinHeader_2x20_P2.54mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3.3V" type="passive"/>
+        <pin num="2" name="5V" type="passive"/>
+        <pin num="3" name="I2C1_SDA" type="passive"/>
+        <pin num="4" name="5V" type="passive"/>
+        <pin num="5" name="I2C1_SCL" type="passive"/>
+        <pin num="6" name="GND" type="passive"/>
+        <pin num="7" name="GPIO_4" type="passive"/>
+        <pin num="8" name="UART0_TX" type="passive"/>
+        <pin num="9" name="GND" type="passive"/>
+        <pin num="10" name="UART0_RX" type="passive"/>
+        <pin num="11" name="GPIO_17" type="passive"/>
+        <pin num="12" name="GPIO_18" type="passive"/>
+        <pin num="13" name="GPIO_27" type="passive"/>
+        <pin num="14" name="GND" type="passive"/>
+        <pin num="15" name="GPIO_22" type="passive"/>
+        <pin num="16" name="GPIO_23" type="passive"/>
+        <pin num="17" name="3.3V" type="passive"/>
+        <pin num="18" name="GPIO_24" type="passive"/>
+        <pin num="19" name="SPI0_MOSI" type="passive"/>
+        <pin num="20" name="GND" type="passive"/>
+        <pin num="21" name="SPI0_MISO" type="passive"/>
+        <pin num="22" name="GPIO_25" type="passive"/>
+        <pin num="23" name="SPI0_SCLK" type="passive"/>
+        <pin num="24" name="SPI0_CS0" type="passive"/>
+        <pin num="25" name="GND" type="passive"/>
+        <pin num="26" name="SPI0_CS1" type="passive"/>
+        <pin num="27" name="Reserved" type="passive"/>
+        <pin num="28" name="Reserved" type="passive"/>
+        <pin num="29" name="GPIO_5" type="passive"/>
+        <pin num="30" name="GND" type="passive"/>
+        <pin num="31" name="GPIO_6" type="passive"/>
+        <pin num="32" name="GPIO_12" type="passive"/>
+        <pin num="33" name="GPIO_13" type="passive"/>
+        <pin num="34" name="GND" type="passive"/>
+        <pin num="35" name="GPIO_19" type="passive"/>
+        <pin num="36" name="GPIO_16" type="passive"/>
+        <pin num="37" name="GPIO_26" type="passive"/>
+        <pin num="38" name="GPIO_20" type="passive"/>
+        <pin num="39" name="GND" type="passive"/>
+        <pin num="40" name="GPIO_21" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="ENSEA_Symbols" part="Regulator_Switching__TPS54560BDDA">
+      <description>5A, Step Down DC-DC Converter, 4.5-60V Input Voltage, Texas R-PDSO-G8</description>
+      <docs>https://www.ti.com/lit/ds/symlink/tps54560b.pdf</docs>
+      <footprints>
+        <fp>Texas*R*PDSO*G8*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U5</field>
+        <field name="Value">TPS54560BDDA</field>
+        <field name="Footprint">Package_SO:Texas_R-PDSO-G8_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps54560b.pdf</field>
+        <field name="Description">5A, Step Down DC-DC Converter, 4.5-60V Input Voltage, Texas R-PDSO-G8</field>
+        <field name="MPN">595-TPS54560BDDA </field>
+      </fields>
+      <pins>
+        <pin num="1" name="BOOT" type="passive"/>
+        <pin num="2" name="VIN" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="RT/CLK" type="passive"/>
+        <pin num="5" name="FB" type="input"/>
+        <pin num="6" name="COMP" type="output"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="SW" type="power_out"/>
+        <pin num="9" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="ENSEA_Symbols">
+      <uri>/workspace/scratch/18f33083818f/output/PCB_ENSEA_V2/Hardware/Caisse_Fixe/ENSEA_Symbols.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3.3V" class="Default">
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="J4" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="R19" pin="2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="3.3V" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="3.3V" pintype="passive"/>
+    </net>
+    <net code="2" name="+12V_RAW" class="Default">
+      <node ref="J2" pin="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="3" name="+12V_SW" class="Default">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5" pin="2" pinfunction="VIN" pintype="power_in"/>
+    </net>
+    <net code="4" name="/Buzzer_PWM" class="Default">
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="GPIO_23" pintype="passive"/>
+    </net>
+    <net code="5" name="/Ouv_Tiroir" class="Default">
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="TP4" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="GPIO_18" pintype="passive"/>
+    </net>
+    <net code="6" name="/Power_supply/BUCK_SW" class="Default">
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="L1" pin="1" pintype="passive"/>
+      <node ref="U5" pin="8" pinfunction="SW" pintype="power_out"/>
+    </net>
+    <net code="7" name="/Power_supply/FB" class="Default">
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U5" pin="5" pinfunction="FB" pintype="input"/>
+    </net>
+    <net code="8" name="/Q1_GATE" class="Default">
+      <node ref="D8" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="9" name="/Q3_GATE" class="Default">
+      <node ref="D9" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="Q3" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="/SCL" class="Default">
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R19" pin="1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="I2C1_SCL" pintype="passive"/>
+    </net>
+    <net code="11" name="/SDA" class="Default">
+      <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="I2C1_SDA" pintype="passive"/>
+    </net>
+    <net code="12" name="GND" class="Default">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D8" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D9" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="H1" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H2" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H3" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H4" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="J2" pin="2" pintype="passive"/>
+      <node ref="J2" pin="3" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q3" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="25" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="30" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="34" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="39" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="GND" pintype="passive"/>
+      <node ref="U5" pin="7" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5" pin="9" pinfunction="GND" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(BZ1--)" class="Default">
+      <node ref="BZ1" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(C15-Pad1)" class="Default">
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(D1-A)" class="Default">
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(D3-A)" class="Default">
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(D4-A)" class="Default">
+      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(D5-A)" class="Default">
+      <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="19" name="Net-(D6-A)" class="Default">
+      <node ref="D6" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Q3" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(U5-BOOT)" class="Default">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="U5" pin="1" pinfunction="BOOT" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(U5-COMP)" class="Default">
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+      <node ref="U5" pin="6" pinfunction="COMP" pintype="output"/>
+    </net>
+    <net code="22" name="Net-(U5-EN)" class="Default">
+      <node ref="R12" pin="1" pintype="passive"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U5" pin="3" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="23" name="Net-(U5-RT/CLK)" class="Default">
+      <node ref="R11" pin="1" pintype="passive"/>
+      <node ref="U5" pin="4" pinfunction="RT/CLK" pintype="passive"/>
+    </net>
+    <net code="24" name="VOUT 5V" class="Default">
+      <node ref="BZ1" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="L1" pin="2" pintype="passive"/>
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="5V" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="5V" pintype="passive"/>
+    </net>
+    <net code="25" name="unconnected-(U1-GPIO_4-Pad7)" class="Default">
+      <node ref="U1" pin="7" pinfunction="GPIO_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="26" name="unconnected-(U1-GPIO_5-Pad29)" class="Default">
+      <node ref="U1" pin="29" pinfunction="GPIO_5" pintype="passive+no_connect"/>
+    </net>
+    <net code="27" name="unconnected-(U1-GPIO_6-Pad31)" class="Default">
+      <node ref="U1" pin="31" pinfunction="GPIO_6" pintype="passive+no_connect"/>
+    </net>
+    <net code="28" name="unconnected-(U1-GPIO_12-Pad32)" class="Default">
+      <node ref="U1" pin="32" pinfunction="GPIO_12" pintype="passive+no_connect"/>
+    </net>
+    <net code="29" name="unconnected-(U1-GPIO_13-Pad33)" class="Default">
+      <node ref="U1" pin="33" pinfunction="GPIO_13" pintype="passive+no_connect"/>
+    </net>
+    <net code="30" name="unconnected-(U1-GPIO_16-Pad36)" class="Default">
+      <node ref="U1" pin="36" pinfunction="GPIO_16" pintype="passive+no_connect"/>
+    </net>
+    <net code="31" name="unconnected-(U1-GPIO_17-Pad11)" class="Default">
+      <node ref="U1" pin="11" pinfunction="GPIO_17" pintype="passive+no_connect"/>
+    </net>
+    <net code="32" name="unconnected-(U1-GPIO_19-Pad35)" class="Default">
+      <node ref="U1" pin="35" pinfunction="GPIO_19" pintype="passive+no_connect"/>
+    </net>
+    <net code="33" name="unconnected-(U1-GPIO_20-Pad38)" class="Default">
+      <node ref="U1" pin="38" pinfunction="GPIO_20" pintype="passive+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(U1-GPIO_21-Pad40)" class="Default">
+      <node ref="U1" pin="40" pinfunction="GPIO_21" pintype="passive+no_connect"/>
+    </net>
+    <net code="35" name="unconnected-(U1-GPIO_22-Pad15)" class="Default">
+      <node ref="U1" pin="15" pinfunction="GPIO_22" pintype="passive+no_connect"/>
+    </net>
+    <net code="36" name="unconnected-(U1-GPIO_24-Pad18)" class="Default">
+      <node ref="U1" pin="18" pinfunction="GPIO_24" pintype="passive+no_connect"/>
+    </net>
+    <net code="37" name="unconnected-(U1-GPIO_25-Pad22)" class="Default">
+      <node ref="U1" pin="22" pinfunction="GPIO_25" pintype="passive+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(U1-GPIO_26-Pad37)" class="Default">
+      <node ref="U1" pin="37" pinfunction="GPIO_26" pintype="passive+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(U1-GPIO_27-Pad13)" class="Default">
+      <node ref="U1" pin="13" pinfunction="GPIO_27" pintype="passive+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(U1-Reserved-Pad27)" class="Default">
+      <node ref="U1" pin="27" pinfunction="Reserved" pintype="passive+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(U1-Reserved-Pad28)" class="Default">
+      <node ref="U1" pin="28" pinfunction="Reserved" pintype="passive+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(U1-SPI0_CS0-Pad24)" class="Default">
+      <node ref="U1" pin="24" pinfunction="SPI0_CS0" pintype="passive+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(U1-SPI0_CS1-Pad26)" class="Default">
+      <node ref="U1" pin="26" pinfunction="SPI0_CS1" pintype="passive+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(U1-SPI0_MISO-Pad21)" class="Default">
+      <node ref="U1" pin="21" pinfunction="SPI0_MISO" pintype="passive+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(U1-SPI0_MOSI-Pad19)" class="Default">
+      <node ref="U1" pin="19" pinfunction="SPI0_MOSI" pintype="passive+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U1-SPI0_SCLK-Pad23)" class="Default">
+      <node ref="U1" pin="23" pinfunction="SPI0_SCLK" pintype="passive+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U1-UART0_RX-Pad10)" class="Default">
+      <node ref="U1" pin="10" pinfunction="UART0_RX" pintype="passive+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(U1-UART0_TX-Pad8)" class="Default">
+      <node ref="U1" pin="8" pinfunction="UART0_TX" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

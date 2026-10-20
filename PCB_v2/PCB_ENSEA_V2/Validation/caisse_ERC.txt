@@ -1,0 +1,8 @@
+ERC report (2026-10-20T07:22:46+0100, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+
+***** Sheet /Power_supply/
+
+ ** ERC messages: 0  Errors 0  Warnings 0

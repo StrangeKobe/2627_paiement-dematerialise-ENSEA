@@ -1,0 +1,24 @@
+[
+  {
+    "carte": "caisse",
+    "pastilles_comparees_au_schema": 170,
+    "broches_V1_comparees": 158,
+    "modifications_connexions_non_prevues": 0,
+    "ERC_anomalies": 0,
+    "DRC_anomalies": 0,
+    "liaisons_non_routees": 0,
+    "ecarts_schema_PCB": 0,
+    "regles_projet_inchangees": true
+  },
+  {
+    "carte": "terminal",
+    "pastilles_comparees_au_schema": 98,
+    "broches_V1_comparees": 96,
+    "modifications_connexions_non_prevues": 0,
+    "ERC_anomalies": 0,
+    "DRC_anomalies": 0,
+    "liaisons_non_routees": 0,
+    "ecarts_schema_PCB": 0,
+    "regles_projet_inchangees": true
+  }
+]
