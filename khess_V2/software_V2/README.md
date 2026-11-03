@@ -101,3 +101,26 @@ d’anonymisation et d’accès technique à `/admin/` reste à valider.
 
 Voir [`CAS_SETUP.md`](Test_App_Django/CAS_SETUP.md) pour chaque variable et chaque
 condition d’activation. Aucun serveur, identifiant ou secret réel n’est fourni.
+
+## Ce qu’il reste à faire pour la version finale
+
+### À faire dès maintenant
+
+- [ ] 1. Définir la démonstration finale : actions de l’étudiant, du vendeur et de l’administrateur avec des comptes fictifs.
+- [ ] 2. Vérifier les fonctions déjà présentes : achat, recharge en espèces, solde, stock, QR code, droits d’accès et historique.
+- [ ] 3. Corriger les problèmes trouvés et ajouter des tests automatiques, notamment pour un solde insuffisant et un double paiement.
+
+### Selon les accès et le matériel disponibles
+
+- [ ] 4. Finaliser la recharge en ligne avec HelloAsso si des accès de test sont obtenus. Sinon, montrer une démonstration fictive et signaler cette limite.
+- [ ] 5. Essayer CAS avec le vrai service ENSEA si l’école fournit les informations et l’accès. En attendant, garder la connexion locale et distinguer les tests CAS simulés d’un essai réel.
+- [ ] 6. Tester le lecteur QR déjà retenu : vérifier sa communication avec le terminal et la lecture des codes en conditions normales.
+- [ ] 7. Assembler et essayer les cartes électroniques V2. Les contrôles des fichiers de conception ne prouvent pas encore le fonctionnement des cartes assemblées.
+- [ ] 8. Relier l’application Django, la caisse et le terminal, puis réaliser un achat complet avec des comptes et paiements fictifs.
+
+### À préparer maintenant, puis à valider sur la version complète
+
+- [ ] 9. Préparer l’exploitation : configuration adaptée, base de données, HTTPS, contrôle des accès, sauvegarde et essai de restauration.
+- [ ] 10. Préparer les scénarios des vagues de tests, réaliser les essais, corriger les défauts, faire essayer la démonstration par une personne extérieure au binôme et terminer les guides.
+
+Le RFID ne fait plus partie du périmètre retenu.
