@@ -61,14 +61,3 @@ La correction de C15 est fondée sur la comparaison du montage avec la figure 32
 - Contrôle visuel des schémas et des exports de couches ; bibliothèque locale cohérente avec les empreintes embarquées.
 
 À réaliser sur prototype : continuité hors tension, polarités, montée du 5 V avec alimentation limitée en courant, essais en charge/transitoires et thermiques, vérification des commandes au démarrage, essais courts du tiroir, puis tests RFID/OLED/QR et buzzer.
-
-## Sources de référence
-
-- Retour d'expérience et projets KiCad de l'archive fournie, conservés pour la partie documentaire dans `Documentation_origine/`.
-- Vishay, **SQ2310ES**, brochage et VGS : https://www.vishay.com/docs/67036/sq2310es.pdf
-- Nexperia, **BZT52H series**, Zener 5,1 V : https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf
-- Texas Instruments, **TPS54560B**, schéma 5 V et compensation, figure 32 / section 8.2.2.11 : https://www.ti.com/lit/ds/symlink/tps54560b.pdf
-- Yageo, **CC0805JRNPO9BN472**, 4 700 pF C0G 0805 : https://yageogroup.com/download/specsheet/CC0805JRNPO9BN472
-- Yageo, **RC0603FR-074K99L** : https://www.yageogroup.com/component-documentation/download/specsheet/RC0603FR-074K99L
-- Same Sky, **CMI-1295-0585T** : https://www.sameskydevices.com/product/audio/buzzers/audio-indicators/cmi-1295-0585t
-- KiCad, commandes de validation et d'export : https://docs.kicad.org/9.0/en/cli/cli.html
