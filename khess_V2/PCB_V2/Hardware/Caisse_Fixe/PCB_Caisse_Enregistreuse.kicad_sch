@@ -7,119 +7,11 @@
 	(title_block
 		(title "PCB_Caisse_Enregistreuse")
 		(date "2026-10-20")
+		(rev "V2")
 		(company "ENSEA")
-		(comment 1 "Maxime RAMBARANE-BARAT")
-	
-(rev "V2")
-)
+		(comment 1 "Rayan LAGHOUANE")
+	)
 	(lib_symbols
-		(symbol "ENSEA_Symbols:Connector__TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Connector__TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Connector__TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "ENSEA_Symbols:Connector_Generic__Conn_01x02"
 			(pin_names
 				(offset 1.016)
@@ -452,6 +344,113 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ENSEA_Symbols:Connector__TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Connector__TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Connector__TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1222,6 +1221,442 @@
 					(at 0 -2.54 90)
 					(length 0.762)
 					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Zener"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ENSEA_V2__D_Zener_5V1_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ENSEA_V2__D_Zener_5V1_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ENSEA_Symbols:ENSEA_V2__SQ2310ES_G1_S2_D3"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "NMOS"
+				(at 5.08 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.vishay.com/docs/67036/sq2310es.pdf"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "SQ2310ES, N-channel, G=1 S=2 D=3, VGS abs max +/-8V"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET simulation"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ENSEA_V2__SQ2310ES_G1_S2_D3_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ENSEA_V2__SQ2310ES_G1_S2_D3_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2569,296 +3004,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ENSEA_Symbols:ENSEA_V2__SQ2310ES_G1_S2_D3"
-			
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "NMOS"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/docs/67036/sq2310es.pdf"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "SQ2310ES, N-channel, G=1 S=2 D=3, VGS abs max +/-8V"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			
-			
-			
-			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET simulation"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "ENSEA_V2__SQ2310ES_G1_S2_D3_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "ENSEA_V2__SQ2310ES_G1_S2_D3_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "ENSEA_Symbols:power__+3.3V"
 			(power)
 			(pin_numbers
@@ -3311,158 +3456,7 @@
 			)
 			(embedded_fonts no)
 		)
-	
-(symbol "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1"
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 1.016)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(property "Reference" "D"
-			(at 0 2.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Zener"
-			(at 0 -2.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener diode"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ki_keywords" "diode"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(symbol "ENSEA_V2__D_Zener_5V1_0_1"
-			(polyline
-				(pts
-					(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 0) (xy -1.27 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "ENSEA_V2__D_Zener_5V1_1_1"
-			(pin passive line
-				(at -3.81 0 0)
-				(length 2.54)
-				(name "K"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 3.81 0 180)
-				(length 2.54)
-				(name "A"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
 	)
-)
 	(rectangle
 		(start 13.97 151.13)
 		(end 101.6 190.5)
@@ -3556,6 +3550,17 @@
 			)
 		)
 		(uuid "10fb92ee-2b02-4059-99d1-247c19f56cbc")
+	)
+	(text "V2 : MOSFET N, actif HIGH ; Zener 5V1 ; BZ1 actif 5V.\nBZ1 : CMI-1295-0585T. Pour PS1720P02, voir README."
+		(exclude_from_sim no)
+		(at 177.8 158.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "1d27a708-c058-4ebb-9550-0431e961e825")
 	)
 	(text "ouvre et ferme l'interrupteur avec un petit courant \npour éviter de griller le buzzer\n"
 		(exclude_from_sim no)
@@ -3879,6 +3884,16 @@
 	)
 	(wire
 		(pts
+			(xy 228.6 114.3) (xy 236.22 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f32cf64-2139-4814-99a4-7eaae51b0aee")
+	)
+	(wire
+		(pts
 			(xy 143.51 88.9) (xy 127 88.9)
 		)
 		(stroke
@@ -4166,6 +4181,16 @@
 			(type default)
 		)
 		(uuid "5a56fcf1-5db7-4330-8274-d4ba6036fcc0")
+	)
+	(wire
+		(pts
+			(xy 238.76 68.58) (xy 246.38 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e99e80f-cc3d-48ad-a049-bbbfcea39a52")
 	)
 	(wire
 		(pts
@@ -4519,6 +4544,16 @@
 	)
 	(wire
 		(pts
+			(xy 246.38 68.58) (xy 246.38 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b031ef5c-55f7-4407-8f87-f87f9f09d130")
+	)
+	(wire
+		(pts
 			(xy 132.08 175.26) (xy 118.11 175.26)
 		)
 		(stroke
@@ -4689,6 +4724,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 114.3) (xy 236.22 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eabc5f30-54f8-4ca8-bf5f-8a40278db535")
+	)
+	(wire
+		(pts
 			(xy 173.99 41.91) (xy 173.99 45.72)
 		)
 		(stroke
@@ -4807,6 +4852,16 @@
 		)
 		(uuid "1f5a82c2-a3a1-43e2-b8af-1f037aa51544")
 	)
+	(label "Q1_GATE"
+		(at 238.76 68.58 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "30ebb8ce-44ae-48e1-9961-c687eb046174")
+	)
 	(label "Buzzer_PWM"
 		(at 59.69 166.37 0)
 		(effects
@@ -4826,6 +4881,26 @@
 			(justify right bottom)
 		)
 		(uuid "43dbdab1-c2fe-4768-8881-ddc15e84300c")
+	)
+	(label "Q3_GATE"
+		(at 246.38 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a439764-0584-4e97-8519-8c94d716b1ab")
+	)
+	(label "Q3_GATE"
+		(at 228.6 114.3 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "63438ec3-98be-48a8-bb6f-e1a4dcd32dca")
 	)
 	(label "Ouv_Tiroir"
 		(at 143.51 83.82 180)
@@ -4877,6 +4952,16 @@
 		)
 		(uuid "e8ca8a92-3854-4b7b-849f-f5e6aa481ef6")
 	)
+	(label "Q1_GATE"
+		(at 213.36 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f6292c92-f42e-4092-9313-c8c209c98574")
+	)
 	(label "Ouv_Tiroir"
 		(at 77.47 166.37 0)
 		(effects
@@ -4886,6 +4971,46 @@
 			(justify left bottom)
 		)
 		(uuid "f6814cbe-1678-493e-8062-9996407fad69")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 213.36 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4c7adbb7-bc37-4155-881c-dc0476be5767")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GND"
+		(shape input)
+		(at 246.38 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d0902ed9-c723-4829-8826-9be9c74a8e0b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 246.38 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Mechanical__MountingHole_Pad")
@@ -4940,6 +5065,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 166.37 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 166.37 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "30e87870-0c47-479d-aa94-a0e27736b1eb")
 		)
@@ -4951,11 +5094,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 166.37 189.23 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 166.37 189.23 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 76.2 64.77 0)
@@ -5078,6 +5217,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K99L"
+			(at 173.99 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 173.99 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 173.99 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b2d20ae3-5b64-4e97-9501-c9b4818b471d")
 		)
@@ -5092,13 +5258,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K99L" (at 173.99 77.47 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 173.99 77.47 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 173.99 77.47 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__LED")
 		(at 173.99 86.36 90)
@@ -5172,6 +5332,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 173.99 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d7b85371-c0e8-429c-9aca-c780d17532cb")
 		)
@@ -5186,9 +5355,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 173.99 86.36 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 162.56 49.53 0)
@@ -5243,6 +5410,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "KAM15AR71C104KM"
+			(at 162.56 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 162.56 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 162.56 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "17d97e7b-bee9-4697-ab43-c580257ffbda")
 		)
@@ -5257,13 +5451,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "KAM15AR71C104KM" (at 162.56 49.53 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "KYOCERA AVX" (at 162.56 49.53 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 162.56 49.53 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Mechanical__MountingHole_Pad")
 		(at 166.37 167.64 90)
@@ -5317,6 +5505,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 166.37 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 166.37 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5cf87932-05f5-49c9-b4f0-9a239fef43fd")
 		)
@@ -5328,11 +5534,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 166.37 167.64 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 166.37 167.64 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Mechanical__MountingHole_Pad")
 		(at 166.37 175.26 90)
@@ -5386,6 +5588,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 166.37 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 166.37 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4b3ec313-2150-4da9-a8a9-6157feca35be")
 		)
@@ -5397,11 +5617,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 166.37 175.26 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 166.37 175.26 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 243.84 133.35 0)
@@ -5521,6 +5737,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K7L"
+			(at 83.82 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 83.82 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 83.82 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d418b6e1-8ec2-444c-a262-78615fb44e42")
 		)
@@ -5535,13 +5778,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K7L" (at 83.82 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 83.82 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 83.82 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector__TestPoint")
 		(at 45.72 173.99 180)
@@ -5597,6 +5834,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 45.72 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 45.72 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d8f4ae63-4787-4568-a026-046c7f64a840")
 		)
@@ -5608,11 +5863,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 45.72 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 45.72 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector_Generic__Conn_01x04")
 		(at 111.76 172.72 180)
@@ -5666,6 +5917,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 111.76 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 111.76 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 111.76 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "77d3924d-0093-47a9-a3b1-c87e666d201c")
 		)
@@ -5686,13 +5964,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "B4B-XH-A(LF)(SN)" (at 111.76 172.72 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "JST" (at 111.76 172.72 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 111.76 172.72 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 173.99 106.68 0)
@@ -6013,6 +6285,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 59.69 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 59.69 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2f7f72e8-5f9f-4e30-921d-8ee5e9857fdf")
 		)
@@ -6024,11 +6314,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 59.69 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 59.69 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 130.81 93.98 90)
@@ -6091,6 +6377,106 @@
 			(project "PCB_Caisse_Enregistreuse"
 				(path "/02c80df9-57c5-42a1-97de-7efad2ef1bd4"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1")
+		(at 213.36 151.13 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3f100fe8-369e-4026-93bd-c43d3fb59054")
+		(property "Reference" "D8"
+			(at 217.17 149.86 90)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BZT52H-C5V1"
+			(at 217.17 152.4 90)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ENSEA_Footprints:D8"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BZT52H-C5V1,115"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "06acfa75-7b3e-499f-bf79-d5cb8e37c402")
+		)
+		(pin "2"
+			(uuid "aa4241e9-d0a2-4ffb-af4b-e876d8aab88b")
+		)
+		(instances
+			(project "PCB_Caisse_Enregistreuse"
+				(path "/02c80df9-57c5-42a1-97de-7efad2ef1bd4"
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -6217,10 +6603,16 @@
 				(hide yes)
 			)
 		)
-		
-		
-		
 		(property "MPN" "SQ2310ES-T1_BE3"
+			(at 241.3 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay"
 			(at 241.3 120.65 0)
 			(effects
 				(font
@@ -6246,9 +6638,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Vishay" (at 241.3 120.65 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 118.11 176.53 0)
@@ -6434,6 +6824,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-071KL"
+			(at 228.6 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 228.6 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 228.6 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d7d57f36-961b-4b98-a70c-bff5dc697e8a")
 		)
@@ -6448,13 +6865,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-071KL" (at 228.6 120.65 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 228.6 120.65 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 228.6 120.65 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 119.38 166.37 0)
@@ -6643,6 +7054,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-0710KL"
+			(at 233.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2"
+			(at 233.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 233.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7cd4b406-c69d-453c-9776-58e3e2f520b6")
 		)
@@ -6657,13 +7095,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-0710KL" (at 233.68 127 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2" (at 233.68 127 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 233.68 127 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 185.42 50.8 0)
@@ -6718,6 +7150,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "KAM15AR71C104KM"
+			(at 185.42 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 185.42 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 185.42 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "deedfa7a-9119-4c21-bc53-31cf401c257f")
 		)
@@ -6732,13 +7191,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "KAM15AR71C104KM" (at 185.42 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "KYOCERA AVX" (at 185.42 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 185.42 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 173.99 54.61 0)
@@ -6932,6 +7385,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 173.99 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c2212f06-d22a-4b40-9785-74b0908d4d6d")
 		)
@@ -6946,9 +7408,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 173.99 50.8 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 130.81 111.76 90)
@@ -7135,6 +7595,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "885012206002"
+			(at 132.08 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 132.08 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 132.08 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9eca0fec-e097-43d1-8bba-722ee0caa8af")
 		)
@@ -7149,13 +7636,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "885012206002" (at 132.08 171.45 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Wurth Elektronik" (at 132.08 171.45 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 132.08 171.45 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 151.13 41.91 0)
@@ -7417,6 +7898,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 151.13 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "227c4d71-c86c-4b67-8f49-00dce16bf571")
 		)
@@ -7431,9 +7921,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 151.13 49.53 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 162.56 53.34 0)
@@ -7551,6 +8039,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K7L"
+			(at 76.2 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 76.2 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 76.2 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b65bb3d0-2d74-41e5-acb3-cceb6dd9907e")
 		)
@@ -7565,13 +8080,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K7L" (at 76.2 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 76.2 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 76.2 69.85 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+48V")
 		(at 232.41 106.68 0)
@@ -8091,6 +8600,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K99L"
+			(at 173.99 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 173.99 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 173.99 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d836584f-135e-48cd-b77c-5d9a5f4249d1")
 		)
@@ -8105,13 +8641,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K99L" (at 173.99 111.76 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 173.99 111.76 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 173.99 111.76 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 173.99 72.39 0)
@@ -8232,6 +8762,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-0710KL"
+			(at 246.38 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2"
+			(at 246.38 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 246.38 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3df69133-350c-4f8b-8c7a-55c828aceba5")
 		)
@@ -8246,13 +8803,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-0710KL" (at 246.38 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2" (at 246.38 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 246.38 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector__TestPoint")
 		(at 77.47 173.99 180)
@@ -8308,6 +8859,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 77.47 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 77.47 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "47888ee0-61b9-4cc2-a544-a184f255f1ff")
 		)
@@ -8319,11 +8888,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 77.47 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 77.47 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__D")
 		(at 243.84 110.49 270)
@@ -8406,6 +8971,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "onsemi"
+			(at 243.84 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "374eff4f-7e72-4db7-80a1-eaa09d6e082d")
 		)
@@ -8420,9 +8994,107 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "onsemi" (at 243.84 110.49 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
+	(symbol
+		(lib_id "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1")
+		(at 246.38 151.13 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bb66c2f4-4814-4150-9479-29ed42e1f031")
+		(property "Reference" "D9"
+			(at 250.19 149.86 90)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BZT52H-C5V1"
+			(at 250.19 152.4 90)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ENSEA_Footprints:D9"
+			(at 251.46 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf"
+			(at 251.46 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BZT52H-C5V1,115"
+			(at 251.46 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 251.46 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2"
+			(at 251.46 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9412b3c1-bab5-45ac-86e1-f5ecdbc6d127")
+		)
+		(pin "2"
+			(uuid "e144820f-38de-4b93-b3ac-ce95877ec7c1")
+		)
+		(instances
+			(project "PCB_Caisse_Enregistreuse"
+				(path "/02c80df9-57c5-42a1-97de-7efad2ef1bd4"
+					(reference "D9")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 91.44 91.44 90)
@@ -8676,6 +9348,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-071KL"
+			(at 241.3 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 241.3 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 241.3 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9b5c127b-5232-4104-8508-1f5a68741707")
 		)
@@ -8690,13 +9389,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-071KL" (at 241.3 74.93 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 241.3 74.93 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 241.3 74.93 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__D")
 		(at 255.27 62.23 270)
@@ -8779,6 +9472,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "onsemi"
+			(at 255.27 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "043a2786-3c37-46e3-b5a0-64ceb41c4aef")
 		)
@@ -8793,9 +9495,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "onsemi" (at 255.27 62.23 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__Buzzer")
 		(at 265.43 63.5 0)
@@ -8819,7 +9519,7 @@
 			(at 269.24 64.7699 0)
 			(effects
 				(font
-					(size 1.0 1.0)
+					(size 1 1)
 				)
 				(justify left)
 			)
@@ -8860,6 +9560,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Same Sky"
+			(at 265.43 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "52f97a8c-709e-4ea5-bd44-276fcf050200")
 		)
@@ -8874,9 +9583,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Same Sky" (at 265.43 63.5 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector_Generic__Conn_01x02")
 		(at 264.16 106.68 0)
@@ -8932,6 +9639,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "B2B-XH-A(LF)(SN)"
+			(at 264.16 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 264.16 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 264.16 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d69684c8-0c83-4eaf-8081-b84876dd4730")
 		)
@@ -8946,13 +9680,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "B2B-XH-A(LF)(SN)" (at 264.16 106.68 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "JST" (at 264.16 106.68 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 264.16 106.68 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:ENSEA_V2__SQ2310ES_G1_S2_D3")
 		(at 251.46 74.93 0)
@@ -9008,10 +9736,16 @@
 				(hide yes)
 			)
 		)
-		
-		
-		
 		(property "MPN" "SQ2310ES-T1_BE3"
+			(at 251.46 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay"
 			(at 251.46 74.93 0)
 			(effects
 				(font
@@ -9037,9 +9771,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Vishay" (at 251.46 74.93 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 91.44 119.38 270)
@@ -9153,6 +9885,42 @@
 			)
 		)
 		(property "Description" ""
+			(at 113.03 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Commentaire_BOM" "Connecteur PCB 2x20 ; Raspberry Pi 5 externe"
+			(at 113.03 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "61304021121"
+			(at 113.03 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 113.03 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
 			(at 113.03 88.9 0)
 			(effects
 				(font
@@ -9289,15 +10057,7 @@
 				)
 			)
 		)
-	
-(property "Commentaire_BOM" "Connecteur PCB 2x20 ; Raspberry Pi 5 externe" (at 113.03 88.9 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "MPN" "61304021121" (at 113.03 88.9 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Wurth Elektronik" (at 113.03 88.9 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 113.03 88.9 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 173.99 127 0)
@@ -9503,6 +10263,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 173.99 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9f1c0825-9a07-4385-abcd-491d5cf19038")
 		)
@@ -9517,9 +10286,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 173.99 120.65 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Mechanical__MountingHole_Pad")
 		(at 166.37 181.61 90)
@@ -9573,6 +10340,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 166.37 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 166.37 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b5625cc8-374b-46c6-b86b-f02bf13d25ae")
 		)
@@ -9584,11 +10369,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 166.37 181.61 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 166.37 181.61 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector__TestPoint")
 		(at 30.48 173.99 180)
@@ -9644,6 +10425,24 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "N/A - element cuivre/mecanique du PCB"
+			(at 30.48 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "N/A"
+			(at 30.48 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "adc30f95-c83a-4a98-9b30-e4d652d16067")
 		)
@@ -9655,11 +10454,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "N/A - element cuivre/mecanique du PCB" (at 30.48 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "N/A" (at 30.48 173.99 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(sheet
 		(at 13.97 80.01)
 		(size 33.02 12.7)
@@ -9708,30 +10503,4 @@
 		)
 	)
 	(embedded_fonts no)
-
-(global_label "GND" (shape input) (at 213.36 154.94 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "4c7adbb7-bc37-4155-881c-dc0476be5767") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 213.36 147.32 0) (effects (font (size 1.27 1.27)) (hide yes))))
-
-(global_label "GND" (shape input) (at 246.38 154.94 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "d0902ed9-c723-4829-8826-9be9c74a8e0b") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 246.38 147.32 0) (effects (font (size 1.27 1.27)) (hide yes))))
-
-(label "Q1_GATE" (at 213.36 147.32 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f6292c92-f42e-4092-9313-c8c209c98574"))
-
-(label "Q1_GATE" (at 238.76 68.58 0) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid "30ebb8ce-44ae-48e1-9961-c687eb046174"))
-
-(label "Q3_GATE" (at 228.6 114.3 0) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid "63438ec3-98be-48a8-bb6f-e1a4dcd32dca"))
-
-(label "Q3_GATE" (at 246.38 147.32 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "5a439764-0584-4e97-8519-8c94d716b1ab"))
-
-(symbol (lib_id "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1") (at 213.36 151.13 270) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "3f100fe8-369e-4026-93bd-c43d3fb59054")
- (property "Reference" "D8" (at 217.17 149.86 90) (effects (font (size 1.0 1.0)) (justify left) )) (property "Value" "BZT52H-C5V1" (at 217.17 152.4 90) (effects (font (size 1.0 1.0)) (justify left) )) (property "Footprint" "ENSEA_Footprints:D8" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "MPN" "BZT52H-C5V1,115" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Manufacturer" "Nexperia" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Statut_MPN" "Selection V2" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (pin "1" (uuid "06acfa75-7b3e-499f-bf79-d5cb8e37c402")) (pin "2" (uuid "aa4241e9-d0a2-4ffb-af4b-e876d8aab88b"))
- (instances (project "PCB_Caisse_Enregistreuse" (path "/02c80df9-57c5-42a1-97de-7efad2ef1bd4" (reference "D8") (unit 1)))))
-
-(symbol (lib_id "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1") (at 246.38 151.13 270) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "bb66c2f4-4814-4150-9479-29ed42e1f031")
- (property "Reference" "D9" (at 250.19 149.86 90) (effects (font (size 1.0 1.0)) (justify left) )) (property "Value" "BZT52H-C5V1" (at 250.19 152.4 90) (effects (font (size 1.0 1.0)) (justify left) )) (property "Footprint" "ENSEA_Footprints:D9" (at 251.46 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf" (at 251.46 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "MPN" "BZT52H-C5V1,115" (at 251.46 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Manufacturer" "Nexperia" (at 251.46 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Statut_MPN" "Selection V2" (at 251.46 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (pin "1" (uuid "9412b3c1-bab5-45ac-86e1-f5ecdbc6d127")) (pin "2" (uuid "e144820f-38de-4b93-b3ac-ce95877ec7c1"))
- (instances (project "PCB_Caisse_Enregistreuse" (path "/02c80df9-57c5-42a1-97de-7efad2ef1bd4" (reference "D9") (unit 1)))))
-
-(text "V2 : MOSFET N, actif HIGH ; Zener 5V1 ; BZ1 actif 5V.\nBZ1 : CMI-1295-0585T. Pour PS1720P02, voir README." (at 177.8 158.75 0) (effects (font (size 1 1)) (justify left top)) (uuid "1d27a708-c058-4ebb-9550-0431e961e825"))
-
-(wire (pts (xy 228.6 114.3) (xy 236.22 114.3)) (stroke (width 0) (type default)) (uuid "0f32cf64-2139-4814-99a4-7eaae51b0aee"))(wire (pts (xy 236.22 114.3) (xy 236.22 120.65)) (stroke (width 0) (type default)) (uuid "eabc5f30-54f8-4ca8-bf5f-8a40278db535"))
-
-(wire (pts (xy 238.76 68.58) (xy 246.38 68.58)) (stroke (width 0) (type default)) (uuid "5e99e80f-cc3d-48ad-a049-bbbfcea39a52"))(wire (pts (xy 246.38 68.58) (xy 246.38 74.93)) (stroke (width 0) (type default)) (uuid "b031ef5c-55f7-4407-8f87-f87f9f09d130"))
 )

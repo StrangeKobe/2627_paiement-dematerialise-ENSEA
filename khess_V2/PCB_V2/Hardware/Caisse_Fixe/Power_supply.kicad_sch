@@ -5,6 +5,148 @@
 	(uuid "86143b49-bacf-447a-8820-400b4e02f625")
 	(paper "A4")
 	(lib_symbols
+		(symbol "ENSEA_Symbols:Connector_Generic__Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Connector_Generic__Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "ENSEA_Symbols:Connector__Barrel_Jack_Switch"
 			(pin_names
 				(hide yes)
@@ -210,148 +352,6 @@
 					(at 7.62 -2.54 180)
 					(length 2.54)
 					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "ENSEA_Symbols:Connector_Generic__Conn_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Connector_Generic__Conn_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2168,12 +2168,6 @@
 		(uuid "43567d61-62c1-45b3-8e01-9d5a3f5ae702")
 	)
 	(junction
-		(at 21.59 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "48bbced6-871c-4a4d-84c0-c4f9b2056e5a")
-	)
-	(junction
 		(at 130.81 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2250,6 +2244,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "be3c15de-a2bd-46ce-9716-247f265e0985")
+	)
+	(junction
+		(at 38.1 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3dadc87-32c0-4f6f-a700-02b73a7e2b22")
 	)
 	(junction
 		(at 34.29 55.88)
@@ -2847,7 +2847,6 @@
 		)
 		(uuid "7cf09020-c840-4c16-8c0c-cd0814149f6d")
 	)
-	
 	(wire
 		(pts
 			(xy 34.29 63.5) (xy 34.29 66.04)
@@ -3498,6 +3497,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Yageo"
+			(at 130.81 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "63ed18b8-da8a-4021-957c-af8f6632e893")
 		)
@@ -3512,9 +3520,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Yageo" (at 130.81 121.92 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 130.81 138.43 0)
@@ -3654,6 +3660,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0bbaba27-9731-44b1-bd7e-03d54d8cb7e7")
 		)
@@ -3668,9 +3683,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 87.63 67.31 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Diode__MBRS340")
 		(at 132.08 105.41 270)
@@ -3735,6 +3748,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Diodes Incorporated"
+			(at 132.08 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0a5b62ff-4917-479d-bb30-ee274377b3df")
 		)
@@ -3749,9 +3771,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Diodes Incorporated" (at 132.08 105.41 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 92.71 128.27 0)
@@ -3816,6 +3836,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Yageo"
+			(at 92.71 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "44c7ef45-a4a2-484d-9497-0de0f3f06614")
 		)
@@ -3830,9 +3859,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Yageo" (at 92.71 128.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector__Barrel_Jack_Switch")
 		(at 30.48 29.21 0)
@@ -3895,6 +3922,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "CLIFF"
+			(at 30.48 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8a4c9009-b1c7-420f-9255-00a48e07c7ec")
 		)
@@ -3912,9 +3948,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "CLIFF" (at 30.48 29.21 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 34.29 60.96 180)
@@ -3970,6 +4004,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "KAM15AR71C104KM"
+			(at 34.29 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 34.29 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 34.29 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "72fc6709-fee7-4dfb-b3c6-22c7c1f311cf")
 		)
@@ -3984,13 +4045,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "KAM15AR71C104KM" (at 34.29 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "KYOCERA AVX" (at 34.29 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 34.29 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 214.63 100.33 0)
@@ -4178,6 +4233,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K99L"
+			(at 214.63 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 214.63 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 214.63 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "217da02f-7ca3-44a7-a930-231b59bc5caa")
 		)
@@ -4192,13 +4274,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K99L" (at 214.63 106.68 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 214.63 106.68 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 214.63 106.68 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 181.61 121.92 0)
@@ -4329,6 +4405,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 143.51 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c7152369-fa55-4d6f-98dc-34becd865d13")
 		)
@@ -4343,9 +4428,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "KYOCERA AVX" (at 143.51 127 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 68.58 119.38 0)
@@ -4410,6 +4493,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 68.58 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "69c9b20b-b2cc-44ae-a54e-ae6352f97435")
 		)
@@ -4424,9 +4516,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 68.58 119.38 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 181.61 115.57 0)
@@ -4491,6 +4581,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Yageo"
+			(at 181.61 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dc12c0eb-b5dc-43d1-9554-3b83763f2834")
 		)
@@ -4505,9 +4604,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Yageo" (at 181.61 115.57 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 214.63 121.92 0)
@@ -4638,6 +4735,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 48.26 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "ca047b2e-3c71-4409-939a-40533cee2fc8")
 		)
@@ -4652,9 +4758,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 48.26 119.38 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 38.1 119.38 0)
@@ -4719,6 +4823,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 38.1 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9cafa9d5-827a-4bc9-90ac-a78f40aeee08")
 		)
@@ -4733,9 +4846,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 38.1 119.38 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__PWR_FLAG")
 		(at 195.58 92.71 0)
@@ -4932,6 +5043,24 @@
 				(hide yes)
 			)
 		)
+		(property "Statut_MPN" "Selection V2"
+			(at 85.09 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 85.09 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "aa7412c7-5c24-491b-ab21-8efde880b7c9")
 		)
@@ -4946,11 +5075,7 @@
 				)
 			)
 		)
-	
-(property "Statut_MPN" "Selection V2" (at 85.09 128.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 85.09 128.27 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector_Generic__Conn_01x02")
 		(at 33.02 76.2 0)
@@ -5006,6 +5131,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "B2B-XH-A(LF)(SN)"
+			(at 33.02 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 33.02 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 33.02 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0d6979fc-1cde-4ccc-8070-80d61a69f2ae")
 		)
@@ -5020,13 +5172,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "B2B-XH-A(LF)(SN)" (at 33.02 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "JST" (at 33.02 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 33.02 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 43.18 33.02 0)
@@ -5221,6 +5367,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 109.22 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "c9275905-13aa-49b1-9587-ebbd1f2d79ae")
 		)
@@ -5256,9 +5411,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Texas Instruments" (at 109.22 114.3 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 109.22 96.52 90)
@@ -5321,6 +5474,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 109.22 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8e7acccc-281b-4d88-8274-6196003b8987")
 		)
@@ -5335,9 +5497,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "KYOCERA AVX" (at 109.22 96.52 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 85.09 118.11 0)
@@ -5402,6 +5562,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Panasonic"
+			(at 85.09 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f0a094c3-bf52-432c-a84c-f75303678c6e")
 		)
@@ -5416,9 +5585,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Panasonic" (at 85.09 118.11 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 181.61 102.87 0)
@@ -5483,6 +5650,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Yageo"
+			(at 181.61 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "84274db7-df56-4688-b97d-38fcfaa16537")
 		)
@@ -5497,9 +5673,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Yageo" (at 181.61 102.87 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 38.1 127 0)
@@ -5639,6 +5813,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 214.63 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "42340e9a-265d-4328-9582-9e3aa291e480")
 		)
@@ -5653,9 +5836,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 214.63 115.57 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+48V")
 		(at 21.59 53.34 0)
@@ -5786,6 +5967,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 152.4 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "49cf93f4-da76-4b08-a809-9c1a358f525c")
 		)
@@ -5800,9 +5990,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 152.4 104.14 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 87.63 58.42 0)
@@ -5858,6 +6046,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K99L"
+			(at 87.63 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 87.63 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 87.63 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b8fff14e-2a34-420b-a599-213fd659d5ed")
 		)
@@ -5872,13 +6087,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K99L" (at 87.63 58.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 87.63 58.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 87.63 58.42 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 21.59 67.31 0)
@@ -6009,6 +6218,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 172.72 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "146ade7c-7ad4-4cc1-9efa-72640643fe8d")
 		)
@@ -6023,9 +6241,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 172.72 104.14 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__PWR_FLAG")
 		(at 35.56 110.49 0)
@@ -6154,6 +6370,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Pulse Electronics"
+			(at 143.51 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d4d9339e-8c6c-49b7-946d-5e4847156b20")
 		)
@@ -6168,9 +6393,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Pulse Electronics" (at 143.51 96.52 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__PWR_FLAG")
 		(at 38.1 26.67 0)
@@ -6196,9 +6419,8 @@
 				(font
 					(size 1.27 1.27)
 				)
-			
-(hide yes)
-)
+				(hide yes)
+			)
 		)
 		(property "Footprint" ""
 			(at 38.1 26.67 0)
@@ -6435,6 +6657,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 162.56 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "63a49005-42fd-4efa-92e8-aff6a3d24683")
 		)
@@ -6449,9 +6680,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 162.56 104.14 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 92.71 135.89 0)
@@ -6582,6 +6811,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 21.59 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0773b1e6-c0cf-44b9-84a9-d532ea077f9a")
 		)
@@ -6596,9 +6834,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 21.59 60.96 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 58.42 119.38 0)
@@ -6663,6 +6899,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 58.42 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "24646360-f836-4a54-846c-d3e97ace3212")
 		)
@@ -6677,9 +6922,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 58.42 119.38 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 130.81 132.08 0)
@@ -6743,6 +6986,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Yageo"
+			(at 130.81 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2564328c-0ced-4d39-b113-b1dca706daa3")
 		)
@@ -6757,11 +7009,5 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Yageo" (at 130.81 132.08 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
-
-
-
-(junction (at 38.1 26.67) (diameter 0) (color 0 0 0 0) (uuid "c3dadc87-32c0-4f6f-a700-02b73a7e2b22"))
+	)
 )

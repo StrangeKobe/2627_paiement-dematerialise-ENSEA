@@ -7,11 +7,10 @@
 	(title_block
 		(title "PCB_Caisse_Dématérialisée")
 		(date "2026-10-20")
+		(rev "V2")
 		(company "ENSEA")
-		(comment 1 "Maxime RAMBARANE-BARAT")
-	
-(rev "V2")
-)
+		(comment 1 "Rayan LAGHOUANE")
+	)
 	(lib_symbols
 		(symbol "ENSEA_Symbols:Connector_Generic__Conn_01x04"
 			(pin_names
@@ -1593,8 +1592,157 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Zener"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ENSEA_V2__D_Zener_5V1_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ENSEA_V2__D_Zener_5V1_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "ENSEA_Symbols:ENSEA_V2__SQ2310ES_G1_S2_D3"
-			
 			(pin_names
 				(offset 0)
 			)
@@ -1646,9 +1794,6 @@
 					(hide yes)
 				)
 			)
-			
-			
-			
 			(property "ki_keywords" "transistor NMOS N-MOS N-MOSFET simulation"
 				(at 0 0 0)
 				(effects
@@ -3233,158 +3378,7 @@
 			)
 			(embedded_fonts no)
 		)
-	
-(symbol "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1"
-		(pin_numbers
-			(hide yes)
-		)
-		(pin_names
-			(offset 1.016)
-			(hide yes)
-		)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(property "Reference" "D"
-			(at 0 2.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Zener"
-			(at 0 -2.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Zener diode"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ki_keywords" "diode"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(symbol "ENSEA_V2__D_Zener_5V1_0_1"
-			(polyline
-				(pts
-					(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 0) (xy -1.27 0)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
-				)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-		)
-		(symbol "ENSEA_V2__D_Zener_5V1_1_1"
-			(pin passive line
-				(at -3.81 0 0)
-				(length 2.54)
-				(name "K"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 3.81 0 180)
-				(length 2.54)
-				(name "A"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
 	)
-)
 	(rectangle
 		(start 176.53 97.79)
 		(end 227.33 138.43)
@@ -3464,6 +3458,17 @@
 			)
 		)
 		(uuid "5e1d788c-a53b-4356-b8eb-451981e7e597")
+	)
+	(text "V2 : MOSFET N, actif HIGH ; Zener 5V1 ; BZ1 actif 5V.\nJ1 : UART 3V3. Lecteur USB sur USB du Pi. Voir README."
+		(exclude_from_sim no)
+		(at 177.8 158.75 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "6c0a13b7-9baf-4f4c-8c78-e53c1114a312")
 	)
 	(text "ouvre et ferme l'interrupteur avec un petit courant \npour éviter de griller le buzzer\n"
 		(exclude_from_sim no)
@@ -4178,6 +4183,16 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 72.39) (xy 204.47 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d6860f5-72d7-4d85-888a-164ecc6d992d")
+	)
+	(wire
+		(pts
 			(xy 113.03 49.53) (xy 120.65 49.53)
 		)
 		(stroke
@@ -4465,6 +4480,16 @@
 			(type default)
 		)
 		(uuid "a9140672-8b3e-45ec-8410-149a408f7e48")
+	)
+	(wire
+		(pts
+			(xy 196.85 72.39) (xy 204.47 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9b909a5-711b-4d82-8fe2-a032d506f8fc")
 	)
 	(wire
 		(pts
@@ -4826,6 +4851,16 @@
 		)
 		(uuid "01baf65a-75a1-4400-92fd-51c0155e5305")
 	)
+	(label "Q1_GATE"
+		(at 213.36 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0d8f9f3a-1f86-4060-b38e-ac2ed5534954")
+	)
 	(label "OLED_CS"
 		(at 36.83 69.85 0)
 		(effects
@@ -5046,6 +5081,16 @@
 		)
 		(uuid "cbc647e5-5d0e-4f1d-bcc8-d3254a6e1b03")
 	)
+	(label "Q1_GATE"
+		(at 196.85 72.39 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "cfb8d1da-85ee-4b15-884d-289ddac95d44")
+	)
 	(label "RFID_MISO"
 		(at 36.83 74.93 0)
 		(effects
@@ -5075,6 +5120,26 @@
 			(justify left bottom)
 		)
 		(uuid "f95b67ec-8463-4f3a-b6c7-0074ea5481c7")
+	)
+	(global_label "GND"
+		(shape input)
+		(at 213.36 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "692377ed-9342-4831-987b-615ba91eff93")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 213.36 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
@@ -5394,6 +5459,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K99L"
+			(at 154.94 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 154.94 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 154.94 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b2d20ae3-5b64-4e97-9501-c9b4818b471d")
 		)
@@ -5408,13 +5500,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K99L" (at 154.94 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 154.94 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 154.94 76.2 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__LED")
 		(at 154.94 85.09 90)
@@ -5488,6 +5574,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d7b85371-c0e8-429c-9aca-c780d17532cb")
 		)
@@ -5502,9 +5597,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 154.94 85.09 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 143.51 33.02 0)
@@ -5625,6 +5718,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K99L"
+			(at 154.94 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 154.94 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 154.94 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4dc041c1-39af-4c64-8724-ad2232f22e3f")
 		)
@@ -5639,13 +5759,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K99L" (at 154.94 110.49 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 154.94 110.49 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 154.94 110.49 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 212.09 87.63 0)
@@ -5773,6 +5887,106 @@
 			(project ""
 				(path "/f527cadd-9438-4426-b4ac-9eb72c375d31"
 					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1")
+		(at 213.36 151.13 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ce750c4-1e2d-4852-91e6-a0b5c3a9ead2")
+		(property "Reference" "D8"
+			(at 217.17 149.86 90)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BZT52H-C5V1"
+			(at 217.17 152.4 90)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ENSEA_Footprints:D8"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "BZT52H-C5V1,115"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2"
+			(at 218.44 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "983487f4-0b71-4b0d-8fc2-e12dd74d6bb5")
+		)
+		(pin "2"
+			(uuid "240e173b-47ba-456e-ad1c-e5c4d07f02cc")
+		)
+		(instances
+			(project "PCB_Caisse_Dématérialisée"
+				(path "/f527cadd-9438-4426-b4ac-9eb72c375d31"
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -6295,6 +6509,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "KAM15AR71C104KM"
+			(at 166.37 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 166.37 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 166.37 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "deedfa7a-9119-4c21-bc53-31cf401c257f")
 		)
@@ -6309,13 +6550,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "KAM15AR71C104KM" (at 166.37 30.48 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "KYOCERA AVX" (at 166.37 30.48 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 166.37 30.48 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 154.94 34.29 0)
@@ -6575,6 +6810,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 154.94 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c2212f06-d22a-4b40-9785-74b0908d4d6d")
 		)
@@ -6589,9 +6833,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 154.94 30.48 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 132.08 33.02 0)
@@ -6710,6 +6952,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K7L"
+			(at 31.75 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 31.75 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 31.75 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e13c2c0e-7693-4c15-b588-256d44f97f01")
 		)
@@ -6724,13 +6993,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K7L" (at 31.75 52.07 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 31.75 52.07 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 31.75 52.07 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 41.91 52.07 180)
@@ -6786,6 +7049,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-074K7L"
+			(at 41.91 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 41.91 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 41.91 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b65bb3d0-2d74-41e5-acb3-cceb6dd9907e")
 		)
@@ -6800,13 +7090,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-074K7L" (at 41.91 52.07 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 41.91 52.07 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 41.91 52.07 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+5V")
 		(at 191.77 114.3 90)
@@ -6937,6 +7221,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 218.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8067143c-b040-4d94-8255-475ad9bb7e84")
 		)
@@ -6951,9 +7244,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 218.44 116.84 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 154.94 24.13 0)
@@ -7083,6 +7374,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 264.16 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "591ad284-94cf-4922-a31f-5f2a2b1da8a0")
 		)
@@ -7097,9 +7397,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 264.16 35.56 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 264.16 39.37 0)
@@ -7352,6 +7650,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "KAM15AR71C104KM"
+			(at 143.51 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "KYOCERA AVX"
+			(at 143.51 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 143.51 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "639e0887-81ea-4531-a5c3-a9f524fc74a3")
 		)
@@ -7366,13 +7691,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "KAM15AR71C104KM" (at 143.51 29.21 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "KYOCERA AVX" (at 143.51 29.21 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 143.51 29.21 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 210.82 30.48 0)
@@ -7559,6 +7878,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-0710KL"
+			(at 204.47 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2"
+			(at 204.47 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 204.47 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "24a0fc99-c1df-4107-82bf-f2c4c5110b58")
 		)
@@ -7573,13 +7919,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-0710KL" (at 204.47 82.55 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2" (at 204.47 82.55 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 204.47 82.55 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__PWR_FLAG")
 		(at 130.81 49.53 0)
@@ -7717,6 +8057,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "JST"
+			(at 247.65 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Module_reference_origine" "Code : 38089 (Gotronic)"
+			(at 247.65 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 247.65 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "073ec14a-554c-410a-93d4-10c2dd62acb3")
 		)
@@ -7746,13 +8113,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "JST" (at 247.65 36.83 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Module_reference_origine" "Code : 38089 (Gotronic)" (at 247.65 36.83 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 247.65 36.83 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__R_Small")
 		(at 199.39 78.74 90)
@@ -7806,6 +8167,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "RC0603FR-071KL"
+			(at 199.39 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Yageo"
+			(at 199.39 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 199.39 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9b5c127b-5232-4104-8508-1f5a68741707")
 		)
@@ -7820,13 +8208,7 @@
 				)
 			)
 		)
-	
-(property "MPN" "RC0603FR-071KL" (at 199.39 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Yageo" (at 199.39 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 199.39 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__C_Small")
 		(at 132.08 29.21 0)
@@ -7890,6 +8272,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 132.08 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "963fa50c-622b-4687-b2f5-bb2f9efbf60a")
 		)
@@ -7904,9 +8295,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 132.08 29.21 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Device__D")
 		(at 213.36 66.04 270)
@@ -7989,6 +8378,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "onsemi"
+			(at 213.36 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "043a2786-3c37-46e3-b5a0-64ceb41c4aef")
 		)
@@ -8003,9 +8401,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "onsemi" (at 213.36 66.04 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+5V")
 		(at 218.44 113.03 0)
@@ -8161,7 +8557,7 @@
 			(at 227.33 68.5799 0)
 			(effects
 				(font
-					(size 1.0 1.0)
+					(size 1 1)
 				)
 				(justify left)
 			)
@@ -8202,6 +8598,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Same Sky"
+			(at 223.52 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "52f97a8c-709e-4ea5-bd44-276fcf050200")
 		)
@@ -8216,9 +8621,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Same Sky" (at 223.52 67.31 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:raspberry_pi_zero_2_w__RASPBERRY_PI_ZERO_2_W")
 		(at 82.55 80.01 0)
@@ -8383,6 +8786,42 @@
 				(hide yes)
 			)
 		)
+		(property "Commentaire_BOM" "Module Pi Zero 2 W ; verifier connecteur et hauteur assemblage"
+			(at 82.55 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "SC0510"
+			(at 82.55 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Raspberry Pi"
+			(at 82.55 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 82.55 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "16"
 			(uuid "1b098165-868f-4c5b-9e84-aa5ebd75aeb8")
 		)
@@ -8511,15 +8950,7 @@
 				)
 			)
 		)
-	
-(property "Commentaire_BOM" "Module Pi Zero 2 W ; verifier connecteur et hauteur assemblage" (at 82.55 80.01 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "MPN" "SC0510" (at 82.55 80.01 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Manufacturer" "Raspberry Pi" (at 82.55 80.01 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 82.55 80.01 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector_Generic__Conn_01x04")
 		(at 205.74 116.84 0)
@@ -8610,6 +9041,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "JST"
+			(at 205.74 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Module_reference_origine" "MC-3000"
+			(at 205.74 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 205.74 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1ebe3845-325f-4ed0-98a6-4a1e719cd846")
 		)
@@ -8630,13 +9088,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "JST" (at 205.74 116.84 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Module_reference_origine" "MC-3000" (at 205.74 116.84 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 205.74 116.84 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 233.68 41.91 270)
@@ -8765,6 +9217,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 210.82 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "55eadef9-e7c0-402f-8693-f04a84ac932f")
 		)
@@ -8779,9 +9240,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 210.82 34.29 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__+3.3V")
 		(at 154.94 105.41 0)
@@ -8903,10 +9362,16 @@
 				(hide yes)
 			)
 		)
-		
-		
-		
 		(property "MPN" "SQ2310ES-T1_BE3"
+			(at 209.55 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Vishay"
 			(at 209.55 78.74 0)
 			(effects
 				(font
@@ -8932,9 +9397,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Vishay" (at 209.55 78.74 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:Connector_Generic__Conn_01x08")
 		(at 199.39 35.56 0)
@@ -9008,6 +9471,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "JST"
+			(at 199.39 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Module_reference_origine" "Code : 34942 (Gotronic)"
+			(at 199.39 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Statut_MPN" "Selection V2 - controle mecanique avant commande"
+			(at 199.39 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "85905071-e48c-4aa6-81b8-401a4299e5c9")
 		)
@@ -9040,13 +9530,7 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "JST" (at 199.39 35.56 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Module_reference_origine" "Code : 34942 (Gotronic)" (at 199.39 35.56 0) (effects (font (size 1.27 1.27)) (hide yes)))
-
-(property "Statut_MPN" "Selection V2 - controle mecanique avant commande" (at 199.39 35.56 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(symbol
 		(lib_id "ENSEA_Symbols:power__GND")
 		(at 184.15 38.1 270)
@@ -9186,6 +9670,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Wurth Elektronik"
+			(at 154.94 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9f1c0825-9a07-4385-abcd-491d5cf19038")
 		)
@@ -9200,27 +9693,11 @@
 				)
 			)
 		)
-	
-(property "Manufacturer" "Wurth Elektronik" (at 154.94 119.38 0) (effects (font (size 1.27 1.27)) (hide yes)))
-)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
 		)
 	)
 	(embedded_fonts no)
-
-(global_label "GND" (shape input) (at 213.36 154.94 0) (effects (font (size 1.27 1.27)) (justify left)) (uuid "692377ed-9342-4831-987b-615ba91eff93") (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 213.36 147.32 0) (effects (font (size 1.27 1.27)) (hide yes))))
-
-(label "Q1_GATE" (at 196.85 72.39 0) (effects (font (size 1.0 1.0)) (justify left bottom)) (uuid "cfb8d1da-85ee-4b15-884d-289ddac95d44"))
-
-(label "Q1_GATE" (at 213.36 147.32 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "0d8f9f3a-1f86-4060-b38e-ac2ed5534954"))
-
-(symbol (lib_id "ENSEA_Symbols:ENSEA_V2__D_Zener_5V1") (at 213.36 151.13 270) (unit 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "2ce750c4-1e2d-4852-91e6-a0b5c3a9ead2")
- (property "Reference" "D8" (at 217.17 149.86 90) (effects (font (size 1.0 1.0)) (justify left) )) (property "Value" "BZT52H-C5V1" (at 217.17 152.4 90) (effects (font (size 1.0 1.0)) (justify left) )) (property "Footprint" "ENSEA_Footprints:D8" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZT52H_SER.pdf" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "MPN" "BZT52H-C5V1,115" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Manufacturer" "Nexperia" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (property "Statut_MPN" "Selection V2" (at 218.44000000000003 153.67 0) (effects (font (size 1.27 1.27)) (justify left) (hide yes))) (pin "1" (uuid "983487f4-0b71-4b0d-8fc2-e12dd74d6bb5")) (pin "2" (uuid "240e173b-47ba-456e-ad1c-e5c4d07f02cc"))
- (instances (project "PCB_Caisse_Dématérialisée" (path "/f527cadd-9438-4426-b4ac-9eb72c375d31" (reference "D8") (unit 1)))))
-
-(text "V2 : MOSFET N, actif HIGH ; Zener 5V1 ; BZ1 actif 5V.\nJ1 : UART 3V3. Lecteur USB sur USB du Pi. Voir README." (at 177.8 158.75 0) (effects (font (size 1 1)) (justify left top)) (uuid "6c0a13b7-9baf-4f4c-8c78-e53c1114a312"))
-
-(wire (pts (xy 196.85 72.39) (xy 204.47 72.39)) (stroke (width 0) (type default)) (uuid "a9b909a5-711b-4d82-8fe2-a032d506f8fc"))(wire (pts (xy 204.47 72.39) (xy 204.47 78.74)) (stroke (width 0) (type default)) (uuid "6d6860f5-72d7-4d85-888a-164ecc6d992d"))
 )
